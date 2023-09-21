@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <!-- ===== Boxicons CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ===== Link Swiper's CSS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="section section-background">
+      <div class="container">
+        <div class="selects-container">
+          <div class="custom-select">
+            <div class="select-header">
+              <div class="select-header-group">
+                <i class="bx bx-filter-alt"></i>
+                <p>За рівнями надання МД</p>
+              </div>
+              <i class="bx bx-chevron-down arrow-icon"></i>
+            </div>
+            <ul class="options-list">
+              <li data-value="option1">Option 1</li>
+              <li data-value="option2">Option 2</li>
+              <li data-value="option3">Option 3</li>
+              <li data-value="option4">Option 4</li>
+            </ul>
+            <input type="hidden" id="selected-option1" />
+          </div>
+
+          <div class="custom-select">
+            <div class="select-header">
+              <div class="select-header-group">
+                <i class="bx bx-filter-alt"></i>
+                <p>За технологією для зберігання та обробки даних</p>
+              </div>
+              <i class="bx bx-chevron-down arrow-icon"></i>
+            </div>
+            <ul class="options-list">
+              <li data-value="option5">Option 5</li>
+              <li data-value="option6">Option 6</li>
+              <li data-value="option7">Option 7</li>
+              <li data-value="option8">Option 8</li>
+            </ul>
+            <input type="hidden" id="selected-option2" />
+          </div>
+
+          <div class="custom-select">
+            <div class="select-header">
+              <div class="select-header-group">
+                <i class="bx bx-filter-alt"></i>
+                <p>З закладами якого типу власності співпрацюють</p>
+              </div>
+
+              <i class="bx bx-chevron-down arrow-icon"></i>
+            </div>
+            <ul class="options-list">
+              <li data-value="option9">Option 9</li>
+              <li data-value="option10">Option 10</li>
+              <li data-value="option11">Option 11</li>
+              <li data-value="option12">Option 12</li>
+            </ul>
+            <input type="hidden" id="selected-option3" />
+          </div>
+
+          <div class="custom-select">
+            <div class="select-header">
+              <div class="select-header-group">
+                <i class="bx bx-filter-alt"></i>
+                <p>За впровадженим функціоналом (або за РМК)</p>
+              </div>
+
+              <i class="bx bx-chevron-down arrow-icon"></i>
+            </div>
+            <ul class="options-list">
+              <li data-value="option13">Option 13</li>
+              <li data-value="option14">Option 14</li>
+              <li data-value="option15">Option 15</li>
+              <li data-value="option16">Option 16</li>
+            </ul>
+            <input type="hidden" id="selected-option4" />
+          </div>
+        </div>
+
+        <!-- Define output elements for each sheet -->
+        <div id="loader" class="loader"></div>
+        <div id="output-1138747254" class="flex-column gap-32"></div>
+        <div id="output-0"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const loader = document.getElementById("loader");
+
+      // Function to show the loader
+      function showLoader(gid) {
+        const output = document.getElementById(`output-${gid}`);
+        if (!output) {
+          return;
+        }
+
+        loader.style.display = "block";
+        output.style.display = "none";
+      }
+
+      // Function to hide the loader and show the content
+      function hideLoader(gid) {
+        const output = document.getElementById(`output-${gid}`);
+        if (!output) {
+          return;
+        }
+        loader.style.display = "none";
+        output.style.display = "flex";
+      }
+
+      // Define a function to fetch data from a specific sheet and create a table
+      function fetchDataAndCreateTable(sheetId, gid, callback) {
+        showLoader(gid); // Show the loader while fetching data
+
+        const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
+        const query = encodeURIComponent("Select *"); // Modify your query here
+        const url = `${base}gid=${gid}&tq=${query}`;
+
+        fetch(url)
+          .then((res) => res.text())
+          .then((rep) => {
+            // Remove additional text and extract only JSON:
+            const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+
+            const colz = [];
+
+            // Extract column labels
+            jsonData.table.cols.forEach((heading) => {
+              if (heading.label) {
+                let column = heading.label;
+                colz.push(column);
+              }
+            });
+
+            const data = [];
+
+            // Extract row data:
+            jsonData.table.rows.forEach((rowData) => {
+              const row = {};
+              colz.forEach((ele, ind) => {
+                row[ele] = rowData.c[ind] != null ? rowData.c[ind].v : "";
+              });
+              data.push(row);
+            });
+
+            // Process and display rows (customize this function as needed)
+            if (typeof callback === "function") {
+              callback(data, gid);
+            }
+
+            hideLoader(gid); // Hide the loader after data processing
+          });
+      }
+
+      // Example of how to use the fetchDataAndCreateTable function for both sheets
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchDataAndCreateTable(
+          "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
+          "1138747254",
+          processRows
+        );
+        fetchDataAndCreateTable(
+          "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
+          "0",
+          processRows2
+        );
+      });
+
+      function processRows(data, gid) {
+        const output = document.getElementById(`output-${gid}`);
+
+        if (!output) {
+          console.error("Output element not found for gid:", gid);
+          return;
+        }
+
+        data.forEach((item) => {
+          // Create a new card container for each object
+          const cardContainer = document.createElement("div");
+          cardContainer.classList.add("mis-card-conatiner");
+
+          const leftSideCard = document.createElement("div");
+          leftSideCard.classList.add("mis-card-left");
+
+          const rightSideCard = document.createElement("div");
+          rightSideCard.classList.add("mis-card-right");
+
+          const misCardsControls = document.createElement("div");
+          misCardsControls.classList.add("mis-card-controls");
+
+          const buttonGoToSite = document.createElement("a");
+          buttonGoToSite.classList.add("btn", "btn__dark", "mis__catalog-btn");
+          buttonGoToSite.innerText = "Перейти на сайт";
+
+          const btnIcon = document.createElement("i");
+          btnIcon.classList.add("bx", "bx-right-arrow-alt");
+          buttonGoToSite.appendChild(btnIcon);
+
+          const buttonEducation = document.createElement("a");
+          buttonEducation.classList.add("btn", "btn__white");
+          buttonEducation.innerText = "Навчальні ресурси";
+
+          for (const key in item) {
+            if (key === "Лого МІС" && item[key] !== "") {
+              // Create an <img> element for the logo
+              const logoImage = document.createElement("img");
+              logoImage.src = item[key];
+              const logoContainer = document.createElement("div");
+              logoContainer.classList.add("logo-container"); // Add a class for styling
+              logoContainer.appendChild(logoImage);
+              leftSideCard.appendChild(logoContainer);
+            } else if (key === "Назва МІС") {
+              const heading = document.createElement("h2");
+              heading.classList.add("h2-mb-m");
+
+              heading.textContent = item[key];
+              rightSideCard.appendChild(heading);
+            } else if (key === "Посилання на навчальні ресурси МІС") {
+              // Insert link into the buttonEducation href attribute
+              buttonEducation.href = item[key];
+            } else if (key === "Посилання на сайт МІС") {
+              // Insert link into the buttonGoToSite href attribute
+              buttonGoToSite.href = item[key];
+            } else {
+              const heading = document.createElement("p");
+              heading.style.color = "#8091B0";
+              heading.style.fontSize = "14px";
+              heading.style.fontWeight = "300";
+              heading.style.lineHeight = "19.6px";
+              heading.textContent = key;
+
+              const paragraph = document.createElement("p");
+              paragraph.textContent = item[key];
+
+              const pairDiv = document.createElement("div");
+              pairDiv.classList.add("flex-column", "gap-6");
+              pairDiv.appendChild(heading);
+              pairDiv.appendChild(paragraph);
+
+              if (key === "Контакти служби підтримки") {
+                leftSideCard.appendChild(misCardsControls);
+                leftSideCard.appendChild(pairDiv);
+              } else if (key === "Лого МІС") {
+                // Handle logo content if needed
+              } else {
+                rightSideCard.appendChild(pairDiv);
+              }
+            }
+          }
+
+          misCardsControls.appendChild(buttonGoToSite);
+          misCardsControls.appendChild(buttonEducation);
+          cardContainer.appendChild(leftSideCard);
+          cardContainer.appendChild(rightSideCard);
+          output.appendChild(cardContainer);
+        });
+      }
+
+      function processRows2(data, gid) {
+        const output = document.getElementById(`output-${gid}`);
+        if (!output) {
+          console.error("Output element not found for gid:", gid);
+          return;
+        }
+
+        const table = document.createElement("table");
+        const thead = document.createElement("thead");
+        const tbody = document.createElement("tbody");
+
+        // Create table headers based on the column names
+        const headerRow = document.createElement("tr"); // Define headerRow here
+        Object.keys(data[0]).forEach((columnName) => {
+          const th = document.createElement("th");
+          th.textContent = columnName;
+          headerRow.appendChild(th);
+        });
+
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        // Create table rows with the data
+        data.forEach((rowData) => {
+          const row = document.createElement("tr");
+          Object.values(rowData).forEach((value) => {
+            const cell = document.createElement("td");
+            cell.textContent = value;
+            row.appendChild(cell);
+          });
+          tbody.appendChild(row);
+        });
+
+        table.appendChild(tbody);
+        output.appendChild(table);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectHeaders = document.querySelectorAll(".select-header");
+        const arrowIcons = document.querySelectorAll(".arrow-icon");
+        const optionsLists = document.querySelectorAll(".options-list");
+        const selectedOptionInputs = document.querySelectorAll(
+          "input[type='hidden']"
+        );
+
+        selectHeaders.forEach((selectHeader, index) => {
+          selectHeader.addEventListener("click", function (event) {
+            event.stopPropagation();
+            optionsLists[index].classList.toggle("show-options");
+            arrowIcons[index].style.transform = optionsLists[
+              index
+            ].classList.contains("show-options")
+              ? "rotate(180deg)"
+              : "rotate(0deg)";
+          });
+        });
+
+        document.addEventListener("click", function () {
+          optionsLists.forEach((optionsList, index) => {
+            optionsList.classList.remove("show-options");
+            arrowIcons[index].style.transform = "rotate(0deg)";
+          });
+        });
+
+        optionsLists.forEach((optionsList, index) => {
+          optionsList.addEventListener("click", function (event) {
+            if (event.target.tagName === "LI") {
+              const selectedValue = event.target.getAttribute("data-value");
+              selectedOptionInputs[index].value = selectedValue;
+              selectHeaders[index].querySelector("p").innerText =
+                event.target.innerText;
+              optionsList.classList.remove("show-options");
+              arrowIcons[index].style.transform = "rotate(0deg)";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

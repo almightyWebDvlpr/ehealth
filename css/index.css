@@ -32,6 +32,7 @@
 
 body {
   font-family: e-Ukraine-Bold;
+  color: #171717;
 }
 h1 {
   font-size: 56px;
@@ -130,6 +131,9 @@ img:hover {
 }
 .p-m {
   padding: 24px;
+}
+.gap-6{
+  gap: 6px;
 }
 
 .gap-8 {
@@ -339,6 +343,7 @@ img:hover {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   white-space: nowrap;
   border-radius: 40px;
   gap: 8px;
@@ -2197,4 +2202,94 @@ swiper-button-ne .swiper-pagination {
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+.mis-card-conatiner{
+  background: #fff;
+  padding: 32px 24px 32px 24px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+}
+
+
+.mis-card-left{
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+.mis-card-right{
+ display: flex;
+ flex-direction: column;
+ gap: 16px;
+}
+
+.mis-card-controls{
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+}
+
+/* Add your CSS styles for the filters here */
+.selects-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.custom-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #9CA3AF;
+  background: #fff;
+}
+
+.select-header i{
+  color: #9CA3AF;
+  font-size: 1.5rem;
+}
+
+.select-header-group{
+  display: flex;
+  gap: 12px;
+}
+
+.arrow-icon::before {
+  content: "▼"; /* Default down arrow icon */
+  transition: transform 0.3s;
+}
+
+.options-list {
+  display: none;
+  width: 85%;
+  /* position: absolute; */
+  background-color: #fff;
+  border: 1px solid #E5E7EB
+  ;
+}
+
+.options-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.options-list li:hover {
+  background-color: #f0f0f0;
+}
+.show-options{
+  display: block;
 }

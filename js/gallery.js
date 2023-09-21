@@ -38,36 +38,84 @@ const misImagesUrls = [
   ];
 
 
+  const partnersImagesUrls = [
+    "../../assets/images/partners/2560px-USAID-Identity.png",
+    "../../assets/images/partners/flag-evrosoyuza-max-990.png",
+    "../../assets/images/partners/Logo-World-Bank-IBRD-IDA.png",
+    "../../assets/images/partners/350px-Alinea-Web-logo.png",
+    "../../assets/images/partners/26-abt-associates.png",
+    "../../assets/images/partners/1200px-UNDP_logo.png",
+    "../../assets/images/partners/1280px-Deloitte.png",
+    "../../assets/images/partners/CRDFGLOBAL.png",
+    "../../assets/images/partners/edge-canada.png",
+    "../../assets/images/partners/EGAP1024.png",
+    "../../assets/images/partners/logo_cgz.png",
+    "../../assets/images/partners/ukaid-logo-6FCE8595F5-seeklogo.png",
+    "../../assets/images/partners/Logo_Krasn.png",
+    "../../assets/images/partners/MSH-logo.png",
+  ]
 
-
-
-// Function to create and append images to the container
-function createImageList() {
-    const imageContainer = document.getElementById('imageContainer');
-    imageContainer.classList.add('grid-auto-fit', 'gap-32')
-    // Loop through the image URLs
-    for (const imageUrl of misImagesUrls) {
-        // Create a <div> element for each image
-        const imageDiv = document.createElement('div');
-        imageDiv.style.padding = '24px 24px 24px 24px';
-        imageDiv.style.background = '#fff';
-        imageDiv.style.textAlign = 'center';
-      
-        // Create an <img> element
-        const imgElement = document.createElement('img');
-        imgElement.style.width = '200px';
-        imgElement.style.height = '90px';
-        imgElement.style.objectFit = 'contain';
-        // Set the src attribute to the image URL
-        imgElement.src = imageUrl;
-  
-        // Append the <img> element to the <div>
-        imageDiv.appendChild(imgElement);
-  
-        // Append the <div> to the container
-        imageContainer.appendChild(imageDiv);
-    }
+function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
+  const imageContainer = document.getElementById(containerId);
+  imageContainer.classList.add('grid-auto-fit', 'gap-32')
+  // Apply container styles if provided
+  if (containerStyles) {
+    Object.assign(imageContainer.style, containerStyles);
   }
-  
-  // Call the function to create the image list
-  createImageList();
+
+  // Loop through the image URLs
+  for (const imageUrl of imageUrls) {
+    // Create a <div> element for each image
+    const imageDiv = document.createElement("div");
+    imageDiv.classList.add('grid-auto-fit', 'gap-32')
+    // Apply default styles to the image container
+    imageDiv.style.padding = "24px";
+    imageDiv.style.background = "#fff";
+    imageDiv.style.textAlign = "center";
+    imageDiv.style.display = "block";
+
+    // Apply custom image container styles if provided
+    if (containerStyles) {
+      Object.assign(imageDiv.style, containerStyles);
+    }
+
+    // Create an <img> element
+    const imgElement = document.createElement("img");
+
+    // Apply default styles to the image
+    // imgElement.style.width = "200px";
+    // imgElement.style.height = "90px";
+    imgElement.style.objectFit = "contain";
+
+    // Apply custom image styles if provided
+    if (imageStyles) {
+      Object.assign(imgElement.style, imageStyles);
+    }
+
+    // Set the src attribute to the image URL
+    imgElement.src = imageUrl;
+
+    // Append the <img> element to the <div>
+    imageDiv.appendChild(imgElement);
+
+    // Append the <div> to the container
+    imageContainer.appendChild(imageDiv);
+  }
+}
+
+
+
+// createImageList(
+//   "misImageContainer",
+//   misImagesUrls,
+//   { padding: "24px", background: "#fff", textAlign: "center" },
+//   { width: "200px", height: "90px", objectFit: "contain" }
+// );
+
+
+createImageList(
+    "partnersImageContainer",
+    partnersImagesUrls,
+    // { padding: "24px", background: "#fff", textAlign: "center" },
+    // { width: "200px", height: "90px", objectFit: "contain" }
+  );
