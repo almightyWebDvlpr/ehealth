@@ -26,6 +26,7 @@ const translationMap = {
   "how-to-connect-pharmacy-to-the-nhcs.html": "Як підключити аптеку до ЕСОЗ",
   "pharmacy-how-to-choose-mis.html": "Як обрати МІС",
   "system-performance-monitoring.html": "Моніторинг працездатності системи",
+  "contracting-with-nhsc.html":"Контрактування з НСЗУ",
   "faq.html": "FAQ",
   patients: "Пацієнтам",
   "to-patients.html": "Пацієнтам",

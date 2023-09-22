@@ -596,6 +596,8 @@ tr:nth-child(even) {
   position: absolute;
   right: 0;
 }
+.document-files i,
+.dashboard__info-list li i,
 .pagination-button-prev i,
 .pagination-button-next i {
   font-size: 2rem;
@@ -1716,10 +1718,6 @@ tr:nth-child(even) {
   padding: 20px;
 
   border-radius: 4px;
-}
-
-.dashboard__info-list li i {
-  font-size: 2rem;
 }
 
 /* Service Providers */
