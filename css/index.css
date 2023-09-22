@@ -128,7 +128,9 @@ img:hover {
 .pt-lg {
   padding: 64px 0 0 0;
 }
-
+.p-huge{
+  padding: 160px 0;
+}
 .pb-xl {
   padding-bottom: 100px;
 }

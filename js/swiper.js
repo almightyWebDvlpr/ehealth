@@ -39,22 +39,22 @@ const misImagesUrls = [
 
 
   const partnersImagesUrls = [
-    "../../assets/images/partners/2560px-USAID-Identity.png",
-    "../../assets/images/partners/flag-evrosoyuza-max-990.png",
-    "../../assets/images/partners/Logo-World-Bank-IBRD-IDA.png",
-    "../../assets/images/partners/350px-Alinea-Web-logo.png",
-    "../../assets/images/partners/26-abt-associates.png",
-    "../../assets/images/partners/1200px-UNDP_logo.png",
-    "../../assets/images/partners/1280px-Deloitte.png",
-    "../../assets/images/partners/CRDFGLOBAL.png",
-    "../../assets/images/partners/edge-canada.png",
-    "../../assets/images/partners/EGAP1024.png",
-    "../../assets/images/partners/logo_cgz.png",
-    "../../assets/images/partners/Logo_Krasn.png",
-    "../../assets/images/partners/MSH-logo.png",
-    "../../assets/images/partners/ukaid-logo-6FCE8595F5-seeklogo.png",
-    "../../assets/images/partners/Logo_Krasn.png",
-    "../../assets/images/partners/MSH-logo.png",
+    "../../../assets/images/partners/2560px-USAID-Identity.png",
+    "../../../assets/images/partners/Logo-World-Bank-IBRD-IDA.png",
+    "../../../assets/images/partners/flag-evrosoyuza-max-990.png",
+    "../../../assets/images/partners/350px-Alinea-Web-logo.png",
+    "../../../assets/images/partners/26-abt-associates.png",
+    "../../../assets/images/partners/1200px-UNDP_logo.png",
+    "../../../assets/images/partners/1280px-Deloitte.png",
+    "../../../assets/images/partners/CRDFGLOBAL.png",
+    "../../../assets/images/partners/edge-canada.png",
+    "../../../assets/images/partners/EGAP1024.png",
+    "../../../assets/images/partners/logo_cgz.png",
+    "../../../assets/images/partners/Logo_Krasn.png",
+    "../../../assets/images/partners/MSH-logo.png",
+    "../../../assets/images/partners/ukaid-logo-6FCE8595F5-seeklogo.png",
+    "../../../assets/images/partners/Logo_Krasn.png",
+    "../../../assets/images/partners/MSH-logo.png",
   ]
 
  
