@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../css/index.css" />
+
+    <!-- ===== Boxicons CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ===== Link Swiper's CSS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <title>Цифрова освіта</title>
+  </head>
+  <body>
+    <!-- Header starts -->
+
+    <header>
+      <div class="section-background">
+        <div class="header__top flex-center-s-b">
+          <div class="header__top-logos">
+            <div>
+              <a href="../../../index.html">
+                <img
+                  src="../../../assets/images/logos/Logo.png"
+                  alt="ehealth-logo"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="https://diia.gov.ua/">
+                <img
+                  src="../../../assets/images/logos/image 8.png"
+                  alt="diia logo"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="header__top-controls flex-al-center">
+            <div
+              id="toggleModalButton"
+              class="btn header__top-control--light flex-al-center"
+            >
+              <i class="bx bx-show-alt icon-show"></i>
+              <i class="bx bx-x icon-modal-close"></i>
+              <span class="header-control-light-text">
+                Для людей з порушенням зору
+              </span>
+              <div class="controls-modal">
+                <i id="toggleFontSize" class="bx bx-font-size"></i>
+                <i id="toggleTheme" class="bx bxs-adjust"></i>
+              </div>
+            </div>
+
+            <!-- <div class="btn header__top-control--dark flex-center">
+              <span>Посилання на чат-бот</span>
+              <i class="bx bx-right-arrow-alt"></i>
+            </div> -->
+          </div>
+
+          <div class="nav_toggle">
+            <i class="bx bx-menu"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__nav">
+        <div class="container">
+          <nav class="navigation">
+            <ul class="navigation__list flex-center-s-b gap-20">
+              <li>
+                <p
+                  class="navigation__link"
+                  onclick="toggleDropdown('dropdown1')"
+                >
+                  Електронна охорона здоров'я
+                </p>
+
+                <div id="dropdown1" class="dropdown">
+                  <div class="container">
+                    <div class="dropdown-inner">
+                      <div>
+                        <p class="item-heading">Системи</p>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a class="item__sublink" href="./ehcs.html">EСОЗ</a>
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a class="item__sublink" href="./central.html"
+                              >Централь</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a class="item__sublink" href="./mis.html">МІСи</a>
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a class="item__sublink" href="./is-nhcs.html"
+                              >ІС НСЗУ</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <p class="item-heading">Реєстри</p>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../registers/country-basic-registers-and-healthcare.html"
+                              >Базові реєстри країни та сфери охорони
+                              здоров’я</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <p class="item-heading">Дані</p>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../data/dashboards.html"
+                              >Дашборди EСОЗ</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../404-not-found.html"
+                              >Інформаційна платформа</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item-list">
+                        <div class="item-list-info">
+                          <a
+                            class="link-heading"
+                            href="../../../404-not-found.html"
+                            >Законодавство</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <p
+                  class="navigation__link"
+                  onclick="toggleDropdown('dropdown2')"
+                >
+                  Надавачам послуг
+                </p>
+
+                <div id="dropdown2" class="dropdown">
+                  <div class="container">
+                    <div class="dropdown-inner">
+                      <div>
+                        <p class="item-heading">Керівникам ЗОЗ</p>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../service-providers/heads-of-health-care-institutions/how-connect-institution-to-esoz.html"
+                              >Як підключити заклад до EСОЗ</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../service-providers/heads-of-health-care-institutions/how-choose-mis.html"
+                              >Як обрати МІС</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink-append-child"
+                              href="../../../404-not-found.html"
+                              >Первинна медична допомога</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink-append-child"
+                              href="../../../404-not-found.html"
+                              >Спеціалізована медична допомога</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              id="doctors-link"
+                              class="item__sublink"
+                              href="../../../service-providers/mis-catalog.html"
+                              >Каталог МІС</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <a
+                          href="../../../service-providers/doctors/to-doctors.html"
+                          class="link-heading"
+                          >Лікарям</a
+                        >
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a class="item__sublink" href="">Навчання</a>
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink-append-child"
+                              href="../../../service-providers/doctors/education/digital-educational-resources.html"
+                              >Цифрові освітні ресурси</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink-append-child"
+                              href="../../../404-not-found.html"
+                              >Кібербезпека</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink-append-child"
+                              href="./digital-education.html"
+                              >Цифрова освіта</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink-append-child"
+                              href="../../../service-providers/doctors/education/nhcs-academy.html"
+                              >Академія НСЗУ</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../service-providers/system-performance-monitoring.html"
+                              >Моніторинг працездатності системи</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../404-not-found.html"
+                              >Повідомити про проблему</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <p class="item-heading">Аптечним закладам</p>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../service-providers/pharmacies/how-to-connect-pharmacy-to-the-nhcs.html"
+                              >Як підключити аптеку до EСОЗ</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../404-not-found.html"
+                              >Контрактування з НСЗУ</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../service-providers/pharmacies/pharmacy-how-to-choose-mis.html"
+                              >Як обрати МІС</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              id="pharmacy-link"
+                              class="item__sublink"
+                              href="../../../service-providers/mis-catalog.html"
+                              >Каталог МІС</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../service-providers/system-performance-monitoring.html"
+                              >Моніторинг працездатності системи</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__sublink"
+                              href="../../../service-providers/pharmacies/faq.html"
+                              >FAQ</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item-list">
+                        <div class="item-list-info">
+                          <a
+                            class="link-heading"
+                            href="../../../404-not-found.html"
+                            >Бібліотека знань</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <p
+                  class="navigation__link"
+                  onclick="toggleDropdown('dropdown3')"
+                >
+                  Пацієнтам
+                </p>
+
+                <div id="dropdown3" class="dropdown">
+                  <div class="container">
+                    <div class="dropdown-inner">
+                      <div class="dropdown-item">
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              class="item__link"
+                              href="../../../patients/to-patients.html"
+                              >Пацієнтам</a
+                            >
+                          </div>
+
+                          <div class="item-list-info">
+                            <a
+                              class="item__link"
+                              href="../../../patients/how-to-make-a-declaration-with-a-family-doctor.html"
+                              >Як укласти декларацію з сімейним лікарем</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../patients/how-to-get-an-e-prescription.html"
+                              >Як отримати е-рецепт</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../patients/medical-conclusions-about-temporary-disability.html"
+                              >Медичні висновки про тимчасову
+                              непрацездатність</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../patients/how-to-use-e-malyatko-services.html"
+                              >Як скористатися послугами єМалятко</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../patients/how-to-get-e-referral-to-a-specialist.html"
+                              >Як отримати е-направлення до спеціаліста</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <p
+                  class="navigation__link"
+                  onclick="toggleDropdown('dropdown4')"
+                >
+                  Партнерам
+                </p>
+
+                <div id="dropdown4" class="dropdown">
+                  <div class="container">
+                    <div class="dropdown-inner">
+                      <div class="dropdown-item">
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../partners/to-state-authorities.html"
+                              >Органам державної влади</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../partners/to-software-developers.html"
+                              >Розробникам ПЗ</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <p
+                  class="navigation__link"
+                  onclick="toggleDropdown('dropdown5')"
+                >
+                  Розробникам
+                </p>
+
+                <div id="dropdown5" class="dropdown">
+                  <div class="container">
+                    <div class="dropdown-inner">
+                      <div class="dropdown-item">
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../developers/how-to-connect-mis-to-esoz.html"
+                              >Як приєднати МІС до ЕСОЗ</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../404-not-found.html"
+                              >Кабінет розробника</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../404-not-found.html">F&Q</a>
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../developers/technical-requirements-and-test-program-for-mis.html"
+                              >Технічні вимоги та тестова програма до МІС</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <p
+                  class="navigation__link"
+                  onclick="toggleDropdown('dropdown6')"
+                >
+                  Новини
+                </p>
+
+                <div id="dropdown6" class="dropdown">
+                  <div class="container">
+                    <div class="dropdown-inner">
+                      <div class="dropdown-item">
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../news/blog.html">Блог</a>
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../404-not-found.html">Команда</a>
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../news/contacts.html">Контакти</a>
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../news/partners.html">Партнери</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <p
+                  class="navigation__link"
+                  onclick="toggleDropdown('dropdown7')"
+                >
+                  Підтримка
+                </p>
+
+                <div id="dropdown7" class="dropdown">
+                  <div class="container">
+                    <div class="dropdown-inner">
+                      <div class="dropdown-item">
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../404-not-found.html"
+                              >Чат-бот зворотнього зв’язку</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../404-not-found.html"
+                              >Лінк на дзвінок контакт-центру</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a
+                              href="../../../support/system-performance-monitoring.html"
+                              >Моніторинг працездатності ЕСОЗ</a
+                            >
+                          </div>
+                        </div>
+
+                        <div class="item-list">
+                          <div class="item-list-info">
+                            <a href="../../../404-not-found.html"
+                              >Повідомити про проблему в ЕСОЗ</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Header end -->
+
+    <!-- Main starts -->
+
+    <main>
+      <section class="top__section box-bg-light-blue">
+        <div class="container">
+          <ul id="breadcrumbs">
+            <!-- Breadcrumb items will be dynamically added here -->
+          </ul>
+
+          <div class="top__section-content flex-column">
+            <div class="top__section-title flex-center-s-b">
+              <h1>Цифрова освіта</h1>
+
+              <a href="" class="top__section-link flex-al-center in-text-link">
+                <span>Поділитися</span>
+                <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+              </a>
+            </div>
+
+            <p>
+              В умовах цифрової трансформації охорони здоров’я важливо набувати
+              і розвивати навики використання цифрових технологій як у
+              професійній діяльності, так і в повсякденному житті. 
+              <br />
+              <br />
+              <br />
+              Безперервний професійний розвиток працівників охорони здоров’я
+              передбачає і підвищення цифрової компетентності, яка охоплює такі
+              поняття, як: загальна цифрова грамотність, інформаційна
+              грамотність, управління цифровими медичними даними та передача
+              медичної інформації, цифрова комунікація та співпраця, оптимізація
+              та управління обігу ліків та лікарських призначень, замовлення
+              діагностичних досліджень, підтримка прийняття рішень, кібергігієна
+              та кібербезпека (включаючи захист персональних даних пацієнтів), а
+              також розв'язання проблем і навчання впродовж життя у цифровому
+              середовищі. 
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-background">
+        <div class="container">
+          <h2>
+            Є кілька важливих компетентностей, які варто розвивати для
+            працівників охорони здоров’я:
+          </h2>
+
+          <ul class="how__choose-mis-help-list">
+            <li>
+              <div class="image__box">
+                <img
+                  class="image-width-height-l"
+                  src="../../../assets/images/new_icons/Desktop computer graph-small.png"
+                  alt="Desktop computer"
+                />
+              </div>
+
+              <p>
+                Володіння основами комп’ютерної та інформаційної грамотності
+              </p>
+            </li>
+
+            <li>
+              <div class="image__box">
+                <img
+                  class="image-width-height-l"
+                  src="../../../assets/images/new_icons/list_assets 1.png"
+                  alt="list_assets"
+                />
+              </div>
+
+              <p>Вміння працювати з даними</p>
+            </li>
+
+            <li>
+              <div class="image__box">
+                <img
+                  class="image-width-height-l"
+                  src="../../../assets/images/new_icons/Arrow-Icon01_3 2.png"
+                  alt="Arrow-Icon "
+                />
+              </div>
+
+              <p>Створення цифрового контенту</p>
+            </li>
+
+            <li>
+              <div class="image__box">
+                <img
+                  class="image-width-height-l"
+                  src="../../../assets/images/new_icons/Rocket-small.png"
+                  alt="Rocket"
+                />
+              </div>
+
+              <p>Комунікацію та взаємодію у цифровому суспільстві</p>
+            </li>
+
+            <li>
+              <div class="image__box">
+                <img
+                  class="image-width-height-l"
+                  src="../../../assets/images/new_icons/list_assets 1.png"
+                  alt="list_assets"
+                />
+              </div>
+
+              <p>Безпеку в цифровому середовищі</p>
+            </li>
+
+            <li>
+              <div class="image__box">
+                <img
+                  class="image-width-height-l"
+                  src="../../../assets/images/new_icons/Magnifying Glass-small.png"
+                  alt="Magnifying Glass"
+                />
+              </div>
+
+              <p>Вміння розв’язувати проблеми у цифровому середовищі.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>
+            Окремі сфери (або по-іншому, домени) формують за різними підходами,
+            враховуючи мету, об’єкт і предмет діяльності:
+          </h2>
+
+          <div class="flex-column gap-32">
+            <ul class="grid-col-1-1-1 gap-32 academy__courses-box-list">
+              <li>
+                <a href="" class="icon-box flex-column gap-8">
+                  <img
+                    class="image-width-height-l"
+                    src="../../../assets/images/new_icons/Desktop computer graph-small.png"
+                    alt="Desktop computer"
+                  />
+                  <h4>За використовуваними цифровими технологіями</h4>
+                </a>
+              </li>
+
+              <li>
+                <a href="" class="icon-box flex-column gap-8">
+                  <img
+                    class="image-width-height-l"
+                    src="../../../assets/images/new_icons/doctor wearing mask.png"
+                    alt="doctor wearing mask"
+                  />
+                  <h4>За основними напрямками діяльності</h4>
+                </a>
+              </li>
+
+              <li>
+                <a href="" class="icon-box flex-column gap-8">
+                  <img
+                    class="image-width-height-l"
+                    src="../../../assets/images/new_icons/Smartphone-small.png"
+                    alt="Smartphone"
+                  />
+                  <h4>За особливостями отримання і перетворення інформації</h4>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div id="medical-facility-workers">
+        <!--Content for medical facility workers -->
+      </div>
+
+      <section class="section section-background">
+        <div class="container-l">
+          <h2>Розглянемо детальніше кожну із компетентностей:</h2>
+          <div
+            id="digitalEducationAccordionContainer"
+            data-accordion-type="digitalEducationAccordionContainer"
+            class="accordion"
+          >
+            <!-- accordion items will be dynamically added here -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-background pb-0">
+        <div class="container-l">
+          <div class="notification__box box-bg-light-blue">
+            <img
+              src="../../../assets/images/new_icons/finger.png"
+              alt="finger"
+            />
+            <h5>
+              Щоб визначити рівень цифрової грамотності, можна скористатися
+              рамкою цифрових компетентностей для працівників охорони здоров'я
+              України – це інструмент створений для того, щоб покращити рівень
+              цифрових компетентностей медичних працівників, допомогти органам
+              державної влади у формуванні державної політики та плануванні
+              освітніх ініціатив, спрямованих на підвищення рівня цифрової
+              грамотності та практичного використання цифрових технологій 
+              працівниками охорони здоров’я.
+            </h5>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-background">
+        <div class="container">
+          <div style="position: relative">
+            <div class="mis__banner"></div>
+            <div class="mis__banner-content">
+              <img
+                class="banner__img banner__img-left"
+                src="../../../assets/images/banners_images/cell_asset 2.png"
+                alt="cell_asset"
+              />
+              <img
+                class="banner__img banner__img-right"
+                src="../../../assets/images/banners_images/cell_asset 3.png"
+                alt="cell_asset"
+              />
+
+              <div class="banner__title">
+                <h2>Цифрові освітні ресурси</h2>
+              </div>
+              <a href="" class="btn btn__transparent banner__btn">
+                Перейти за посиланням
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Main end -->
+
+    <!-- Footer starts -->
+
+    <footer class="footer">
+      <div class="container">
+        <!-- To Partners -->
+
+        <article>
+          <div class="homepage__content-top">
+            <h2 class="h2-mb-l">Партнери</h2>
+
+            <div class="swiper__buttons footer__swiper-buttons">
+              <i
+                class="bx bx-arrow-back swiper-button-prev partners-button-prev"
+              ></i>
+              <i
+                class="bx bx-arrow-back bx-rotate-180 swiper-button-next partners-button-next"
+              ></i>
+            </div>
+          </div>
+
+          <div class="swiper__section">
+            <div
+              id="partners-swiper-container"
+              class="swiper mySwiper container"
+            >
+              <div class="swiper-wrapper content"></div>
+            </div>
+          </div>
+          <div style="position: relative">
+            <div class="swiper-pagination partners-swiper-pagination"></div>
+          </div>
+        </article>
+
+        <nav class="footer__navigation">
+          <ul class="footer__navigation-list">
+            <li class="footer__navigation-item">
+              <h4>Електронна охорона здоров’я</h4>
+
+              <ul class="gap-12 flex-column">
+                <li>
+                  <a class="footer__navigation-link" href="">Системи</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="">Реєстри</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="">Дані</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="">Законодавство</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <h4>Надавачам послуг</h4>
+
+              <ul class="gap-12 flex-column">
+                <li>
+                  <a class="footer__navigation-link" href="">Керівникам ЗОЗ</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="">Лікарям</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href=""
+                    >Аптечним закладам</a
+                  >
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href=""
+                    >Бібліотека знань</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <ul class="footer__navigation-sublist">
+                <li class="footer__navigation-subitem">
+                  <a class="footer__navigation-link" href="">
+                    <h4>Пацієнтам</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a class="footer__navigation-link" href="">
+                    <h4>Партнерам</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a class="footer__navigation-link" href="">
+                    <h4>Розробникам</h4>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <ul class="footer__navigation-sublist">
+                <li class="footer__navigation-subitem">
+                  <a class="footer__navigation-link" href="">
+                    <h4>Новини</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a class="footer__navigation-link" href="">
+                    <h4>Підтримка</h4>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__socials">
+          <p>Стежте за нами тут:</p>
+
+          <div class="footer__socials-list">
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+              </a>
+            </div>
+
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-youtube" style="color: #ff0302"></i>
+              </a>
+            </div>
+
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-linkedin" style="color: #0b53d0"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__controls">
+          <ul class="footer__controls-list">
+            <!-- <li>
+              <a class="btn btn__white" href="">
+                Посилання на чат-бот
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </li> -->
+
+            <li>
+              <a class="btn btn__white" href="">
+                Контакт центр
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="btn btn__white" href="">
+                Повідомити про проблему в ЄСОЗ
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__divider"></div>
+
+      <div class="container">
+        <div class="footer__bootom">
+          <div class="footer__bootom-logos">
+            <a href="../../../index.html">
+              <img
+                src="../../../assets/images/logos/Frame 5.png"
+                alt="ehealth logo"
+              />
+            </a>
+            <a href="https://diia.gov.ua/">
+              <img
+                src="../../../assets/images/logos/Group.png"
+                alt="diia logo"
+              />
+            </a>
+            <a href="../../../index.html">ehealth.gov.ua</a>
+          </div>
+          <div>
+            <p>Всі права захищені 2023</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../../js/menu.js"></script>
+    <script src="../../../js/breadcrumbs.js"></script>
+    <script src="../../../js/modal.js"></script>
+    <!-- Accordion JS -->
+    <script src="../../../js/accordion.js"></script>
+  </body>
+</html>

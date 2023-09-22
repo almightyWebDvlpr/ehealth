@@ -463,16 +463,19 @@ const developersServiceAccordion = [
     ],
   },
   {
-    header:"Проведення тестування Адміністратором ( до 30 календарних днів)",
-    content:"Отримавши запит на проведення тестування, Адміністратор перевіряє надані оператором МІС документи. У разі відсутності зауважень до заяви та копій документів, Адміністратор здійснює тестування."
+    header: "Проведення тестування Адміністратором ( до 30 календарних днів)",
+    content:
+      "Отримавши запит на проведення тестування, Адміністратор перевіряє надані оператором МІС документи. У разі відсутності зауважень до заяви та копій документів, Адміністратор здійснює тестування.",
   },
   {
-    header:"Отримайте висновок (3 робочі дні)",
-    content:"За результатами розгляду надісланих матеріалів МІС отримує висновок. <br> <br> У разі встановлення невідповідностей, висновок буде містити опис таких невідповідностей та пропозиції щодо їх усунення. Оператор МІС має право повторно подати заявку Адміністратору після усунення невідповідностей."
+    header: "Отримайте висновок (3 робочі дні)",
+    content:
+      "За результатами розгляду надісланих матеріалів МІС отримує висновок. <br> <br> У разі встановлення невідповідностей, висновок буде містити опис таких невідповідностей та пропозиції щодо їх усунення. Оператор МІС має право повторно подати заявку Адміністратору після усунення невідповідностей.",
   },
   {
-    header:"Укладіть з Адміністратором договір про підключення МІС до ЦБД подавши заявку на приєднання, додатки та логотип МІС (180×100 піскелей, формат PNG).",
-    content:[
+    header:
+      "Укладіть з Адміністратором договір про підключення МІС до ЦБД подавши заявку на приєднання, додатки та логотип МІС (180×100 піскелей, формат PNG).",
+    content: [
       {
         text: "<a class='in-text-link' href='https://ehealth.gov.ua/wp-content/uploads/2022/09/Dogovir.pdf'>Договір</a>",
         iconClass: "bx bx-wifi-0",
@@ -480,20 +483,128 @@ const developersServiceAccordion = [
       {
         text: "<a class='in-text-link' href='https://ehealth.gov.ua/wp-content/uploads/2021/10/Zayavka-na-pryyednannya-do-dogovoru-1.pdf'>Шаблон заявки на приєднання</a>",
         iconClass: "bx bx-wifi-0",
-      }
+      },
     ],
     subcontent: [
       {
-        text: "Цей Договір є договором приєднання в контексті статті 634 Цивільного кодексу України та частини четвертої статті 179 Господарського кодексу України та укладається шляхом приєднання Оператора МІС до всіх його умов. У випадку незгоди зі змістом та формою Договору, чи окремих його положень, Оператор МІС вправі відмовитися від його укладення."
+        text: "Цей Договір є договором приєднання в контексті статті 634 Цивільного кодексу України та частини четвертої статті 179 Господарського кодексу України та укладається шляхом приєднання Оператора МІС до всіх його умов. У випадку незгоди зі змістом та формою Договору, чи окремих його положень, Оператор МІС вправі відмовитися від його укладення.",
       },
       {
         text: "Протягом п’яти робочих днів з дати укладення договору Адміністратор оприлюднить на своєму веб-сайті  інформацію про підключення МІС до ЦБД та її функціональні можливості в електронній системі охорони здоров’я.",
-      }
+      },
     ],
   },
   {
-    header:"Отримайте від Адміністратора ключі доступу до продуктивного середовища (5 робочих днів)",
-    content:""
+    header:
+      "Отримайте від Адміністратора ключі доступу до продуктивного середовища (5 робочих днів)",
+    content: "",
+  },
+];
+
+const digitalEducationAccordionContainer = [
+  {
+    header:
+      "Основи комп’ютерної та інформаційної грамотності включають у себе наступні компетентності:",
+    content: [
+      {
+        text: "використання комп’ютерних та мобільних пристроїв (вміти користуватись та налаштовувати ці пристрої для виконання робочих завдань і власних потреб);",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "використання базових програм та застосунків (вміти користуватись та обирати потрібне для вирішення певних завдань. Наприклад, вміти користуватись Google Meet чи Zoom, вміти працювати з електронними даними в МІС тощо); ",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "використання Інтернету;",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "управління цифровою ідентичністю (розуміти що це, вміти створювати, управляти, налаштовувати параметри цифрової ідентичності. Наприклад, це про вміння використання кваліфікованого електронного підпису в документообігу медичного закладу).",
+        iconClass: "bx bx-wifi-0",
+      },
+    ],
+  },
+
+  {
+    header: "Вміння працювати з даними:",
+    content: [
+      {
+        text: " Перегляд, пошук і фільтрація даних, інформації та цифрового контенту (вміти формулювати власні інформаційні потреби, шукати потрібний контент, формувати стратегії пошуку потрібної інформації під власні запити. Наприклад, це про вміння користуватись дашбордами НСЗУ та фільтрами до них); ",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "  Управління даними, інформацією та цифровим контентом (вміти добирати, зберігати, організовувати та обробляти дані, цифровий контент у цифрових середовищах. Наприклад, це про вміння користуватись <a class='in-text-underline' href='https://support.microsoft.com/uk-ua/office/%D1%96%D0%BC%D0%BF%D0%BE%D1%80%D1%82-%D1%96-%D0%B0%D0%BD%D0%B0%D0%BB%D1%96%D0%B7-%D0%B4%D0%B0%D0%BD%D0%B8%D1%85-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EBBD=Tables'>Excel</a> , <a class='in-text-underline' href='https://www.google.com/intl/uk/forms/about/'>Google Forms</a>);",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "Реалізація власних запитів і потреб за допомогою цифрових технологій (вміти використовувати цифрові засоби й технології задля особистих потреб);",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "  Самореалізація та особистий розвиток у цифровому суспільстві (вміти набувати різноманітні навички у цифровому середовищі. Наприклад, проходити онлайн курси в Академії НСЗУ, онлайн навчання від МІСів тощо).",
+        iconClass: "bx bx-wifi-0",
+      },
+    ],
+  },
+  {
+    header: "Створення цифрового контенту",
+    content: [
+      {
+        text: "Створення, редагування та інтеграція цифрового контенту у різних форматах. Наприклад, вайбер-канал або особисту сторінку у соцмережах для пацієнтів;",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "Авторське право і ліцензії (розуміти як поширюється авторське право та ліцензії на інформацію та цифровий контент);",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "Базові навички програмування для більш досвідчених спеціалістів з високим рівнем цифрової грамотності (розуміти, як за допомогою програмування можна вирішити певну проблему чи питання).",
+        iconClass: "bx bx-wifi-0",
+      },
+    ],
+  },
+  {
+    header: "Комунікація та взаємодія у цифровому суспільстві",
+    content: [
+      {
+        text: "Поширення контенту та обмін даними за допомогою цифрових технологій (вміти використовувати відповідні цифрові засоби та технології задля поширення контенту та обмін даними. Це і про вміння створювати презентації, наприклад, у <a class='in-text-underline' href='https://support.microsoft.com/uk-ua/office/%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D1%96%D1%97-%D0%B2-powerpoint-422250f8-5721-4cea-92cc-202fa7b89617'>Power Point</a>, і про вміння користуватись сервісами Google); ",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "  Спілкування в цифровому середовищі та мережевий етикет (знати правила поведінки щодо взаємодії у цифрових середовищах, вміти адаптувати стратегії комунікації до певної аудиторії).",
+        iconClass: "bx bx-wifi-0",
+      },
+    ],
+  },
+  {
+    header: "Безпека в цифровому середовищі",
+    content: [
+      {
+        text: "Захист пристроїв і підключення до мережі (вміти захищати власні пристрої та  цифровий контент, знати про заходи безпеки та захисту);",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "Безпека персональних даних та приватності (вміти захищати персональні дані та цифровий контент приватність у цифровому середовищі. Наприклад, вміти захищати персональні дані пацієнтів); ",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "Захист від шахрайства і маніпуляцій (вміння уникнути вірусів, користуючись пристроями, вміння обирати паролі та запобігати “взломам”).",
+        iconClass: "bx bx-wifi-0",
+      },
+    ],
+  },
+  {
+    header: "Вміння розв’язувати проблеми у цифровому середовищі",
+    content: [
+      {
+        text: " Пошук інформації та сервісів для вирішення технічних проблем (знати, як знайти необхідні та якісні сервіси для вирішення технічних проблем. Наприклад, знати, як звертатись до представника МІС, щоб ввести потрібні електронні дані);",
+        iconClass: "bx bx-wifi-0",
+      },
+      {
+        text: "Використання інтернет-ресурсів для навчання, розвитку професійних навичок і саморозвитку (вміти набувати різноманітні навички у цифровому середовищі. Наприклад, проходити онлайн курси на платформах Дія, Академія НСЗУ, тощо).",
+        iconClass: "bx bx-wifi-0",
+      },
+    ],
   },
 ];
 
@@ -509,10 +620,7 @@ function createAccordion(header, content, subcontent, content2, subcontent2) {
   // Check if the header contains a link
   const linkRegex = /(https?:\/\/\S+)/;
   const linkMatch = header.match(linkRegex);
-;
   const containsATags = /<a[^>]*>.*<\/a>/i.test(header);
-
-  
 
   if (linkMatch) {
     const textBeforeLink = header.split(linkMatch[0])[0];
@@ -532,27 +640,29 @@ function createAccordion(header, content, subcontent, content2, subcontent2) {
 
     headerText.appendChild(firstPart);
     headerText.appendChild(secondPart);
-  }else {
+  } else {
     headerText.innerHTML = header;
   }
 
-
   if (containsATags) {
-   // Create a regular expression to match <a> tags
-  const regex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*?>(.*?)<\/a>/gi;
+    // Create a regular expression to match <a> tags
+    const regex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*?>(.*?)<\/a>/gi;
 
-  const extractedText = header.replace(regex, function (match, quote, url, linkText) {
-    const link = document.createElement("a");
-    link.href = url;
-    link.textContent = linkText;
-    link.classList.add("in-text-link"); // Add the class here
-    link.style.pointerEvents = "all";
+    const extractedText = header.replace(
+      regex,
+      function (match, quote, url, linkText) {
+        const link = document.createElement("a");
+        link.href = url;
+        link.textContent = linkText;
+        link.classList.add("in-text-link"); // Add the class here
+        link.style.pointerEvents = "all";
 
-    return link.outerHTML;
-  });
+        return link.outerHTML;
+      }
+    );
 
-  headerText.innerHTML = extractedText;
-     }
+    headerText.innerHTML = extractedText;
+  }
 
   const icon = document.createElement("i");
   icon.className = "fa-sharp fa-solid fa-plus";
@@ -576,7 +686,7 @@ function createAccordion(header, content, subcontent, content2, subcontent2) {
 
   const accordionContentInner = document.createElement("div");
   accordionContentInner.className = "accordion-content-inner";
-  accordionContentInner.classList.add('flex-column', 'gap-16')
+  accordionContentInner.classList.add("flex-column", "gap-16");
   // Replace words with links in content
   if (typeof content === "string" && content.trim() !== "") {
     const contentDiv = document.createElement("p");
@@ -584,7 +694,7 @@ function createAccordion(header, content, subcontent, content2, subcontent2) {
     accordionContentInner.appendChild(contentDiv);
   } else if (Array.isArray(content) && content.length > 0) {
     const subcontentList = document.createElement("ul");
-    subcontentList.classList.add('flex-column', 'gap-12')
+    subcontentList.classList.add("flex-column", "gap-12");
     content.forEach((item) => {
       const listItem = document.createElement("li");
       listItem.innerHTML = `<i class="${item.iconClass}"></i> <p> ${item.text}</p>`;
@@ -596,7 +706,7 @@ function createAccordion(header, content, subcontent, content2, subcontent2) {
   // Replace words with links in subcontent
   if (subcontent && subcontent.length > 0) {
     const subcontentList = document.createElement("ul");
-    subcontentList.classList.add('flex-column', 'gap-12')
+    subcontentList.classList.add("flex-column", "gap-12");
     subcontent.forEach((item) => {
       const listItem = document.createElement("li");
       listItem.innerHTML = `<i class="${item.iconClass}"></i> <p> ${item.text}</p>`;
@@ -608,7 +718,7 @@ function createAccordion(header, content, subcontent, content2, subcontent2) {
   // Replace words with links in content2
   if (content2 && content2.length > 0) {
     const content2List = document.createElement("ul");
-    content2List.classList.add('flex-column', 'gap-12')
+    content2List.classList.add("flex-column", "gap-12");
     content2.forEach((item) => {
       const listItem = document.createElement("li");
       listItem.innerHTML = `<i class="${item.iconClass}"></i> <p> ${item.text}</p>`;
@@ -620,7 +730,7 @@ function createAccordion(header, content, subcontent, content2, subcontent2) {
   // Replace words with links in subcontent2
   if (subcontent2 && subcontent2.length > 0) {
     const subcontent2List = document.createElement("ul");
-    subcontent2List.classList.add('flex-column', 'gap-12')
+    subcontent2List.classList.add("flex-column", "gap-12");
     subcontent2.forEach((item) => {
       const listItem = document.createElement("li");
       listItem.innerHTML = `<i class="${item.iconClass}"></i> <p> ${item.text}</p>`;
@@ -696,6 +806,9 @@ document.addEventListener("DOMContentLoaded", function () {
         break;
       case "developersServiceAccordion":
         accordion = developersServiceAccordion;
+        break;
+      case "digitalEducationAccordionContainer":
+        accordion = digitalEducationAccordionContainer;
         break;
       // Add more cases as needed
 

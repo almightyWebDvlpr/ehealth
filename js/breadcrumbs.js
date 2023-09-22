@@ -21,6 +21,7 @@ const translationMap = {
   education: "Навчання",
   "digital-educational-resources.html": "Цифрові освітні ресурси",
   "nhcs-academy.html": "Академія НСЗУ",
+  "digital-education.html":"Цифрова освіта",
   pharmacies: "Аптечним закладам",
   "how-to-connect-pharmacy-to-the-nhcs.html": "Як підключити аптеку до ЕСОЗ",
   "pharmacy-how-to-choose-mis.html": "Як обрати МІС",

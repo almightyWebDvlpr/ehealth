@@ -122,6 +122,9 @@ img:hover {
 }
 
 /* Paddings */
+.pb-0{
+  padding-bottom: 0 !important;
+}
 .pt-lg {
   padding: 64px 0 0 0;
 }
@@ -391,6 +394,9 @@ img:hover {
 
 .in-text-link {
   color: #0051ec;
+}
+.in-text-underline{
+  text-decoration: underline;
 }
 
 .status__content {
