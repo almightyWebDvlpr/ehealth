@@ -1,4 +1,4 @@
-const misImagesUrls = [
+const misImagesUrl = [
     "../../assets/images/mis/3i.jpg",
     "../../assets/images/mis/Clinica Web.PNG",
     "../../assets/images/mis/DocDream.png",
@@ -38,7 +38,7 @@ const misImagesUrls = [
   ];
 
 
-  const partnersImagesUrls = [
+  const partnersImagesUrl = [
     "../../assets/images/partners/2560px-USAID-Identity.png",
     "../../assets/images/partners/flag-evrosoyuza-max-990.png",
     "../../assets/images/partners/Logo-World-Bank-IBRD-IDA.png",
@@ -115,7 +115,7 @@ function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
 
 createImageList(
     "partnersImageContainer",
-    partnersImagesUrls,
+    partnersImagesUrl,
     // { padding: "24px", background: "#fff", textAlign: "center" },
     // { width: "200px", height: "90px", objectFit: "contain" }
   );
