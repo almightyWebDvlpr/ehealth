@@ -635,9 +635,30 @@
         <!-- To Partners -->
 
         <article>
-          <h2>Партнери</h2>
+          <div class="homepage__content-top">
+            <h2 class="h2-mb-l">Партнери</h2>
 
-          <div class="swiper"></div>
+            <div class="swiper__buttons footer__swiper-buttons">
+              <i
+                class="bx bx-arrow-back swiper-button-prev partners-button-prev"
+              ></i>
+              <i
+                class="bx bx-arrow-back bx-rotate-180 swiper-button-next partners-button-next"
+              ></i>
+            </div>
+          </div>
+
+          <div class="swiper__section">
+            <div
+              id="partners-swiper-container"
+              class="swiper mySwiper container"
+            >
+              <div class="swiper-wrapper content"></div>
+            </div>
+          </div>
+          <div style="position: relative">
+            <div class="swiper-pagination partners-swiper-pagination"></div>
+          </div>
         </article>
 
         <nav class="footer__navigation">
@@ -645,7 +666,7 @@
             <li class="footer__navigation-item">
               <h4>Електронна охорона здоров’я</h4>
 
-              <ul class="list">
+              <ul class="gap-12 flex-column">
                 <li>
                   <a class="footer__navigation-link" href="">Системи</a>
                 </li>
@@ -667,7 +688,7 @@
             <li class="footer__navigation-item">
               <h4>Надавачам послуг</h4>
 
-              <ul class="list">
+              <ul class="gap-12 flex-column">
                 <li>
                   <a class="footer__navigation-link" href="">Керівникам ЗОЗ</a>
                 </li>
@@ -729,25 +750,48 @@
             </li>
           </ul>
         </nav>
+        <div class="footer__socials">
+          <p>Стежте за нами тут:</p>
+
+          <div class="footer__socials-list">
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+              </a>
+            </div>
+
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-youtube" style="color: #ff0302"></i>
+              </a>
+            </div>
+
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-linkedin" style="color: #0b53d0"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
         <div class="footer__controls">
           <ul class="footer__controls-list">
-            <li>
-              <a href="">
-                Посилання на чат-бот
-                <i class="bx bx-right-arrow-alt"></i>
-              </a>
-            </li>
+            <!-- <li>
+        <a class="btn btn__white" href="">
+          Посилання на чат-бот
+          <i class="bx bx-right-arrow-alt"></i>
+        </a>
+      </li> -->
 
             <li>
-              <a href="">
+              <a class="btn btn__white" href="">
                 Контакт центр
                 <i class="bx bx-right-arrow-alt"></i>
               </a>
             </li>
 
             <li>
-              <a href="">
+              <a class="btn btn__white" href="">
                 Повідомити про проблему в ЄСОЗ
                 <i class="bx bx-right-arrow-alt"></i>
               </a>
@@ -761,26 +805,27 @@
       <div class="container">
         <div class="footer__bootom">
           <div class="footer__bootom-logos">
-            <a href="">
+            <a href="../../index.html">
               <img
                 src="../../assets/images/logos/Frame 5.png"
                 alt="ehealth logo"
               />
             </a>
-            <a href="">
+            <a href="https://diia.gov.ua/">
               <img src="../../assets/images/logos/Group.png" alt="diia logo" />
             </a>
-            <a href="">ehealth.gov.ua</a>
+            <a href="../../index.html">ehealth.gov.ua</a>
           </div>
           <div>
             <p>Всі права захищені 2023</p>
           </div>
         </div>
       </div>
+      <a href="./electronic-healthcare/systems/mis.html"></a>
     </footer>
 
     <!-- Footer end -->
-
+<script src="../js/modal.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/breadcrumbs.js"></script>
     <script src="../js/accordion.js"></script>
@@ -790,13 +835,5 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../js/swiper.js"></script>
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
   </body>
 </html>
