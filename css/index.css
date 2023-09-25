@@ -122,13 +122,13 @@ img:hover {
 }
 
 /* Paddings */
-.pb-0{
+.pb-0 {
   padding-bottom: 0 !important;
 }
 .pt-lg {
   padding: 64px 0 0 0;
 }
-.p-huge{
+.p-huge {
   padding: 160px 0;
 }
 .pb-xl {
@@ -397,7 +397,7 @@ img:hover {
 .in-text-link {
   color: #0051ec;
 }
-.in-text-underline{
+.in-text-underline {
   text-decoration: underline;
 }
 
@@ -606,6 +606,63 @@ tr:nth-child(even) {
 .active-pagination-button {
   background: #0051ec;
   color: #fff;
+}
+
+/* Add your CSS styles for the filters here */
+.selects-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.custom-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #9ca3af;
+  background: #fff;
+}
+
+.select-header i {
+  color: #9ca3af;
+  font-size: 1.5rem;
+}
+
+.select-header-group {
+  display: flex;
+  gap: 12px;
+}
+
+.options-list {
+  display: none;
+  width: 85%;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+}
+
+.options-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.options-list li:hover {
+  background-color: #f0f0f0;
+}
+.show-options {
+  display: block;
 }
 
 /* HEADER STYLES */
@@ -1375,7 +1432,7 @@ tr:nth-child(even) {
 
 .section__box-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(462px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(462px, 1fr)); */
   gap: 24px;
   row-gap: 48px;
 }
@@ -1965,6 +2022,12 @@ tr:nth-child(even) {
 }
 
 @media (max-width: 730px) {
+  .flex-baseline-s-b.block {
+    flex-direction: column;
+  }
+  .hero h1 {
+    width: unset;
+  }
   .container {
     max-width: 600px; /* Adjust this value to your desired tablet width */
   }
@@ -1991,16 +2054,60 @@ tr:nth-child(even) {
       height: 100%;
       transition: all 0.5s ease-in;
   } */
-}
-@media (max-width: 520px) {
-  .flex-center-s-b {
+
+  .dashboard__slider-content-top,
+  .responses__slider-content-top,
+  .homepage__content-top {
     flex-direction: column;
   }
 }
+@media (max-width: 520px) {
+  h1{
+    font-size: 48px;
+    line-height: 57px;
+  }
+  .flex-center-s-b {
+    flex-direction: column;
+  }
+  .container-l {
+    margin: auto 40px;
+}
+}
 
 @media (max-width: 480px) {
+h2{
+  font-size: 34px;
+}
+  .section .m-0{
+    margin: 0;
+  }
   .container {
     max-width: 320px; /* Adjust this value for mobiles */
+  }
+  .connect__section-list,
+  .article__list,
+  .left-long,
+  .right-long,
+  .section__box-content,
+  #breadcrumbs,
+  .flex-baseline-s-b.block,
+  .flex-gap-32.block,
+  .grid-col-1-1.block,
+  .grid-col-1-1-1.block, 
+  .grid-col-1-1-1-1.block {
+    display: flex;
+    flex-direction: column;
+  }
+  #breadcrumbs {
+    align-items: baseline;
+    gap: 12px;
+  }
+  .box-padding-lg {
+    padding: 20px;
+  }
+
+  .section__box-content.reverse {
+    flex-direction: column-reverse;
   }
 }
 
@@ -2240,67 +2347,4 @@ swiper-button-ne .swiper-pagination {
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-
-/* Add your CSS styles for the filters here */
-.selects-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 48px;
-}
-
-.custom-select {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.select-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 40px;
-  cursor: pointer;
-  color: #9ca3af;
-  background: #fff;
-}
-
-.select-header i {
-  color: #9ca3af;
-  font-size: 1.5rem;
-}
-
-.select-header-group {
-  display: flex;
-  gap: 12px;
-}
-
-.arrow-icon::before {
-  content: "▼"; /* Default down arrow icon */
-  transition: transform 0.3s;
-}
-
-.options-list {
-  display: none;
-  width: 85%;
-  /* position: absolute; */
-  background-color: #fff;
-  border: 1px solid #e5e7eb;
-}
-
-.options-list li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.options-list li:hover {
-  background-color: #f0f0f0;
-}
-.show-options {
-  display: block;
 }
