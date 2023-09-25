@@ -59,11 +59,3 @@ closeMenu.addEventListener("click", toggleMenu);
 menuArrow.addEventListener("click", hideSubMenu);
 menuInner.addEventListener("click", toggleSubMenu);
 
-//   // JavaScript code to check if the URL is not found and redirect to 404 page
-//   window.addEventListener('DOMContentLoaded', () => {
-//     const pageNotFound = true; // You should determine if the page is not found
-
-//     if (pageNotFound) {
-//         window.location.href = '404-not-found.html';
-//     }
-// });
