@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <!-- ===== Boxicons CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ===== Link Swiper's CSS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <title>Електоронна Сисиема Охорони Здоров'я</title>
+  </head>
+  <body>
+    <!-- Header starts -->
+
+    <header class="header" id="header">
+        <nav class="navbar container">
+           <section class="navbar-left">
+              <div class="burger" id="burger">
+                 <span class="burger-line"></span>
+                 <span class="burger-line"></span>
+                 <span class="burger-line"></span>
+              </div>
+           </section>
+           <section class="navbar-center">
+              <span class="overlay"><i id ='closeMenu'class='bx bx-x close-menu' ></i></span>
+              <div class="menu" id="menu">
+                
+                 <div class="menu-header">
+                    <span class="menu-arrow"><i class="bx bx-chevron-left"></i></span>
+                    <span class="menu-title"></span>
+                 </div>
+                 <ul class="menu-inner">
+                    <li class="menu-item menu-dropdown">
+                       <p class="menu-link">Електронна охорона здоров’я<i class="bx bx-chevron-right"></i></p>
+                       <div class="submenu megamenu megamenu-column-4">
+                          <div class="submenu-inner">
+                            <a href=""> <h4 class="submenu-title">Системи</h4></a>
+                             <ul class="submenu-list">
+                                <li class="submenu-item"><a href="#" class="submenu-link">EСОЗ</a></li>
+                                <li class="submenu-item"><a href="#" class="submenu-link">Централь</a></li>
+                                <li class="submenu-item"><a href="#" class="submenu-link">МІСи</a></li>
+                                <li class="submenu-item"><a href="#" class="submenu-link">ІС НСЗУ</a></li>
+                             </ul>
+                          </div>
+
+                          <div class="submenu-inner">
+                            <a href=""> <h4 class="submenu-title">Реєстри</h4></a>
+                            <ul class="submenu-list">
+                               <li class="submenu-item"><a href="#" class="submenu-link">Базові реєстри країни та сфери охорони здоров’я</a></li>
+                            </ul>
+                          </div>
+                          <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Дані</h4></a>
+                             <ul class="submenu-list">
+                                <li class="submenu-item"><a href="#" class="submenu-link">Дашборди EСОЗ</a></li>
+                                <li class="submenu-item"><a href="#" class="submenu-link">Інформаційна платформа</a></li>
+                             </ul>
+                          </div>
+                          <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Законодавство</h4></a>
+                          </div>
+                       
+                       </div>
+                    </li>
+                    <li class="menu-item menu-dropdown">
+                       <p class="menu-link">Надавачам послуг<i class="bx bx-chevron-right"></i></p>
+                       <div class="submenu megamenu megamenu-column-4">
+                          <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Керівникам ЗОЗ</h4></a>
+                             <ul class="submenu-list">
+                                <li class="submenu-item"><a href="#" class="submenu-link">Як підключити заклад до EСОЗ</a></li>
+                                <li class="submenu-item"><a href="#" class="submenu-link">Як обрати МІС</a></li>
+                                <li class="submenu-item"><a href="#" class="submenu-link small-text">Первинна медична допомога</a></li>
+                                <li class="submenu-item"><a href="#" class="submenu-link small-text">Спеціалізована медична допомога</a></li>
+                                <li class="submenu-item"><a href="#" class="submenu-link">Каталог МІС</a></li>
+                             </ul>
+                          </div>
+                          <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Лікарям</h4></a>
+                            <ul class="submenu-list">
+                               <li class="submenu-item"><a href="#" class="submenu-link">Навчання</a></li>
+                               <li class="submenu-item "><a href="#" class="submenu-link small-text">Цифрові освітні ресурси</a></li>
+                               <li class="submenu-item "><a href="#" class="submenu-link small-text">Кібербезпека</a></li>
+                               <li class="submenu-item"><a href="#" class="submenu-link small-text">Цифрова освіта</a></li>
+                               <li class="submenu-item "><a href="#" class="submenu-link small-text">Академія НСЗУ</a></li>
+                               <li class="submenu-item"><a href="#" class="submenu-link">Моніторинг працездатності системи</a></li>
+                               <li class="submenu-item"><a href="#" class="submenu-link">Повідомити про проблему</a></li>
+                            </ul>
+                          </div>
+                    
+                          <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Аптечним закладам</h4></a>
+                            <ul class="submenu-list">
+                               <li class="submenu-item"><a href="#" class="submenu-link">Як підключити аптеку до EСОЗ</a></li>
+                               <li class="submenu-item"><a href="#" class="submenu-link">Контрактування з НСЗУ</a></li>
+                               <li class="submenu-item"><a href="#" class="submenu-link">Як обрати МІС</a></li>
+                               <li class="submenu-item"><a href="#" class="submenu-link">Каталог МІС</a></li>
+                               <li class="submenu-item"><a href="#" class="submenu-link">Моніторинг працездатності системи</a></li>
+                               <li class="submenu-item"><a href="#" class="submenu-link">FAQ</a></li>
+                            </ul>
+                          </div>
+
+                          <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Бібліотека знань</h4></a>
+                          </div>
+                       </div>
+                    </li>
+
+
+                    <li class="menu-item menu-dropdown">
+                        <p class="menu-link">Пацієнтам<i class="bx bx-chevron-right"></i></p>
+                        <div class="submenu megamenu megamenu-column-4">
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Як укласти декларацію з сімейним лікарем</h4></a>
+                            
+                           </div>
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Як отримати е-рецепт</h4></a>
+                         
+                           </div>
+                     
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Медичні висновки про тимчасову непрацездатність</h4></a>
+                           </div>
+ 
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Як скористатися послугами єМалятко</h4></a>
+                           </div>
+
+                           <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title no-wrap">Як отримати е-направлення до спеціаліста</h4></a>
+                          </div>
+                        </div>
+                     </li>
+                  
+
+                     <li class="menu-item menu-dropdown">
+                        <p class="menu-link">Партнерам<i class="bx bx-chevron-right"></i></p>
+                        <div class="submenu megamenu megamenu-column-4">
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Органам державної влади</h4></a>
+                            
+                           </div>
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Розробникам ПЗ</h4></a>
+                         
+                           </div>
+                     
+                        </div>
+                     </li>
+
+                     <li class="menu-item menu-dropdown">
+                        <p class="menu-link">Розробникам<i class="bx bx-chevron-right"></i></p>
+                        <div class="submenu megamenu megamenu-column-4">
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Технічні вимоги та тестова програма до МІС</h4></a>
+                            
+                           </div>
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Як приєднати МІС до ЕСОЗ</h4></a>
+                         
+                           </div>
+                           <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Кабінет розробника</h4></a>
+                        
+                          </div>
+                          <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">F&Q</h4></a>
+                        
+                          </div>
+                     
+                        </div>
+                     </li>
+
+                     <li class="menu-item menu-dropdown">
+                        <p class="menu-link">Новини<i class="bx bx-chevron-right"></i></p>
+                        <div class="submenu megamenu megamenu-column-4">
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Блог</h4></a>
+                            
+                           </div>
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Команда</h4></a>
+                         
+                           </div>
+                           <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Контакти</h4></a>
+                        
+                          </div>
+                          <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Партнери</h4></a>
+                        
+                          </div>
+                     
+                        </div>
+                     </li>
+
+                     <li class="menu-item menu-dropdown">
+                        <p class="menu-link">Підтримка<i class="bx bx-chevron-right"></i></p>
+                        <div class="submenu megamenu megamenu-column-4">
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Чат-бот зворотнього зв’язку</h4></a>
+                            
+                           </div>
+                           <div class="submenu-inner">
+                             <a href=""><h4 class="submenu-title">Лінк на дзвінок контакт-центру</h4></a>
+                         
+                           </div>
+                           <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Моніторинг працездатності ЕСОЗ</h4></a>
+                        
+                          </div>
+                          <div class="submenu-inner">
+                            <a href=""><h4 class="submenu-title">Повідомити про проблему в ЕСОЗ</h4></a>
+                        
+                          </div>
+                     
+                        </div>
+                     </li>
+                 </ul>
+              </div>
+           </section>
+      
+        </nav>
+     </header>
+      
+     <script>
+  
+     </script>
+  </body>
+</html>
