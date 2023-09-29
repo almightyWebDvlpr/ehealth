@@ -142,7 +142,7 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href="./electronic-healthcare/legislation/legislation.html"
+                        <a href="./electronic-healthcare/legislation.html"
                           ><h4 class="submenu-title">Законодавство</h4></a
                         >
                       </div>
@@ -628,11 +628,12 @@
 
       <section class="section-background pb-xl">
         <div class="container">
-          <div class="tab-container">
-            <div data-num="1" class="tab wave active" onclick="changeTab(0)">
+          
+          <div class="tab-container" id="containerIndexHtml">
+            <div data-num="1" class="tab wave active" onclick="changeTab(0, 'containerIndexHtml')">
               <h3>Пацієнтам</h3>
             </div>
-            <div data-num="2" class="tab wave" onclick="changeTab(1)">
+            <div data-num="2" class="tab wave" onclick="changeTab(1, 'containerIndexHtml')">
               <h3>Лікарям</h3>
             </div>
             <div class="indicator"></div>
@@ -1118,9 +1119,9 @@
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="./js/swiper.js"></script>
+    <script type="module" src="./js/imagesSwiper.js"></script>
     <script src="./js/toggleMenu.js"></script>
-    <script src="./js/responses-swiper.js"></script>
+    <script type="module" src="./js/cardsSwiper.js"></script>
     <script src="./js/tabs.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/themeSwitcher.js"></script>

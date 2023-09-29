@@ -16,6 +16,7 @@ const translationMap = {
   "how-connect-institution-to-esoz.html": "Як підключити заклад до ЕСОЗ",
   "how-choose-mis.html": "Як обрати МІС",
   "mis-catalog.html": "Каталог МІС",
+  "legislation.html":"Законодавство",
   doctors: "Лікарям",
   "to-doctors.html": "Лікарям",
   education: "Навчання",

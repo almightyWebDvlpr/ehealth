@@ -78,7 +78,7 @@ input {
 img,
 video {
   display: block;
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
   object-fit: cover;
 }
@@ -542,7 +542,8 @@ tr:nth-child(even) {
   color: #8091b0;
 }
 
-.tab.active h3 {
+.tab.active h3,
+.tab.active p {
   color: #000;
 }
 .tab-content {
@@ -655,9 +656,13 @@ tr:nth-child(even) {
   font-size: 1.5rem;
 }
 
+
 .select-header-group {
   display: flex;
   gap: 12px;
+}
+.select-header-group p{
+  color: #6B7280;
 }
 
 .options-list {
@@ -2274,21 +2279,6 @@ swiper-button-ne .swiper-pagination {
 
 
 
-
-
-img,
-video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
 
 @keyframes slideLeft {
   0% {
