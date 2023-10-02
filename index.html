@@ -82,27 +82,27 @@
                   <h5>Розмір текста</h5>
 
                   <div class="modal-controls">
-                  <div>
-                    <span class="modal-btn">
-                      <i class="bx bx-minus"></i>
-                    </span>
-                  </div>
-                   <div>
-                    <span class="modal-btn">
-                      <i class="bx bx-plus"></i>
-                    </span>
-                   </div>
+                    <div>
+                      <button id="decreaseFontSizeBtn" class="modal-btn">
+                        <i class="bx bx-minus"></i>
+                      </button>
+                    </div>
+                    <div>
+                      <button id="increaseFontSizeBtn" class="modal-btn">
+                        <i class="bx bx-plus"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div class="flex-column gap-12">
                   <h5>Відступи між буквами</h5>
                   <div class="modal-controls">
-                    <span class="modal-btn">
+                    <button id="decreaseLetterSpacingBtn" class="modal-btn">
                       <i class="bx bx-minus"></i>
-                    </span>
-                    <span class="modal-btn">
+                    </button>
+                    <button id="increaseLetterSpacingBtn" class="modal-btn">
                       <i class="bx bx-plus"></i>
-                    </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -110,8 +110,15 @@
                 <div class="flex-column gap-12">
                   <h5>Колір</h5>
                   <div class="modal-controls">
-                    <span class="btn btn__white modal-btn-rounded"> Колір </span>
-                    <span id="darkColorToggleButton" class="btn btn__white modal-btn-rounded"> Чб </span>
+                    <span class="btn btn__white modal-btn-rounded">
+                      Колір
+                    </span>
+                    <span
+                      id="darkColorToggleButton"
+                      class="btn btn__white modal-btn-rounded"
+                    >
+                      Чб
+                    </span>
                   </div>
                 </div>
               </div>
@@ -119,10 +126,14 @@
                 <div class="flex-column gap-12">
                   <h5>Інше</h5>
                   <div class="modal-controls">
-                    <span class="btn btn__white"> Великий курсор </span>
+                    <span id="toggleCursorBtn" class="btn btn__white">
+                      Великий курсор
+                    </span>
                     <span class="btn btn__white"> Лінія для читання </span>
                   </div>
-                  <span class="btn btn__white"> Лінія для читання </span>
+                  <span id="toggleUnderlineBtn" class="btn btn__white"
+                    >Підкреслювати посилання
+                  </span>
                 </div>
               </div>
             </div>
@@ -147,7 +158,11 @@
                 <ul class="menu-inner">
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <a href="./electronic-healthcare/electronic-healthcare.html" class="menu-link">Електронна охорона здоров’я</a>
+                      <a
+                        href="./electronic-healthcare/electronic-healthcare.html"
+                        class="menu-link"
+                        >Електронна охорона здоров’я</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
@@ -728,7 +743,7 @@
                   src="./assets/images/new_icons/Hospital.png"
                   alt="hospital icon"
                 />
-                <h5>Медичним закладам</h5>
+                <h5 class="h-5-heading">Медичним закладам</h5>
               </a>
             </li>
             <li>
@@ -740,7 +755,7 @@
                   src="./assets/images/new_icons/Shield 1.png"
                   alt="medical services icon"
                 />
-                <h5>МІСам</h5>
+                <h5 class="h-5-heading">МІСам</h5>
               </a>
             </li>
             <li>
@@ -752,7 +767,7 @@
                   src="./assets/images/new_icons/kotak obat.png"
                   alt="pharmacy icon"
                 />
-                <h5>Аптекам</h5>
+                <h5 class="h-5-heading">Аптекам</h5>
               </a>
             </li>
           </ul>
@@ -1266,6 +1281,7 @@
     <script src="./js/tabs.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/themeSwitcher.js"></script>
+    <script src="./js/fontSizeMutation.js"></script>
     <script src="./js/modal.js"></script>
     <!-- <script src="./js/reusableHTML.js"></script> -->
 

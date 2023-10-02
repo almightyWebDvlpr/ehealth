@@ -4,6 +4,4 @@ const header = document.querySelector('.header');
 
 toggleButton.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-    header.classList.toggle('dark-mode');
-    console.log('fdsfds')
 });

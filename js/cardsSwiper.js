@@ -20,6 +20,7 @@ function createSlideElement(slideContent, elementType, id) {
   }
 
   const title = document.createElement("h5");
+  title.className = 'h-5-heading';
   title.textContent = slideContent.title;
   title.className = id === "#dashboardsSwiper" ? "mb" : "";
   const paragraph = document.createElement("p");
