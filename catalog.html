@@ -523,13 +523,18 @@
                 <i class="bx bx-filter-alt"></i>
                 <p>За рівнями надання МД</p>
               </div>
-              <i class="bx bx-chevron-down arrow-icon"></i>
+              <div>
+                <i class="bx bx-chevron-down arrow-icon"></i>
+                <i class="reset-button hidden bx bx-plus-circle"></i>
+              </div>
             </div>
             <ul class="options-list">
-              <li data-value="option1">Option 1</li>
-              <li data-value="option2">Option 2</li>
-              <li data-value="option3">Option 3</li>
-              <li data-value="option4">Option 4</li>
+              <li data-value="Надавачам ПМД">Надавачам ПМД</li>
+              <li data-value="Надавачам СМД">Надавачам СМД</li>
+              <li data-value="Аптечним закладам">Аптечним закладам</li>
+              <li data-value="Лабораторіям">Лабораторіям</li>
+              <li data-value="Екстреної МД">Екстреної МД</li>
+              <li data-value="Пацієнтам (ПІС)">Пацієнтам (ПІС)</li>
             </ul>
             <input type="hidden" id="selected-option1" />
           </div>
@@ -540,7 +545,10 @@
                 <i class="bx bx-filter-alt"></i>
                 <p>За технологією для зберігання та обробки даних</p>
               </div>
-              <i class="bx bx-chevron-down arrow-icon"></i>
+              <div>
+                <i class="bx bx-chevron-down arrow-icon"></i>
+                <i class="reset-button hidden bx bx-plus-circle"></i>
+              </div>
             </div>
             <ul class="options-list">
               <li data-value="option5">Option 5</li>
@@ -557,12 +565,14 @@
                 <i class="bx bx-filter-alt"></i>
                 <p>З закладами якого типу власності співпрацюють</p>
               </div>
-
-              <i class="bx bx-chevron-down arrow-icon"></i>
+              <div>
+                <i class="bx bx-chevron-down arrow-icon"></i>
+                <i class="reset-button hidden bx bx-plus-circle"></i>
+              </div>
             </div>
             <ul class="options-list">
-              <li data-value="option9">Option 9</li>
-              <li data-value="option10">Option 10</li>
+              <li data-value="Лікарня">Лікарня</li>
+              <li data-value="Аптека">Аптека</li>
               <li data-value="option11">Option 11</li>
               <li data-value="option12">Option 12</li>
             </ul>
@@ -575,8 +585,10 @@
                 <i class="bx bx-filter-alt"></i>
                 <p>За впровадженим функціоналом (або за РМК)</p>
               </div>
-
-              <i class="bx bx-chevron-down arrow-icon"></i>
+              <div>
+                <i class="bx bx-chevron-down arrow-icon"></i>
+                <i class="reset-button hidden bx bx-plus-circle"></i>
+              </div>
             </div>
             <ul class="options-list">
               <li data-value="option13">Option 13</li>
@@ -596,316 +608,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-      const loader = document.getElementById("loader");
-
-      // Function to show the loader
-      function showLoader(gid) {
-        const output = document.getElementById(`output-${gid}`);
-        if (!output) {
-          return;
-        }
-
-        loader.style.display = "block";
-        output.style.display = "none";
-      }
-
-      // Function to hide the loader and show the content
-      function hideLoader(gid) {
-        const output = document.getElementById(`output-${gid}`);
-        if (!output) {
-          return;
-        }
-        loader.style.display = "none";
-        output.style.display = "flex";
-      }
-
-      // Define a function to fetch data from a specific sheet and create a table
-      function fetchDataAndCreateTable(sheetId, gid, callback) {
-        showLoader(gid); // Show the loader while fetching data
-
-        const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
-        const query = encodeURIComponent("Select *"); // Modify your query here
-        const url = `${base}gid=${gid}&tq=${query}`;
-
-        fetch(url)
-          .then((res) => res.text())
-          .then((rep) => {
-            // Remove additional text and extract only JSON:
-            const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-
-            const colz = [];
-
-            // Extract column labels
-            jsonData.table.cols.forEach((heading) => {
-              if (heading.label) {
-                let column = heading.label;
-                colz.push(column);
-              }
-            });
-
-            const data = [];
-
-            // Extract row data:
-            jsonData.table.rows.forEach((rowData) => {
-              const row = {};
-              colz.forEach((ele, ind) => {
-                row[ele] = rowData.c[ind] != null ? rowData.c[ind].v : "";
-              });
-              data.push(row);
-            });
-
-            // Process and display rows (customize this function as needed)
-            if (typeof callback === "function") {
-              callback(data, gid);
-            }
-
-            hideLoader(gid); // Hide the loader after data processing
-          });
-      }
-
-      // Example of how to use the fetchDataAndCreateTable function for both sheets
-      document.addEventListener("DOMContentLoaded", () => {
-        fetchDataAndCreateTable(
-          "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
-          "1138747254",
-          processRows
-        );
-        fetchDataAndCreateTable(
-          "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
-          "0",
-          processRows2
-        );
-      });
-
-      function processRows(data, gid) {
-        const output = document.getElementById(`output-${gid}`);
-        console.log(data);
-        if (!output) {
-          console.error("Output element not found for gid:", gid);
-          return;
-        }
-
-        data.forEach((item) => {
-          // Create a new card container for each object
-          const cardContainer = document.createElement("div");
-          cardContainer.classList.add("mis-card-conatiner");
-
-          const leftSideCard = document.createElement("div");
-          leftSideCard.classList.add("mis-card-left");
-
-          const rightSideCard = document.createElement("div");
-          rightSideCard.classList.add("mis-card-right");
-
-          const misCardsControls = document.createElement("div");
-          misCardsControls.classList.add("mis-card-controls");
-
-          const buttonGoToSite = document.createElement("a");
-          buttonGoToSite.setAttribute("target", "_blank");
-          buttonGoToSite.classList.add("btn", "btn__dark", "mis__catalog-btn");
-          buttonGoToSite.innerText = "Перейти на сайт";
-
-          const btnIcon = document.createElement("i");
-          btnIcon.classList.add("bx", "bx-right-arrow-alt");
-          buttonGoToSite.appendChild(btnIcon);
-
-          const buttonEducation = document.createElement("a");
-          buttonEducation.setAttribute("target", "_blank");
-          buttonEducation.classList.add("btn", "btn__white");
-          buttonEducation.innerText = "Навчальні ресурси";
-
-          for (const key in item) {
-            if (key === "Лого МІС" && item[key] !== "") {
-              // Create an <img> element for the logo
-              const logoImage = document.createElement("img");
-              logoImage.classList.add("catalog-logo-img");
-              // logoImage.style.width = '100%'
-              logoImage.src = item[key];
-              const logoContainer = document.createElement("div");
-              logoContainer.classList.add("logo-container"); // Add a class for styling
-              logoContainer.appendChild(logoImage);
-              leftSideCard.appendChild(logoContainer);
-            } else if (key === "Назва МІС") {
-              const heading = document.createElement("h2");
-              heading.classList.add("h2-mb-m");
-
-              heading.textContent = item[key];
-              rightSideCard.appendChild(heading);
-            } else if (key === "Посилання на навчальні ресурси МІС") {
-              // Insert link into the buttonEducation href attribute
-              buttonEducation.href = item[key];
-            } else if (key === "Посилання на сайт МІС") {
-              // Insert link into the buttonGoToSite href attribute
-              buttonGoToSite.href = item[key];
-            } else {
-              const heading = document.createElement("p");
-              heading.style.color = "#8091B0";
-              heading.style.fontSize = "14px";
-              heading.style.fontWeight = "300";
-              heading.style.lineHeight = "19.6px";
-              heading.textContent = key;
-
-              const paragraph = document.createElement("p");
-              paragraph.textContent = item[key];
-
-              const pairDiv = document.createElement("div");
-              pairDiv.classList.add("flex-column", "gap-6");
-
-              if (key === "Рівні надання МД") {
-                const parts = paragraph.textContent
-                  .split(",")
-                  .map(function (part) {
-                    return part.trim();
-                  });
-
-                const mdContainer = document.createElement("div");
-                mdContainer.style.display = "flex";
-                mdContainer.style.gap = "12px";
-                mdContainer.style.flexWrap = "wrap";
-
-                parts.forEach(function (partText) {
-
-                  if (partText) {
-                    const newP = document.createElement("p");
-                    newP.style.fontSize = "13px";
-                    newP.classList.add("chips");
-                    newP.textContent = partText;
-                    mdContainer.appendChild(newP);
-                  }
-                });
-
-
-                pairDiv.appendChild(heading);
-                pairDiv.appendChild(mdContainer);
-              } else {
-                pairDiv.appendChild(heading);
-                pairDiv.appendChild(paragraph);
-              }
-
-              if (key === "Контакти служби підтримки") {
-                const contactsWrapper = document.createElement('div');
-                contactsWrapper.classList.add("flex-column", "gap-6");
-
-                const contactsDiv = document.createElement("div");
-                contactsDiv.style.display = "flex";
-                contactsDiv.style.gap = "12px";
-                contactsDiv.style.flexWrap = "wrap";
-
-                const contactsParts = paragraph.textContent
-                  .split(",")
-                  .map(function (part) {
-                    return part.trim();
-                  });
-
-                contactsParts.forEach(function (partText) {
-                  console.log(partText);
-                  if (partText) {
-                    const newP = document.createElement("a");
-                    newP.setAttribute('href', `tel:${partText}`)
-                    newP.textContent = partText;
-                    contactsDiv.appendChild(newP);
-                  }
-                });
-
-                leftSideCard.appendChild(misCardsControls);
-                contactsWrapper.appendChild(heading);
-                contactsWrapper.appendChild(contactsDiv);
-        
-                leftSideCard.appendChild(contactsWrapper);
-                
-              } else {
-                rightSideCard.appendChild(pairDiv);
-              }
-            }
-          }
-
-          misCardsControls.appendChild(buttonGoToSite);
-          misCardsControls.appendChild(buttonEducation);
-          cardContainer.appendChild(leftSideCard);
-          cardContainer.appendChild(rightSideCard);
-          output.appendChild(cardContainer);
-        });
-      }
-
-      function processRows2(data, gid) {
-        const output = document.getElementById(`output-${gid}`);
-        if (!output) {
-          console.error("Output element not found for gid:", gid);
-          return;
-        }
-
-        const table = document.createElement("table");
-        const thead = document.createElement("thead");
-        const tbody = document.createElement("tbody");
-
-        // Create table headers based on the column names
-        const headerRow = document.createElement("tr"); // Define headerRow here
-        Object.keys(data[0]).forEach((columnName) => {
-          const th = document.createElement("th");
-          th.textContent = columnName;
-          headerRow.appendChild(th);
-        });
-
-        thead.appendChild(headerRow);
-        table.appendChild(thead);
-
-        // Create table rows with the data
-        data.forEach((rowData) => {
-          const row = document.createElement("tr");
-          Object.values(rowData).forEach((value) => {
-            const cell = document.createElement("td");
-            cell.textContent = value;
-            row.appendChild(cell);
-          });
-          tbody.appendChild(row);
-        });
-
-        table.appendChild(tbody);
-        output.appendChild(table);
-      }
-
-      // filter code
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const selectHeaders = document.querySelectorAll(".select-header");
-        const arrowIcons = document.querySelectorAll(".arrow-icon");
-        const optionsLists = document.querySelectorAll(".options-list");
-        const selectedOptionInputs = document.querySelectorAll(
-          "input[type='hidden']"
-        );
-
-        selectHeaders.forEach((selectHeader, index) => {
-          selectHeader.addEventListener("click", function (event) {
-            event.stopPropagation();
-            optionsLists[index].classList.toggle("show-options");
-            arrowIcons[index].style.transform = optionsLists[
-              index
-            ].classList.contains("show-options")
-              ? "rotate(180deg)"
-              : "rotate(0deg)";
-          });
-        });
-
-        document.addEventListener("click", function () {
-          optionsLists.forEach((optionsList, index) => {
-            optionsList.classList.remove("show-options");
-            arrowIcons[index].style.transform = "rotate(0deg)";
-          });
-        });
-
-        optionsLists.forEach((optionsList, index) => {
-          optionsList.addEventListener("click", function (event) {
-            if (event.target.tagName === "LI") {
-              const selectedValue = event.target.getAttribute("data-value");
-              selectedOptionInputs[index].value = selectedValue;
-              selectHeaders[index].querySelector("p").innerText =
-                event.target.innerText;
-              optionsList.classList.remove("show-options");
-              arrowIcons[index].style.transform = "rotate(0deg)";
-            }
-          });
-        });
-      });
-    </script>
+    <script type="module" src="./js/catalog.js"></script>
   </body>
 </html>

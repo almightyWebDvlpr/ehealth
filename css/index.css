@@ -2660,4 +2660,12 @@ swiper-button-ne .swiper-pagination {
   background:  #e0e0e0;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
-
+.reset-button{
+  transform: rotate(45deg);
+}
+.reset-button:hover{
+  color: #000;
+}
+.hidden{
+  display: none !important;
+}
