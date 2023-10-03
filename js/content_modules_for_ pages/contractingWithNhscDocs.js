@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       for (const itemData of paginatedData) {
         const li = document.createElement("li");
-        li.classList.add("icon-box", "amount-box");
+        li.classList.add("icon-box", "box-hover" ,"amount-box");
 
         const a = document.createElement("a");
         a.classList.add("flex-column", "gap-24");

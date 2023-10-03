@@ -130,8 +130,20 @@ function updateLetterSpacing(change) {
 
 
 
-// toggle cursor size 
+// toggle read line 
+const cursorLine = document.querySelector(".cursor-line");
+const readLineBtn = document.getElementById('readLineBtn');
 
+readLineBtn.addEventListener('click', ()=>{
+  cursorLine.classList.toggle('hide');
+})
+
+
+document.addEventListener("mousemove", (e) => {
+ 
+  const scrollY = window.scrollY || window.pageYOffset;
+  cursorLine.style.top = e.clientY + scrollY + "px";
+});
 
 
 

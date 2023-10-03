@@ -35,6 +35,7 @@ body {
   font-family: e-Ukraine-Bold;
   color: #171717;
   letter-spacing: 0.1px;
+  cursor: url("../assets/images/icons/cursor.svg"), 20;
 }
 
 h1 {
@@ -65,7 +66,6 @@ h4 {
 }
 .h-5-heading {
   letter-spacing: 0.1px;
-
 }
 h5 {
   font-size: 18px;
@@ -512,6 +512,20 @@ tr:nth-child(even) {
 
 /* Existing styles */
 
+.cursor-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the height of the line as needed */
+  background-color: #000; /* Change the line color as needed */
+  z-index: 10999; /* Ensures the line appears on top of other elements */
+  pointer-events: none; /* Allows clicks to pass through the line */
+}
+.cursor-line.hide{
+  display: none;
+}
+
 .player-wrapper {
   position: relative;
 }
@@ -947,50 +961,6 @@ button:disabled i {
   background: #fff;
 }
 
-.responses__swiper-card {
-  display: block;
-  padding: 31px 32px 31px 32px;
-  min-height: 175px;
-  position: relative;
-  color: #000;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 25.2px;
-  background: #e5effe;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-}
-
-.responses__swiper-card.card-height {
-  min-height: 400px;
-}
-.responses__swiper-card.section-background {
-  background: #f9fbfe;
-}
-.responses__swiper-card.p-m {
-  padding: 24px;
-}
-
-.responses__swiper-card i {
-  font-size: 1.7rem;
-  position: absolute;
-  bottom: 20px;
-  left: 24px;
-}
-
-.responses-swiper-slide {
-  margin-right: 20px !important;
-}
-
-.responses__swiper-card:hover i {
-  left: 32px;
-  transition: all 0.3s ease-in-out;
-}
-.responses__swiper-card:hover {
-  background: #d1e3fd;
-  transition: all 0.3s ease-in-out;
-}
-
 /* Goals and Video*/
 
 .video-container {
@@ -1019,20 +989,6 @@ button:disabled i {
 
   font-size: 1.7rem;
   color: #000;
-}
-
-.goals__swiper-card {
-  border: 1px solid #e5effe;
-  background: #fff;
-  min-height: 240px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 16px;
-}
-.goals__swiper-card i {
-  color: #0051ec;
-  font-size: 1.5rem;
 }
 
 /* MIS Homepage*/
@@ -1522,7 +1478,8 @@ button:disabled i {
   align-items: baseline;
 }
 
-.article__list i {
+.article__list i,
+.check-list-icon {
   font-size: 1.7rem;
   margin-right: 16px;
 }
@@ -1652,6 +1609,12 @@ button:disabled i {
   padding: 24px;
   height: 100%;
   transition: all 0.3s ease-in-out;
+}
+
+
+.icon-box.box-hover:hover{
+  background: #E5EFFE;
+  cursor: default;
 }
 
 .icon-box.amount-box {
@@ -1911,6 +1874,13 @@ button:disabled i {
   height: 123px;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.providers__connect-list li:hover .number__box{
+  background: #1A43A9;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
 .providers__connect-list li .number__box span {
@@ -2200,6 +2170,89 @@ button:disabled i {
 
 /* Swiper */
 
+.swiper-card {
+  display: block;
+  padding: 31px 32px 31px 32px;
+  min-height: 175px;
+  position: relative;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.2px;
+  background: #e5effe;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Define card height for swiper1 container */
+#swiper1 .swiper-card {
+}
+
+#swiper1 .swiper-card i,
+#systemsSwiper .swiper-card i {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+}
+
+#swiper1 .swiper-card:hover,
+ #systemsSwiper .swiper-card:hover{
+  background: #D1E3FD;
+  transition: all 0.3s ease-in-out;
+}
+
+#swiper1 .swiper-card:hover i,
+#systemsSwiper .swiper-card:hover i {
+  left: 32px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Define card height for swiper2 container */
+#swiper2 .swiper-card {
+  border: 1px solid #e5effe;
+  background: #fff;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 16px;
+}
+
+#swiper2 .swiper-card i {
+  color: #0051ec;
+  font-size: 1.5rem;
+}
+
+/* Define card height for dashboardsSwiper container */
+#dashboardsSwiper .swiper-card {
+  min-height: 400px; /* Adjust the height as needed */
+  background: #f9fbfe;
+}
+
+#dashboardsSwiper .swiper-card i {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+}
+
+#dashboardsSwiper .swiper-card:hover {
+  background: #e5effe;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Define card height for systemsSwiper container */
+#systemsSwiper .swiper-card {
+  min-height: 140px; /* Adjust the height as needed */
+}
+
+
+.responses-swiper-slide {
+  margin-right: 20px !important;
+}
+
 .dashboard__slider {
   position: relative;
 }
@@ -2314,9 +2367,9 @@ button:disabled i {
 .card-content {
   text-align: center;
 }
-swiper-button-ne .swiper-pagination {
+/* swiper-button-next .swiper-pagination {
   position: absolute;
-}
+} */
 
 .swiper-pagination-bullet {
   height: 7px;
@@ -2564,11 +2617,13 @@ swiper-button-ne .swiper-pagination {
   display: inline-block;
   line-height: 1.5;
   padding-right: 1.25rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-link {
+  position: relative;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 .menu-link-wrapper > i.bx {
   display: none;
@@ -2595,6 +2650,19 @@ swiper-button-ne .swiper-pagination {
   }
   .menu-item:hover .menu-link {
     color: #0051ec;
+  }
+.dark-mode .menu-item:hover .menu-link::before{
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  content: '';
+  background: #000;
+  height: 2px;
+  width: 100%;
+}
+
+  .dark-mode .menu-item:hover .menu-link{
+    color: #000;
   }
 }
 
@@ -2635,6 +2703,9 @@ swiper-button-ne .swiper-pagination {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: all 0.25s ease-in-out;
+}
+.dark-mode .submenu{
+  background: #fff;
 }
 
 .submenu-inner {
@@ -2803,6 +2874,5 @@ swiper-button-ne .swiper-pagination {
   display: none !important;
 }
 
-.adjusted-letter-spacing {
-  letter-spacing: 0px; /* Initial letter spacing */
-}
+
+

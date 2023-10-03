@@ -1,4 +1,41 @@
-import { responsesSlides, goalsSlides, dashboardSlides } from "./data.js";
+import { responsesSlides, goalsSlides, dashboardSlides, systemsSlides} from "./data.js";
+
+// function createSlideElement(slideContent, elementType, id) {
+//   const slide = document.createElement("div");
+//   slide.classList.add("swiper-slide");
+//   slide.classList.add("responses-swiper-slide");
+
+//   const card =
+//     elementType === "a"
+//       ? document.createElement("a")
+//       : document.createElement("div");
+//   card.className =
+//     elementType === "a"
+//       ? "responses__swiper-card"
+//       : id === "#dashboardsSwiper"
+//       ? "responses__swiper-card card-height p-m section-background"
+//       : "goals__swiper-card";
+//   if (slideContent.url) {
+//     card.href = slideContent.url;
+//   }
+
+//   const title = document.createElement("h5");
+//   title.className = 'h-5-heading';
+//   title.textContent = slideContent.title;
+//   title.className = id === "#dashboardsSwiper" ? "mb" : "";
+//   const paragraph = document.createElement("p");
+//   paragraph.textContent = slideContent.paragraph;
+
+//   const icon = document.createElement("i");
+//   icon.className = slideContent.iconClass;
+
+//   card.appendChild(icon);
+//   card.appendChild(title);
+//   card.appendChild(paragraph);
+//   slide.appendChild(card);
+//   return slide;
+// }
+
 
 function createSlideElement(slideContent, elementType, id) {
   const slide = document.createElement("div");
@@ -9,12 +46,10 @@ function createSlideElement(slideContent, elementType, id) {
     elementType === "a"
       ? document.createElement("a")
       : document.createElement("div");
-  card.className =
-    elementType === "a"
-      ? "responses__swiper-card"
-      : id === "#dashboardsSwiper"
-      ? "responses__swiper-card card-height p-m section-background"
-      : "goals__swiper-card";
+
+  // Set a class based on the container's ID
+  card.className = `swiper-card ${id.slice(1)}__swiper-card`;
+
   if (slideContent.url) {
     card.href = slideContent.url;
   }
@@ -23,18 +58,24 @@ function createSlideElement(slideContent, elementType, id) {
   title.className = 'h-5-heading';
   title.textContent = slideContent.title;
   title.className = id === "#dashboardsSwiper" ? "mb" : "";
-  const paragraph = document.createElement("p");
-  paragraph.textContent = slideContent.paragraph;
 
   const icon = document.createElement("i");
   icon.className = slideContent.iconClass;
 
-  card.appendChild(icon);
+ 
   card.appendChild(title);
-  card.appendChild(paragraph);
+  card.appendChild(icon);
+  // Check if there's paragraph content before creating the paragraph element
+  if (slideContent.paragraph) {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = slideContent.paragraph;
+    card.appendChild(paragraph);
+  }
+
   slide.appendChild(card);
   return slide;
 }
+
 
 function createReusableSwiper(id, slides, elementType, options) {
   const swiperContainer = document.querySelector(id);
@@ -145,4 +186,12 @@ const dashboardsSwiper = createReusableSwiper(
   dashboardSlides,
   "div",
   dasboardSwiperOptions
+);
+
+
+const systemsSwiper = createReusableSwiper(
+  "#systemsSwiper",
+  systemsSlides,
+  "a",
+  responsesSwiperOptions
 );

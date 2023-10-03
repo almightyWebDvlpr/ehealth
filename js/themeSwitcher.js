@@ -1,7 +1,13 @@
-const toggleButton = document.getElementById('darkColorToggleButton');
+const onDarkColorToggleButton = document.getElementById('onDarkColorToggleButton');
+const offDarkColorToggleButton = document.getElementById('offDarkColorToggleButton');
 const body = document.body;
 const header = document.querySelector('.header');
 
-toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
+onDarkColorToggleButton.addEventListener('click', () => {
+    body.classList.add('dark-mode');
+});
+
+
+offDarkColorToggleButton.addEventListener('click', () => {
+    body.classList.remove('dark-mode');
 });

@@ -49,6 +49,30 @@ export const goalsSlides = [
   },
 ];
 
+
+export const systemsSlides = [
+  {
+    title:"ЕСОЗ",
+    iconClass:"bx bx-right-arrow-alt",
+    url:"./systems/ehcs.html"
+  },
+  {
+    title:"Централь",
+    iconClass:"bx bx-right-arrow-alt",
+    url:"./systems/central.html"
+  },
+  {
+    title:"МІСи",
+    iconClass:"bx bx-right-arrow-alt",
+    url:"./systems/mis.html"
+  },
+  {
+    title:"ІС НСЗУ",
+    iconClass:"bx bx-right-arrow-alt",
+    url:"./systems/is-nhcs.html"
+  }
+]
+
 export const dashboardSlides = [
   {
     title:
