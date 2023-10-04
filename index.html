@@ -111,7 +111,11 @@
                 <div class="flex-column gap-12">
                   <h5>Колір</h5>
                   <div class="modal-controls">
-                    <span id="offDarkColorToggleButton" class="btn btn__white modal-btn-rounded">
+                    <button
+                      id="offDarkColorToggleButton"
+                      class="btn btn__white modal-btn-rounded"
+                      disabled
+                    >
                       <svg
                         width="20"
                         height="20"
@@ -133,13 +137,12 @@
                           fill="#A7C4E9"
                         ></path>
                       </svg>
-                      Колір
-                    </span>
-                    <span
+                     <span class="btn-content"> Колір</span>
+                    </button>
+                    <button
                       id="onDarkColorToggleButton"
                       class="btn btn__white modal-btn-rounded"
                     >
-                     
                       <svg
                         width="20"
                         height="20"
@@ -160,8 +163,8 @@
                           fill="black"
                         ></path>
                       </svg>
-                      Ч/Б
-                    </span>
+                     <span class="btn-content"> Ч/Б</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -169,10 +172,11 @@
                 <div class="flex-column gap-12">
                   <h5>Інше</h5>
                   <div class="modal-controls">
-                    <span id="toggleCursorBtn" class="btn btn__white">
-                      Великий курсор
-                    </span>
-                    <span id="readLineBtn" class="btn btn__white">
+                    <button id="toggleCursorBtn" class="btn btn__white">
+                      <span class="btn-content">Великий курсор</span>
+                    </button>
+                    <button id="readLineBtn" class="btn btn__white">
+
                       <svg
                         width="20"
                         height="20"
@@ -194,10 +198,10 @@
                           stroke-width="2"
                         ></line>
                       </svg>
-                      Лінія для читання
-                    </span>
+                      <span class="btn-content">Лінія для читання</span>
+                    </button>
                   </div>
-                  <span id="toggleUnderlineBtn" class="btn btn__white">
+                  <button id="toggleUnderlineBtn" class="btn btn__white">
                     <svg
                       width="20"
                       height="20"
@@ -219,8 +223,8 @@
                         stroke-width="2"
                       ></line>
                     </svg>
-                    Підкреслювати посилання
-                  </span>
+                    <span class="btn-content"> Підкреслювати посилання </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -254,8 +258,8 @@
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="./404-not-found.html">
-                          <h4 class="submenu-title">Системи</h4></a
+                        <a class="submenu-title" href="./404-not-found.html">
+                          Системи</a
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
@@ -361,7 +365,7 @@
                           <li class="submenu-item">
                             <a
                               href="./404-not-found.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Спеціалізована медична допомога</a
                             >
                           </li>
@@ -408,7 +412,7 @@
                           <li class="submenu-item">
                             <a
                               href="./service-providers/doctors/education/nhcs-academy.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Академія НСЗУ</a
                             >
                           </li>
@@ -867,7 +871,7 @@
 
       <section class="section-background pb-xl">
         <div class="container">
-          <div class="tab-container" id="containerIndexHtml">
+          <div class="tab-container h2-mb-l" id="containerIndexHtml">
             <div
               data-num="1"
               class="tab wave active"
@@ -886,7 +890,7 @@
           </div>
           <div class="tab-content" id="tab1Content">
             <div class="patients__content flex">
-              <div class="patients__content-text">
+              <div class="flex-column gap-24">
                 <h2>Пацієнтам</h2>
                 <p>Найбільш популярні запити</p>
 
@@ -942,7 +946,7 @@
                 <img src="./assets/images/Frame 31.png" alt="frame" />
               </div>
 
-              <div class="doctors__content-text">
+              <div class="doctors__content-text flex-column gap-24">
                 <h2>Лікарям</h2>
                 <p>Найбільш популярні запити</p>
 

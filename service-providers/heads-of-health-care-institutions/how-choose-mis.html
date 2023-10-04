@@ -28,20 +28,27 @@
     <title>Як обрати МІС</title>
   </head>
   <body>
-     <!-- Header starts -->
+    <div class="cursor-line hide"></div>
+    <!-- Header starts -->
 
-     <header>
+    <header>
       <div class="section-background">
         <div class="header__top flex-center-s-b">
           <div class="header__top-logos">
             <div>
               <a href="./index.html">
-                <img src="../../assets/images/logos/Logo.png" alt="ehealth-logo" />
+                <img
+                  src="../../assets/images/logos/Logo.png"
+                  alt="ehealth-logo"
+                />
               </a>
             </div>
             <div>
               <a href="https://diia.gov.ua/">
-                <img src="../../assets/images/logos/image 8.png" alt="diia logo" />
+                <img
+                  src="../../assets/images/logos/image 8.png"
+                  alt="diia logo"
+                />
               </a>
             </div>
           </div>
@@ -52,14 +59,9 @@
               class="btn header__top-control--light flex-al-center"
             >
               <i class="bx bx-show-alt icon-show"></i>
-              <i class="bx bx-x icon-modal-close"></i>
               <span class="header-control-light-text">
                 Для людей з порушенням зору
               </span>
-              <div class="controls-modal">
-                <i id="toggleFontSize" class="bx bx-font-size"></i>
-                <i id="toggleTheme" class="bx bxs-adjust"></i>
-              </div>
             </div>
 
             <!-- <div class="btn header__top-control--dark flex-center">
@@ -72,6 +74,161 @@
             <span class="burger-line"></span>
             <span class="burger-line"></span>
             <span class="burger-line"></span>
+          </div>
+        </div>
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <i id="closeModalBtn" class="bx bx-x close"></i>
+            <h3>Налаштувати вигляд</h3>
+            <div class="modal-controls-wrapper">
+              <div class="flex-column gap-12">
+                <h5>Розмір текста</h5>
+
+                <div class="modal-controls">
+                  <div>
+                    <button id="decreaseFontSizeBtn" class="modal-btn">
+                      <i class="bx bx-minus"></i>
+                    </button>
+                  </div>
+                  <div>
+                    <button id="increaseFontSizeBtn" class="modal-btn">
+                      <i class="bx bx-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-column gap-12">
+                <h5>Відступи між буквами</h5>
+                <div class="modal-controls">
+                  <button id="decreaseLetterSpacingBtn" class="modal-btn">
+                    <i class="bx bx-minus"></i>
+                  </button>
+                  <button id="increaseLetterSpacingBtn" class="modal-btn">
+                    <i class="bx bx-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex-column gap-12">
+                <h5>Колір</h5>
+                <div class="modal-controls">
+                  <button
+                    id="offDarkColorToggleButton"
+                    class="btn btn__white modal-btn-rounded"
+                    disabled
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg"
+                    >
+                      <circle
+                        cx="10"
+                        cy="10"
+                        r="9"
+                        fill="#F4EF67"
+                        stroke="black"
+                        stroke-width="2"
+                      ></circle>
+                      <path
+                        d="M10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C10 9 10 11.3333 10 18Z"
+                        fill="#A7C4E9"
+                      ></path>
+                    </svg>
+                    <span class="btn-content"> Колір</span>
+                  </button>
+                  <button
+                    id="onDarkColorToggleButton"
+                    class="btn btn__white modal-btn-rounded"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg"
+                    >
+                      <circle
+                        cx="10"
+                        cy="10"
+                        r="9"
+                        stroke="black"
+                        stroke-width="2"
+                      ></circle>
+                      <path
+                        d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C10 8.75 10 11.6667 10 20Z"
+                        fill="black"
+                      ></path>
+                    </svg>
+                    <span class="btn-content"> Ч/Б</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex-column gap-12">
+                <h5>Інше</h5>
+                <div class="modal-controls">
+                  <button id="toggleCursorBtn" class="btn btn__white">
+                    <span class="btn-content">Великий курсор</span>
+                  </button>
+                  <button id="readLineBtn" class="btn btn__white">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg"
+                    >
+                      <path
+                        opacity="0.3"
+                        d="M14.6172 18L13.2891 14.5625H6.17969L4.85156 18H2.27344L8.25 3.15625H11.2578L17.2344 18H14.6172ZM7.03906 12.375H12.4297L9.73438 5.42188L7.03906 12.375Z"
+                        fill="black"
+                      ></path>
+                      <line
+                        y1="11"
+                        x2="20"
+                        y2="11"
+                        stroke="black"
+                        stroke-width="2"
+                      ></line>
+                    </svg>
+                    <span class="btn-content">Лінія для читання</span>
+                  </button>
+                </div>
+                <button id="toggleUnderlineBtn" class="btn btn__white">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="svg"
+                  >
+                    <path
+                      d="M13.4629 14L12.4668 11.4219H7.13477L6.13867 14H4.20508L8.6875 2.86719H10.9434L15.4258 14H13.4629ZM7.7793 9.78125H11.8223L9.80078 4.56641L7.7793 9.78125Z"
+                      fill="black"
+                    ></path>
+                    <line
+                      x1="3"
+                      y1="17"
+                      x2="17"
+                      y2="17"
+                      stroke="black"
+                      stroke-width="2"
+                    ></line>
+                  </svg>
+                  <span class="btn-content"> Підкреслювати посилання </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -93,33 +250,59 @@
                 <ul class="menu-inner">
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Електронна охорона здоров’я</p>
+                      <a
+                        href="../../electronic-healthcare/electronic-healthcare.html"
+                        class="menu-link"
+                        >Електронна охорона здоров’я</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html"> <h4 class="submenu-title">Системи</h4></a>
+                        <a href="../../404-not-found.html">
+                          <h4 class="submenu-title">Системи</h4></a
+                        >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a href="../../electronic-healthcare/systems/ehcs.html" class="submenu-link">EСОЗ</a>
+                            <a
+                              href="../../electronic-healthcare/systems/ehcs.html"
+                              class="submenu-link"
+                              >EСОЗ</a
+                            >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../electronic-healthcare/systems/central.html" class="submenu-link">Централь</a>
+                            <a
+                              href="../../electronic-healthcare/systems/central.html"
+                              class="submenu-link"
+                              >Централь</a
+                            >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../electronic-healthcare/systems/mis.html" class="submenu-link">МІСи</a>
+                            <a
+                              href="../../electronic-healthcare/systems/mis.html"
+                              class="submenu-link"
+                              >МІСи</a
+                            >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../electronic-healthcare/systems/is-nhcs.html" class="submenu-link">ІС НСЗУ</a>
+                            <a
+                              href="../../electronic-healthcare/systems/is-nhcs.html"
+                              class="submenu-link"
+                              >ІС НСЗУ</a
+                            >
                           </li>
-                          </ul>
+                        </ul>
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html"> <h4 class="submenu-title">Реєстри</h4></a>
+                        <a href="../../404-not-found.html">
+                          <h4 class="submenu-title">Реєстри</h4></a
+                        >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a href="../../electronic-healthcare/registers/country-basic-registers-and-healthcare.html" class="submenu-link"
+                            <a
+                              href="../../electronic-healthcare/registers/country-basic-registers-and-healthcare.html"
+                              class="submenu-link"
                               >Базові реєстри країни та сфери охорони
                               здоров’я</a
                             >
@@ -130,10 +313,16 @@
                         <a href=""><h4 class="submenu-title">Дані</h4></a>
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a href="../../electronic-healthcare/data/dashboards.html" class="submenu-link">Дашборди EСОЗ</a>
+                            <a
+                              href="../../electronic-healthcare/data/dashboards.html"
+                              class="submenu-link"
+                              >Дашборди EСОЗ</a
+                            >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../404-not-found.html" class="submenu-link"
+                            <a
+                              href="../../404-not-found.html"
+                              class="submenu-link"
                               >Інформаційна платформа</a
                             >
                           </li>
@@ -158,61 +347,94 @@
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a href="../../service-providers/heads-of-health-care-institutions/how-connect-institution-to-esoz.html" class="submenu-link"
+                            <a
+                              href="../../service-providers/heads-of-health-care-institutions/how-connect-institution-to-esoz.html"
+                              class="submenu-link"
                               >Як підключити заклад до EСОЗ</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/heads-of-health-care-institutions/how-choose-mis.html" class="submenu-link">Як обрати МІС</a>
+                            <a
+                              href="../../service-providers/heads-of-health-care-institutions/how-choose-mis.html"
+                              class="submenu-link"
+                              >Як обрати МІС</a
+                            >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../404-not-found.html" class="submenu-link small-text"
+                            <a
+                              href="../../404-not-found.html"
+                              class="submenu-link small-text"
                               >Первинна медична допомога</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../404-not-found.html" class="submenu-link small-text"
+                            <a
+                              href="../../404-not-found.html"
+                              class="submenu-link small-text"
                               >Спеціалізована медична допомога</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/heads-of-health-care-institutions/mis-catalog.html" class="submenu-link">Каталог МІС</a>
+                            <a
+                              href="../../service-providers/heads-of-health-care-institutions/mis-catalog.html"
+                              class="submenu-link"
+                              >Каталог МІС</a
+                            >
                           </li>
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../service-providers/doctors/to-doctors.html"><h4 class="submenu-title">Лікарям</h4></a>
+                        <a
+                          href="../../service-providers/doctors/to-doctors.html"
+                          ><h4 class="submenu-title">Лікарям</h4></a
+                        >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a href="../../404-not-found.html" class="submenu-link">Навчання</a>
+                            <a
+                              href="../../404-not-found.html"
+                              class="submenu-link"
+                              >Навчання</a
+                            >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/doctors/education/digital-educational-resources.html" class="submenu-link small-text"
+                            <a
+                              href="../../service-providers/doctors/education/digital-educational-resources.html"
+                              class="submenu-link small-text"
                               >Цифрові освітні ресурси</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../404-not-found.html" class="submenu-link small-text"
+                            <a
+                              href="../../404-not-found.html"
+                              class="submenu-link small-text"
                               >Кібербезпека</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/doctors/education/digital-education.html" class="submenu-link small-text"
+                            <a
+                              href="../../service-providers/doctors/education/digital-education.html"
+                              class="submenu-link small-text"
                               >Цифрова освіта</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/doctors/education/nhcs-academy.html" class="submenu-link small-text"
+                            <a
+                              href="../../service-providers/doctors/education/nhcs-academy.html"
+                              class="submenu-link small-text"
                               >Академія НСЗУ</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/system-performance-monitoring.html" class="submenu-link"
+                            <a
+                              href="../../service-providers/system-performance-monitoring.html"
+                              class="submenu-link"
                               >Моніторинг працездатності системи</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../404-not-found.html" class="submenu-link"
+                            <a
+                              href="../../404-not-found.html"
+                              class="submenu-link"
                               >Повідомити про проблему</a
                             >
                           </li>
@@ -225,28 +447,46 @@
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a href="../../service-providers/pharmacies/how-to-connect-pharmacy-to-the-nhcs.html" class="submenu-link"
+                            <a
+                              href="../../service-providers/pharmacies/how-to-connect-pharmacy-to-the-nhcs.html"
+                              class="submenu-link"
                               >Як підключити аптеку до EСОЗ</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/pharmacies/contracting-with-nhsc.html" class="submenu-link"
+                            <a
+                              href="../../service-providers/pharmacies/contracting-with-nhsc.html"
+                              class="submenu-link"
                               >Контрактування з НСЗУ</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/pharmacies/pharmacy-how-to-choose-mis.html" class="submenu-link">Як обрати МІС</a>
+                            <a
+                              href="../../service-providers/pharmacies/pharmacy-how-to-choose-mis.html"
+                              class="submenu-link"
+                              >Як обрати МІС</a
+                            >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/pharmacies/mis-catalog.html" class="submenu-link">Каталог МІС</a>
+                            <a
+                              href="../../service-providers/pharmacies/mis-catalog.html"
+                              class="submenu-link"
+                              >Каталог МІС</a
+                            >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/system-performance-monitoring.html" class="submenu-link"
+                            <a
+                              href="../../service-providers/system-performance-monitoring.html"
+                              class="submenu-link"
                               >Моніторинг працездатності системи</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a href="../../service-providers/pharmacies/faq.html" class="submenu-link">FAQ</a>
+                            <a
+                              href="../../service-providers/pharmacies/faq.html"
+                              class="submenu-link"
+                              >FAQ</a
+                            >
                           </li>
                         </ul>
                       </div>
@@ -261,19 +501,25 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <a href="../../patients/to-patients.html" class="menu-link">Пацієнтам</a>
+                      <a
+                        href="../../patients/to-patients.html"
+                        class="menu-link"
+                        >Пацієнтам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../patients/how-to-make-a-declaration-with-a-family-doctor.html"
+                        <a
+                          href="../../patients/how-to-make-a-declaration-with-a-family-doctor.html"
                           ><h4 class="submenu-title">
                             Як укласти декларацію з сімейним лікарем
                           </h4></a
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../patients/how-to-get-an-e-prescription.html"
+                        <a
+                          href="../../patients/how-to-get-an-e-prescription.html"
                           ><h4 class="submenu-title">
                             Як отримати е-рецепт
                           </h4></a
@@ -281,7 +527,8 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../patients/medical-conclusions-about-temporary-disability.html"
+                        <a
+                          href="../../patients/medical-conclusions-about-temporary-disability.html"
                           ><h4 class="submenu-title">
                             Медичні висновки про тимчасову непрацездатність
                           </h4></a
@@ -289,7 +536,8 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../patients/how-to-use-e-malyatko-services.html"
+                        <a
+                          href="../../patients/how-to-use-e-malyatko-services.html"
                           ><h4 class="submenu-title">
                             Як скористатися послугами єМалятко
                           </h4></a
@@ -297,7 +545,8 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../patients/how-to-get-e-referral-to-a-specialist.html"
+                        <a
+                          href="../../patients/how-to-get-e-referral-to-a-specialist.html"
                           ><h4 class="submenu-title no-wrap">
                             Як отримати е-направлення до спеціаліста
                           </h4></a
@@ -336,14 +585,16 @@
 
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../developers/technical-requirements-and-test-program-for-mis.html"
+                        <a
+                          href="../../developers/technical-requirements-and-test-program-for-mis.html"
                           ><h4 class="submenu-title">
                             Технічні вимоги та тестова програма до МІС
                           </h4></a
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../developers/how-to-connect-mis-to-esoz.html"
+                        <a
+                          href="../../developers/how-to-connect-mis-to-esoz.html"
                           ><h4 class="submenu-title">
                             Як приєднати МІС до ЕСОЗ
                           </h4></a
@@ -355,7 +606,9 @@
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html"><h4 class="submenu-title">F&Q</h4></a>
+                        <a href="../../404-not-found.html"
+                          ><h4 class="submenu-title">F&Q</h4></a
+                        >
                       </div>
                     </div>
                   </li>
@@ -368,16 +621,24 @@
 
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../news/blog.html"><h4 class="submenu-title">Блог</h4></a>
+                        <a href="../../news/blog.html"
+                          ><h4 class="submenu-title">Блог</h4></a
+                        >
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../news/team.html"><h4 class="submenu-title">Команда</h4></a>
+                        <a href="../../news/team.html"
+                          ><h4 class="submenu-title">Команда</h4></a
+                        >
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../news/contacts.html"><h4 class="submenu-title">Контакти</h4></a>
+                        <a href="../../news/contacts.html"
+                          ><h4 class="submenu-title">Контакти</h4></a
+                        >
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../news/partners.html"><h4 class="submenu-title">Партнери</h4></a>
+                        <a href="../../news/partners.html"
+                          ><h4 class="submenu-title">Партнери</h4></a
+                        >
                       </div>
                     </div>
                   </li>
@@ -404,7 +665,8 @@
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../support/system-performance-monitoring.html"
+                        <a
+                          href="../../support/system-performance-monitoring.html"
                           ><h4 class="submenu-title">
                             Моніторинг працездатності ЕСОЗ
                           </h4></a
@@ -423,7 +685,6 @@
               </div>
             </section>
           </nav>
-        
         </div>
       </div>
     </header>
@@ -439,7 +700,7 @@
             <!-- Breadcrumb items will be dynamically added here -->
           </ul>
 
-          <div class="top__section-content flex-column">
+          <div class="gap-24 flex-column">
             <div class="top__section-title flex-center-s-b">
               <h1>Як обрати МІС</h1>
 
@@ -625,7 +886,10 @@
               створювати, переглядати, обмінюватися інформацією в електронній
               формі, зокрема з Центральною базою даних у разі підключення.
             </p>
-            <a href="../heads-of-health-care-institutions/mis-catalog.html" class="btn btn__dark">
+            <a
+              href="../heads-of-health-care-institutions/mis-catalog.html"
+              class="btn btn__dark"
+            >
               Детальніше
             </a>
           </div>
@@ -828,7 +1092,6 @@
           </div>
         </div>
       </div>
-      <a href="./electronic-healthcare/systems/mis.html"></a>
     </footer>
 
     <!-- Footer end -->
@@ -839,6 +1102,8 @@
     <script src="../../js/toggleMenu.js"></script>
     <script src="../../js/breadcrumbs.js"></script>
     <script src="../../js/modal.js"></script>
+    <script src="../../js/fontSizeMutation.js"></script>
+    <script src="../../js/themeSwitcher.js"></script>
     <!-- Accordion JS -->
     <script type="module" src="../../js/accordion.js"></script>
 

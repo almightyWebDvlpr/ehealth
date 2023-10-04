@@ -134,10 +134,22 @@ function updateLetterSpacing(change) {
 const cursorLine = document.querySelector(".cursor-line");
 const readLineBtn = document.getElementById('readLineBtn');
 
-readLineBtn.addEventListener('click', ()=>{
-  cursorLine.classList.toggle('hide');
-})
+let isButtonRed = false;
 
+
+readLineBtn.addEventListener('click', () => {
+  if (!isButtonRed) {
+    readLineBtn.style.background = '#d1e3fd'
+     
+  } else {
+    readLineBtn.style= null
+  }
+  
+  cursorLine.classList.toggle('hide');
+
+  
+  isButtonRed = !isButtonRed;
+});
 
 document.addEventListener("mousemove", (e) => {
  
@@ -162,8 +174,10 @@ document.addEventListener("DOMContentLoaded", function () {
       links.forEach(link => {
         if (isUnderline) {
           link.classList.add("underline");
+          toggleUnderlineBtn.style.background = '#d1e3fd'
         } else {
           link.classList.remove("underline");
+          toggleUnderlineBtn.style= null
         }
       });
 

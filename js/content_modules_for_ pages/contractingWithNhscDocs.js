@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
         a.href = itemData.link || "#";
 
         const imageBox = document.createElement("div");
-        imageBox.classList.add("image__box");
+        imageBox.classList.add("image__box", "image__box-hover");
 
         const img = document.createElement("img");
-        img.src = "../../assets/images/new_icons/file text.png"; // Static image URL
+        img.src = "../assets/images/new_icons/file text.png"; // Static image URL
         img.alt = "file text";
 
         imageBox.appendChild(img);

@@ -37,6 +37,9 @@ body {
   letter-spacing: 0.1px;
   cursor: url("../assets/images/icons/cursor.svg"), 20;
 }
+.dark-mode body{
+  filter: grayscale();
+}
 
 h1 {
   font-size: 56px;
@@ -168,6 +171,13 @@ img:hover {
 .p-m {
   padding: 24px;
 }
+
+.p-b-20{
+  padding-bottom: 20px;
+}
+
+/* Gaps */
+
 .gap-6 {
   gap: 6px;
 }
@@ -252,7 +262,7 @@ img:hover {
   background: #f9f8f6;
 }
 .bg-light-gray {
-  background: #e8e5fe;
+  background: #e8e5fe !important;
 }
 
 .bg-gray-purple {
@@ -632,6 +642,10 @@ tr:nth-child(even) {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 24px 32px 32px 32px;
 }
+
+.dark-mode .modal-content{
+  filter: invert();
+}
 .modal-controls-wrapper {
   display: flex;
   gap: 32px;
@@ -659,6 +673,9 @@ button:disabled {
 }
 button:disabled i {
   color: #f1f1f1;
+}
+button[disabled] {
+  pointer-events: none;
 }
 
 .modal-btn i {
@@ -1068,21 +1085,9 @@ button:disabled i {
 
 /* For Ptients and Doctors */
 
-.patients__content-text {
-  padding-right: 110px;
-}
 
 .doctors__content-text {
   padding-left: 110px;
-}
-
-.patients__content-text h2,
-.doctors__content-text h2 {
-  margin-bottom: 24px;
-}
-
-.patients__content-image {
-  width: 100%;
 }
 
 .patients__content-image img {
@@ -1094,7 +1099,6 @@ button:disabled i {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 24px 0;
 }
 
 .patients__content-links li a,
@@ -1133,7 +1137,8 @@ button:disabled i {
 .patients__button,
 .doctors__button,
 .new__top-button,
-.articles__top-button {
+.articles__top-button,
+.btn-content {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -1441,20 +1446,17 @@ button:disabled i {
   height: auto;
 }
 
-.mis__top-section-content h1,
-.nhcs__top-section-content h1 {
-  margin: 48px 0 24px 0;
-}
+
 
 .contacts,
-.top__section,
-.mis__top-section,
-.nhcs__top-section {
+.top__section {
   padding: 24px 0 48px 0;
 }
-.top__section-content {
-  gap: 24px;
+
+.dark-mode .top__section{
+  filter: invert();
 }
+
 
 .top__section-link {
   gap: 8px;
@@ -1586,9 +1588,6 @@ button:disabled i {
   margin: 24px 0 48px 0;
 }
 
-.mis__top-section-content p:not(:last-child) {
-  margin-bottom: 16px;
-}
 
 .mis__article h3 {
   margin-bottom: 32px;
@@ -1616,6 +1615,10 @@ button:disabled i {
   background: #E5EFFE;
   cursor: default;
 }
+.icon-box.box-hover:hover .image__box.image__box-hover{
+  background: #fff ;
+  transition: all 0.3s ease-in-out;
+}
 
 .icon-box.amount-box {
   background: #fff;
@@ -1631,6 +1634,8 @@ button:disabled i {
   border-radius: 4px;
   padding: 32px 24px 32px 24px;
 }
+
+
 
 .mis__article-content ul li {
   border-radius: 4px;
@@ -2714,11 +2719,11 @@ button:disabled i {
 }
 
 .submenu-title {
-  font-family: inherit;
+  display: block;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  padding: 0.75rem 0;
+  padding: 24px 0;
   transition: all 0.3s ease;
 }
 
@@ -2726,19 +2731,23 @@ button:disabled i {
   white-space: nowrap;
 }
 
+
 .submenu-item {
   display: block;
   line-height: 1;
   margin: 0 auto;
 }
 
+.submenu-item a:hover{
+  color: #0051EC;
+}
+
 .submenu-link {
   display: inline-block;
-  font-family: inherit;
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
-  padding: 0.3rem 0;
+  padding-bottom: 20px;
   /* word-break: ; */
   transition: all 0.25s ease-in-out;
 }
@@ -2746,7 +2755,14 @@ button:disabled i {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
+  padding-bottom: 6px;
 }
+
+.submenu-link.small-text.p-b-20{
+  padding-bottom: 20px;
+}
+
+
 
 /* // Media Query Breakpoint */
 @media only screen and (max-width: 1050px) {
