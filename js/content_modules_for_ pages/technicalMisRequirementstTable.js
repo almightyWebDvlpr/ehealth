@@ -64,6 +64,45 @@ class DynamicTable {
       "Що затверджено": "Sample Item 2",
       "Наказ": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
       "Вимоги/програма": "Sample Requirements 2"
+    },
+    {
+      "Статус": "Pending",
+      "Наказ №": "54321",
+      "Дата затвердження НСЗУ": "2023-09-14",
+      "Що затверджено": "Sample Item 2",
+      "Наказ": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
+      "Вимоги/програма": "Sample Requirements 2"
+    },
+    {
+      "Статус": "Pending",
+      "Наказ №": "54321",
+      "Дата затвердження НСЗУ": "2023-09-14",
+      "Що затверджено": "Sample Item 2",
+      "Наказ": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
+      "Вимоги/програма": "Sample Requirements 2"
+    },{
+      "Статус": "Pending",
+      "Наказ №": "54321",
+      "Дата затвердження НСЗУ": "2023-09-14",
+      "Що затверджено": "Sample Item 2",
+      "Наказ": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
+      "Вимоги/програма": "Sample Requirements 2"
+    },
+    {
+      "Статус": "Pending",
+      "Наказ №": "54321",
+      "Дата затвердження НСЗУ": "2023-09-14",
+      "Що затверджено": "Sample Item 2",
+      "Наказ": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
+      "Вимоги/програма": "Sample Requirements 2"
+    },
+    {
+      "Статус": "Pending",
+      "Наказ №": "54321",
+      "Дата затвердження НСЗУ": "2023-09-14",
+      "Що затверджено": "Sample Item 2",
+      "Наказ": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
+      "Вимоги/програма": "Sample Requirements 2"
     }
     // Add more data rows here as needed
   ];

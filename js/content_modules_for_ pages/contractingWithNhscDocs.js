@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         imageBox.classList.add("image__box", "image__box-hover");
 
         const img = document.createElement("img");
-        img.src = "../assets/images/new_icons/file text.png"; // Static image URL
+        img.src = "../../assets/images/new_icons/file text.png"; // Static image URL
         img.alt = "file text";
 
         imageBox.appendChild(img);
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Create an instance of the IconBoxList class
-  const iconBoxList = new IconBoxList(".icon-box-list-container", iconBoxData);
+  const iconBoxList = new IconBoxList(".icon-box-list-container", iconBoxData, 6);
 
   const legislationList = new IconBoxList(
     ".legislation-reporting-list-container",
@@ -235,6 +235,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // Select Filter Code
 
   function initializeCustomSelect(filterId) {
+
+    console.log(filterId)
+      // Check if filterId is not provided or is empty
+  if (!filterId) {
+    console.warn("No filterId provided. Exiting the function.");
+    return;
+  }
+
+ 
     const selectFilter = document.querySelector(`#${filterId}`);
     const optionsList = selectFilter.querySelector(".options-list");
     const hiddenInput = selectFilter.querySelector(

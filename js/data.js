@@ -145,6 +145,18 @@ export const dashboardSlides = [
     year: "2023",
     link: "sample-order-3.pdf", // Link to another document on the backend
   },
+  {
+    year: "2021",
+    link: "sample-order-1.pdf", // Link to the document on the backend
+  },
+  {
+    year: "2022",
+    link: "sample-order-2.pdf", // Link to another document on the backend
+  },
+  {
+    year: "2023",
+    link: "sample-order-3.pdf", // Link to another document on the backend
+  },
 ];
 
 //------------- contracting with nhsc data end--------------------------------
