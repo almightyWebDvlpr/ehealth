@@ -1,39 +1,83 @@
 import { fetchDataAndCreateTable } from "./fetchCatalogData.js";
 
+// Function to decode URL parameters
+function getUrlParameter(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+// Retrieve search query and found elements from URL
+const urlParam = getUrlParameter("q");
+const passedFilterName = urlParam && urlParam.length > 0 ? decodeURIComponent(urlParam) : '';
+
+const pageTitle = document.getElementById("pageTitle");
+
+if(passedFilterName){
+  pageTitle.innerText = passedFilterName;
+console.log('sfdsf')
+}
+else{
+  pageTitle.innerText = 'Каталог Міс';
+}
+
+
+
+
+
+
+
+
 // Define variables to store the selected options
-let selectedOption1 = "";
-let selectedOption2 = "";
-let selectedOption3 = "";
-let selectedOption4 = "";
+let selectedOptions = {
+  option1: passedFilterName || "",
+  option2: "",
+  option3: "",
+  option4: "",
+};
+
+// Check if passedFilterName is valid before setting it as a selected option
 
 export function filterData(data) {
+ 
+
+  // Check if any options are selected
+  const optionsSelected =
+    selectedOptions.option1 || selectedOptions.option2 || selectedOptions.option3 || selectedOptions.option4;
+
+  // If no options are selected and no passedFilterName, return all data
+  if (!optionsSelected && !passedFilterName) {
+    return data;
+  }
+
+  // Filter the data based on selected options
   return data.filter((item) => {
-    // Check if the selected options match the item's data
     const option1Value = Array.isArray(item["Рівні надання МД"])
       ? item["Рівні надання МД"]
       : [item["Рівні надання МД"]];
 
     const option1Match =
-      !selectedOption1 ||
-      option1Value.some((option) => option.includes(selectedOption1));
+      ! selectedOptions.option1 ||
+      option1Value.some((option) => option.includes( selectedOptions.option1));
 
     const option2Match =
-      !selectedOption2 ||
-      item["З технологією для зберігання та обробки даних"] === selectedOption2;
+      ! selectedOptions.option2 ||
+      item["З технологією для зберігання та обробки даних"] ===  selectedOptions.option2;
 
     const option3Match =
-      !selectedOption3 ||
-      item["З закладами якого типу власності співпрацюють"] === selectedOption3;
+      ! selectedOptions.option3 ||
+      item["З закладами якого типу власності співпрацюють"] ===  selectedOptions.option3;
 
     const option4Match =
-      !selectedOption4 ||
-      item["За впровадженим функціоналом (або за РМК)"] === selectedOption4;
+      ! selectedOptions.option4 ||
+      item["За впровадженим функціоналом (або за РМК)"] ===  selectedOptions.option4;
 
     return option1Match && option2Match && option3Match && option4Match;
   });
 }
 
+
 export function processRows(data, gid) {
+  
   // Filter the data based on selected options
   const filteredData = filterData(data);
 
@@ -44,8 +88,9 @@ export function processRows(data, gid) {
     console.error("Output element not found for gid:", gid);
     return;
   }
-
+ 
   filteredData.forEach((item) => {
+   
     // Create a new card container for each object
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("mis-card-conatiner");
@@ -231,11 +276,15 @@ export function processRows(data, gid) {
   });
 }
 
+
 // Function to show or hide the "Reset Filters" button based on selected options
 export function toggleResetButtonVisibility(index) {
   const resetFiltersBtn = document.querySelectorAll(".reset-button")[index];
   const hasSelectedOptions =
-    selectedOption1 || selectedOption2 || selectedOption3 || selectedOption4;
+    selectedOptions.option1 ||
+    selectedOptions.option2 ||
+    selectedOptions.option3 ||
+    selectedOptions.option4;
 
   // Toggle the "hidden" class based on whether there are selected options
   if (resetFiltersBtn) {
@@ -247,15 +296,104 @@ export function toggleResetButtonVisibility(index) {
   }
 }
 
-// filter code
-
 document.addEventListener("DOMContentLoaded", function () {
+  filterAndDisplayData();
   const selectHeaders = document.querySelectorAll(".select-header");
   const arrowIcons = document.querySelectorAll(".arrow-icon");
   const optionsLists = document.querySelectorAll(".options-list");
   const selectedOptionInputs = document.querySelectorAll(
     "input[type='hidden']"
   );
+
+  // Add this line to define selectHeaderGroups
+  const selectHeaderGroups = Array.from(
+    document.querySelectorAll(".select-header-group")
+  );
+
+  // Get the default selected option based on passedFilterName
+  const defaultSelectedOptionIndex = Array.from(optionsLists).findIndex(
+    (optionsList) =>
+      Array.from(optionsList.querySelectorAll("li")).some(
+        (li) => li.getAttribute("data-value") === passedFilterName
+      )
+  );
+
+  // Add this array to store the initial text of the <p> elements within select-header-group
+  const selectHeaderInitialText = Array.from(selectHeaderGroups).map(
+    (selectHeaderGroup) => {
+      return selectHeaderGroup.querySelector("p").innerText;
+    }
+  );
+
+  // Function to reset the selected options and trigger the filtering function
+  function resetSelectedOptions(index) {
+    selectedOptionInputs[index].value = "";
+    selectHeaders[index].querySelector("p").innerText =
+      selectHeaderInitialText[index];
+
+    // Reset the corresponding selected option variable
+    switch (index) {
+      case 0:
+        selectedOptions.option1 = "";
+        break;
+      case 1:
+        selectedOptions.option2 = "";
+        break;
+      case 2:
+        selectedOptions.option3 = "";
+        break;
+      case 3:
+        selectedOptions.option4 = "";
+        break;
+    }
+
+    // Trigger the filtering function
+    filterAndDisplayData();
+
+    // After resetting, hide the reset button
+    toggleResetButtonVisibility(index);
+  }
+
+  filterAndDisplayData();
+  // Update the event listener for the reset buttons to call the resetSelectedOptions function
+  const resetFiltersBtns = document.querySelectorAll(".reset-button");
+  
+  resetFiltersBtns.forEach((resetButton, index) => {
+    resetButton.addEventListener("click", function (e) {
+      e.stopPropagation();
+      resetSelectedOptions(index);
+      resetFilters(index);
+    });
+    // Initial data load when the page loads
+    filterAndDisplayData();
+  });
+
+
+
+// Modify the filterAndDisplayData function
+function filterAndDisplayData() {
+
+  // Check if passedFilterName is present in URL params
+  const filterNamePresent = !!passedFilterName;
+
+  if (filterNamePresent.length) {
+    // // If passedFilterName is not present, reset all options
+    // selectedOptions.option1 = "";
+    // selectedOptions.option2 = "";
+    // selectedOptions.option3 = "";
+    // selectedOptions.option4 = "";
+    resetFilters();
+  }
+
+  // Filter and display data based on selected options or passedFilterName
+  fetchDataAndCreateTable(
+    "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
+    "1138747254",
+    processRows
+  );
+
+}
+
 
   selectHeaders.forEach((selectHeader, index) => {
     selectHeader.addEventListener("click", function (event) {
@@ -267,6 +405,28 @@ document.addEventListener("DOMContentLoaded", function () {
         ? "rotate(180deg)"
         : "rotate(0deg)";
     });
+
+    // Set the default selected option and trigger a click event
+    if (index === defaultSelectedOptionIndex) {
+      const defaultOption = optionsLists[index].querySelector(
+        `li[data-value='${passedFilterName}']`
+      );
+      if (defaultOption) {
+        const selectedValue = defaultOption.getAttribute("data-value");
+        selectedOptionInputs[index].value = selectedValue;
+        selectHeaders[index].querySelector("p").innerText =
+          defaultOption.innerText;
+
+        // Simulate a click event to trigger the filtering
+        defaultOption.click();
+      } else {
+        // If the default option is not found, set selectedOptions.option1 to passedFilterName
+        selectedOptions.option1 = passedFilterName;
+      }
+    } else {
+      // For non-default options, set selectedOptions.option1 to passedFilterName
+      selectedOptions.option1 = passedFilterName;
+    }
   });
 
   document.addEventListener("click", function () {
@@ -291,68 +451,39 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update the selected option variables
         switch (index) {
           case 0:
-            selectedOption1 = selectedValue;
+            selectedOptions.option1 = selectedValue;
             break;
           case 1:
-            selectedOption2 = selectedValue;
+            selectedOptions.option2 = selectedValue;
             break;
           case 2:
-            selectedOption3 = selectedValue;
+            selectedOptions.option3 = selectedValue;
             break;
           case 3:
-            selectedOption4 = selectedValue;
+            selectedOptions.option4 = selectedValue;
             break;
         }
 
         // Filter and display data
-        fetchDataAndCreateTable(
-          "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
-          "1138747254",
-          processRows
-        );
+        filterAndDisplayData();
         toggleResetButtonVisibility(index);
       }
     });
   });
 
-  // Initial data load when the page loads
-  fetchDataAndCreateTable(
-    "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
-    "1138747254",
-    processRows
-  );
-
-  const selectHeaderGroups = Array.from(
-    document.querySelectorAll(".select-header-group")
-  );
-
-  // Add an array to store the initial text of the <p> elements within select-header-group
-  const selectHeaderInitialText = Array.from(selectHeaderGroups).map(
-    (selectHeaderGroup) => {
-      return selectHeaderGroup.querySelector("p").innerText;
-    }
-  );
-
   // Add an event listener for each select option
   selectedOptionInputs.forEach((input, index) => {
-    input.addEventListener("change", toggleResetButtonVisibility);
-  });
-
-  const resetFiltersBtns = document.querySelectorAll(".reset-button");
-
-  resetFiltersBtns.forEach((resetButton, index) => {
-    resetButton.addEventListener("click", function (e) {
-      e.stopPropagation();
-      resetFilters(index); // Pass the index as an argument
+    input.addEventListener("change", function () {
+      toggleResetButtonVisibility(index);
     });
   });
 
   function resetFilters(index) {
     // Clear the selected options and input values
-    selectedOption1 = "";
-    selectedOption2 = "";
-    selectedOption3 = "";
-    selectedOption4 = "";
+    selectedOptions.option1 = "";
+    selectedOptions.option2 = "";
+    selectedOptions.option3 = "";
+    selectedOptions.option4 = "";
     selectedOptionInputs.forEach((input) => {
       input.value = "";
     });
@@ -367,10 +498,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Fetch and display all data
-    fetchDataAndCreateTable(
-      "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
-      "1138747254",
-      processRows
-    );
+    filterAndDisplayData();
   }
+
+  // Initial data load when the page loads
+  filterAndDisplayData();
 });
+

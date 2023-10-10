@@ -1,24 +1,22 @@
-const menuLinks = document.querySelectorAll(".menu-inner .menu-link");
+const menuLinksToActive = document.querySelectorAll(".menu-inner .menu-link");
 
 function setActiveLink() {
-  const currentPath = window.location.pathname; // Get the current path
+  const currentPath = window.location.pathname;
 
-  menuLinks.forEach((link) => {
-    const href = link.getAttribute("href"); // Get the link's href attribute
+  menuLinksToActive.forEach((link) => {
+    const href = link.getAttribute("href");
 
     if (currentPath && href) {
-      const currentPathLastPart = currentPath.split("/").pop(); // Extract the last part of the current path
-      const hrefLastPart = href.split("/").pop(); // Extract the last part of the link's href
+      const currentPathLastPart = currentPath.split("/").pop();
+      const hrefLastPart = href.split("/").pop();
 
       if (currentPathLastPart === hrefLastPart) {
-        link.classList.add("active"); // Apply 'active' class if the last parts match
+        link.classList.add("active");
       } else {
-        link.classList.remove("active"); // Remove 'active' class from other links
+        link.classList.remove("active");
       }
     }
   });
 }
 
-// Call the function when the page loads or when the route changes in your SPA framework
 window.addEventListener("load", setActiveLink);
-// If using a client-side routing library, listen for route changes and call setActiveLink() accordingly

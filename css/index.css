@@ -559,15 +559,15 @@ td {
 tr {
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
-  background:#fff;
+  background: #fff;
 }
 
 tr:nth-child(3n) {
-  background: #E5EFFE;
+  background: #e5effe;
 }
 
 tr:hover {
-  background: #E5EFFE;
+  background: #e5effe;
 }
 
 /* Existing styles */
@@ -593,14 +593,33 @@ tr:hover {
 .dark-mode .player-wrapper {
   filter: grayscale();
 }
-.video-js {
+/* .video-js {
   position: unset !important;
   background-color: transparent !important;
 }
+.video-js .vjs-control-bar {
+bottom: -30px !important;
+}
+
+.video-js.vjs-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 9999 !important;
+}
+.my-video-dimensions{
+  height: auto !important;
+}
 
 .video-js {
-  height: 657px !important;
+ 
   width: 100% !important;
+}
+
+.video-js .vjs-tech{
+  position: unset !important;
 }
 
 .vjs-tech {
@@ -608,6 +627,37 @@ tr:hover {
   width: 100% !important;
   height: unset !important;
   border-radius: 10px;
+} */
+
+/* Default styles for video container */
+.video-js {
+  width: 100%;
+}
+
+/* Media query for screens with a max width of 768px (typical tablets) */
+@media screen and (max-width: 768px) {
+  .video-js {
+    max-width: 100%;
+    height: 500px;
+  }
+}
+
+/* Media query for screens with a max width of 480px (typical mobile devices) */
+@media screen and (max-width: 480px) {
+  .video-js {
+    max-width: 100%;
+    height: 200px;
+  }
+}
+
+/* CSS for video in fullscreen mode */
+.video-js.vjs-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
 }
 
 .play-button {
@@ -633,6 +683,7 @@ tr:hover {
 
 .tab-container {
   display: flex;
+  gap: 32px;
 }
 .tab {
   width: 150px;
@@ -947,11 +998,12 @@ button[disabled] {
 
 .hero {
   padding: 107px 0;
-  background-image: url(../assets/images/Frame\ 133.png);
+  background-image: url(../assets/images/eHealth-grid-02-blue.png);
   background-position-x: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  /* background: var(--header-bg); */
+  background-size: 100% 100%;
+
+  /* background-size: cover; */
   transition: all 0.3s ease-out;
 }
 
@@ -991,6 +1043,7 @@ button[disabled] {
 }
 
 .textfield__box .search__icon {
+  background: transparent;
   color: #9ca3af;
   position: absolute;
   padding-left: 10px;
@@ -1062,7 +1115,7 @@ button[disabled] {
 
 .mis__section {
   position: relative;
-  background: #1a43a9;
+  background: #0D115E;
 }
 .dark-mode .mis__section {
   filter: grayscale();
@@ -1154,9 +1207,9 @@ button[disabled] {
 .doctors__content-links li a {
   display: block;
   padding: 12px;
-  border: 1px solid #0051ec;
+  border: 1px solid #0D115E;
   border-radius: 100px;
-  color: #0051ec;
+  color: #0D115E;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -1187,7 +1240,7 @@ button[disabled] {
 .doctors__button,
 .new__top-button,
 .articles__top-button,
-.btn-content {
+.btn-content, .top__section-link > span {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -1242,6 +1295,7 @@ button[disabled] {
 .articles__content-list p,
 .news__caontent-sublist p {
   margin-bottom: 12px;
+  color: #8091B0;
 }
 
 .news__content-list a,
@@ -1283,7 +1337,7 @@ button[disabled] {
 /* Footer */
 .footer {
   padding: 47px 0px 16px 0px;
-  background: #02206f;
+  background: #0D115E;
 }
 
 .dark-mode .footer {
@@ -1505,6 +1559,7 @@ button[disabled] {
 }
 
 .top__section-link {
+  cursor: pointer;
   gap: 8px;
   padding: 14px 32px 14px 32px;
 }
@@ -1764,6 +1819,7 @@ button[disabled] {
 .nhcs__notification {
   padding-bottom: 100px;
 }
+
 
 .notification__box,
 .registers__box {
@@ -2087,7 +2143,7 @@ button[disabled] {
 }
 @media (min-width: 851px) and (max-width: 1200px) {
   .container {
-    max-width: 900px; /* Adjust this value for the desired width */
+    max-width: 90%; /* Adjust this value for the desired width */
   }
 }
 
@@ -2097,15 +2153,27 @@ button[disabled] {
     opacity: 1;
     visibility: visible;
   }
-
+  .header__top-control--light {
+    display: none;
+  }
   .navbar {
     position: absolute;
   }
 }
 
-@media (min-width: 720px) and (max-width: 850px) {
+@media (min-width: 720px) and (max-width: 1020px) {
   .container {
-    max-width: 680px; /* Adjust this value for the desired width */
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: 80%;
+  }
+
+  .menu-link-wrapper {
+    width: 100% !important; 
   }
 }
 
@@ -2115,9 +2183,6 @@ button[disabled] {
   }
   .hero h1 {
     width: unset;
-  }
-  .container {
-    max-width: 600px; /* Adjust this value to your desired tablet width */
   }
 
   .news__content {
@@ -2236,7 +2301,9 @@ button[disabled] {
 }
 
 #swiper1 .swiper-card i,
-#systemsSwiper .swiper-card i {
+#systemsSwiper .swiper-card i,
+#developersSwiper .swiper-card i,
+#newsSwiper .swiper-card i {
   font-size: 2rem;
   position: absolute;
   bottom: 20px;
@@ -2244,13 +2311,17 @@ button[disabled] {
 }
 
 #swiper1 .swiper-card:hover,
-#systemsSwiper .swiper-card:hover {
+#systemsSwiper .swiper-card:hover,
+#developersSwiper .swiper-card:hover,
+#newsSwiper .swiper-card:hover {
   background: #d1e3fd;
   transition: all 0.3s ease-in-out;
 }
 
 #swiper1 .swiper-card:hover i,
-#systemsSwiper .swiper-card:hover i {
+#systemsSwiper .swiper-card:hover i,
+#developersSwiper .swiper-card:hover i,
+#newsSwiper .swiper-card:hover i {
   left: 32px;
   transition: all 0.3s ease-in-out;
 }
@@ -2590,6 +2661,15 @@ button[disabled] {
 }
 
 /* // Media Query Breakpoint */
+
+@media only screen and (min-width: 1050px) {
+  .menu-link-wrapper > i.bx {
+    display: none;
+    font-size: 1.35rem;
+    margin-left: 0.25rem;
+    transform: rotate(90deg);
+  }
+}
 @media only screen and (max-width: 1050px) {
   .menu {
     position: fixed;
@@ -2646,10 +2726,19 @@ button[disabled] {
     line-height: 1.5rem;
     padding-inline: 1.25rem;
   }
+  .menu-link-wrapper {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: space-between;
+  }
+
   .menu-link-wrapper > i.bx {
-    display: none;
+    /* display: none; */
     margin-left: 0.5rem;
     transform: rotate(0deg);
+    cursor: pointer;
+    font-size: 1.7rem;
   }
 }
 
@@ -2679,12 +2768,12 @@ button[disabled] {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.menu-link-wrapper > i.bx {
+/* .menu-link-wrapper > i.bx {
   display: none;
   font-size: 1.35rem;
   margin-left: 0.25rem;
   transform: rotate(90deg);
-}
+} */
 
 .menu-icon {
   display: flex;

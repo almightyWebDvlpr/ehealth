@@ -1,41 +1,11 @@
-import { responsesSlides, goalsSlides, dashboardSlides, systemsSlides} from "./data.js";
-
-// function createSlideElement(slideContent, elementType, id) {
-//   const slide = document.createElement("div");
-//   slide.classList.add("swiper-slide");
-//   slide.classList.add("responses-swiper-slide");
-
-//   const card =
-//     elementType === "a"
-//       ? document.createElement("a")
-//       : document.createElement("div");
-//   card.className =
-//     elementType === "a"
-//       ? "responses__swiper-card"
-//       : id === "#dashboardsSwiper"
-//       ? "responses__swiper-card card-height p-m section-background"
-//       : "goals__swiper-card";
-//   if (slideContent.url) {
-//     card.href = slideContent.url;
-//   }
-
-//   const title = document.createElement("h5");
-//   title.className = 'h-5-heading';
-//   title.textContent = slideContent.title;
-//   title.className = id === "#dashboardsSwiper" ? "mb" : "";
-//   const paragraph = document.createElement("p");
-//   paragraph.textContent = slideContent.paragraph;
-
-//   const icon = document.createElement("i");
-//   icon.className = slideContent.iconClass;
-
-//   card.appendChild(icon);
-//   card.appendChild(title);
-//   card.appendChild(paragraph);
-//   slide.appendChild(card);
-//   return slide;
-// }
-
+import {
+  responsesSlides,
+  goalsSlides,
+  dashboardSlides,
+  systemsSlides,
+  developersSlides,
+  newsSlides,
+} from "./data.js";
 
 function createSlideElement(slideContent, elementType, id) {
   const slide = document.createElement("div");
@@ -55,14 +25,13 @@ function createSlideElement(slideContent, elementType, id) {
   }
 
   const title = document.createElement("h5");
-  title.className = 'h-5-heading';
+  title.className = "h-5-heading";
   title.textContent = slideContent.title;
   title.className = id === "#dashboardsSwiper" ? "mb" : "";
 
   const icon = document.createElement("i");
   icon.className = slideContent.iconClass;
 
- 
   card.appendChild(title);
   card.appendChild(icon);
   // Check if there's paragraph content before creating the paragraph element
@@ -75,7 +44,6 @@ function createSlideElement(slideContent, elementType, id) {
   slide.appendChild(card);
   return slide;
 }
-
 
 function createReusableSwiper(id, slides, elementType, options) {
   const swiperContainer = document.querySelector(id);
@@ -188,10 +156,24 @@ const dashboardsSwiper = createReusableSwiper(
   dasboardSwiperOptions
 );
 
-
 const systemsSwiper = createReusableSwiper(
   "#systemsSwiper",
   systemsSlides,
+  "a",
+  responsesSwiperOptions
+);
+
+const developersSwiper = createReusableSwiper(
+  "#developersSwiper",
+  developersSlides,
+  "a",
+  responsesSwiperOptions
+);
+
+
+const newsSwiper = createReusableSwiper(
+  "#newsSwiper",
+  newsSlides,
   "a",
   responsesSwiperOptions
 );

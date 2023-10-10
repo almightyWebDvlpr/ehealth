@@ -1,64 +1,12 @@
-const searchInput = document.getElementById('searchInput');
-const clearButton = document.getElementById('icon-cross');
-const searchResultsContainer = document.getElementById('searchResults');
-
+const searchInput = document.getElementById("search-input");
+const submitBtn = document.querySelector(".search__icon");
+const clearButton = document.getElementById("icon-cross");
+// const searchResultsContainer = document.getElementById('searchResults');
 
 // Function to perform the search
-async function performSearch() {
-        const searchQuery = searchInput.value.toLowerCase();
-
-
+async function performSearch(searchQuery) {
   // Create an array to store the found HTML elements
   const foundElements = [];
-
-  // Clear previous results if the search query is empty
-  if (searchQuery === "") {
-    searchResultsContainer.innerHTML = '';
-    return; // Exit the function early
-  } 
-
-  // Helper function to check if an ancestor is an <a> tag
-  function isAncestorLink(node) {
-    if (!node) return false;
-    if (node.tagName.toLowerCase() === "a") return true;
-    return isAncestorLink(node.parentNode);
-  }
-
- // Recursive function to find text nodes with the search query
-function findTextNodes(element, url) {
-    if (!element) return; // Check if element is null or undefined
-  
-    const isTextNode = element.nodeType === Node.TEXT_NODE;
-    const isNotAncestorLink = !isAncestorLink(element.parentNode);
-  
-    // Check if element.parentNode is null or undefined
-    const isNotExcludedElement =
-      element.parentNode &&
-      !element.parentNode.classList.contains('vjs-no-js') &&
-      element.parentNode.id !== 'breadcrumbs';
-  
-    if (isTextNode && isNotAncestorLink && isNotExcludedElement) {
-      const textContent = element.textContent;
-      const lowercaseContent = textContent.toLowerCase();
-  
-      if (textContent && lowercaseContent.includes(searchQuery)) {
-        const foundItem = {
-          url: url,
-          element: textContent,
-        };
-        foundElements.push(foundItem);
-      }
-    } else if (
-      element.tagName &&
-      !['script', 'footer', 'head', 'h1', 'header'].includes(element.tagName.toLowerCase())
-    ) {
-      for (const child of element.childNodes) {
-        findTextNodes(child, url);
-      }
-    }
-  }
-  
-  
 
   // Loop through all HTML pages (you'll need to have a list of URLs)
   const pageURLs = [
@@ -66,13 +14,7 @@ function findTextNodes(element, url) {
     "./electronic-healthcare/systems/ehcs.html",
     "./electronic-healthcare/systems/is-nhcs.html",
     "./electronic-healthcare/systems/mis.html",
-    "",
     "./electronic-healthcare/data/dashboards.html",
-    "",
-    "",
-    "",
-    "",
-    "",
     // Add all the HTML page URLs you want to search here
   ];
 
@@ -92,39 +34,87 @@ function findTextNodes(element, url) {
     }
   }
 
-
- // Display the found HTML elements if there are results
- searchResultsContainer.innerHTML = ''; // Clear previous results
-
- if (foundElements.length > 0) {
-  // Display the found HTML elements
-  foundElements.forEach((item) => {
-   
-    searchResultsContainer.classList.add('flex-column', 'gap-16', 'p-m')
-    const resultItem = document.createElement("div");
-   
-
-    resultItem.innerHTML = `<a href='${item.url}'>${item.element}</a>`;
-    resultItem.style.padding = '24px;'
-
-    searchResultsContainer.appendChild(resultItem);
-  });
+  window.open(
+    `search-results.html?q=${encodeURIComponent(
+      searchQuery
+    )}&elements=${encodeURIComponent(JSON.stringify(foundElements))}`,
+    "_blank"
+  );
 }
- }
+
+// Helper function to check if an ancestor is an <a> tag
+function isAncestorLink(node) {
+  if (!node) return false;
+  if (node.tagName.toLowerCase() === "a") return true;
+  return isAncestorLink(node.parentNode);
+}
+
+// Recursive function to find text nodes with the search query
+function findTextNodes(element, url, searchQuery, foundElements) {
+  if (!element) return; // Check if element is null or undefined
+
+  const isTextNode = element.nodeType === Node.TEXT_NODE;
+  const isNotAncestorLink = !isAncestorLink(element.parentNode);
+
+  // Check if element.parentNode is null or undefined
+  const isNotExcludedElement =
+    element.parentNode &&
+    !element.parentNode.classList.contains("vjs-no-js") &&
+    element.parentNode.id !== "breadcrumbs";
+
+  if (isTextNode && isNotAncestorLink && isNotExcludedElement) {
+    const textContent = element.textContent;
+    const lowercaseContent = textContent.toLowerCase();
+
+    if (textContent && lowercaseContent.includes(searchQuery)) {
+      const foundItem = {
+        url: url,
+        element: textContent,
+      };
+      foundElements.push(foundItem);
+    }
+  } else if (
+    element.tagName &&
+    !["script", "footer", "head", "h1", "header"].includes(
+      element.tagName.toLowerCase()
+    )
+  ) {
+    for (const child of element.childNodes) {
+      findTextNodes(child, url, searchQuery, foundElements);
+    }
+  }
+}
+
+// Function to update the search button and clear button state
+function updateButtonStates() {
+  const searchQuery = searchInput.value.trim(); // Remove leading/trailing spaces
+  submitBtn.disabled = searchQuery === "";
+  clearButton.style.display = searchQuery !== "" ? "block" : "none";
+}
 
 // Function to clear the input field and hide the clear button
 function clearInput() {
-    searchInput.value = '';
-    clearButton.style.display = 'none';
-    searchResultsContainer.innerHTML = '';
+  searchInput.value = "";
+
+  // After clearing the input, update the search button and clear button states
+  updateButtonStates();
 }
 
-// Attach the search function to the input field's "input" event
-searchInput.addEventListener('input', function () {
-    performSearch();
-    // Toggle clear button visibility based on input value
-    clearButton.style.display = searchInput.value !== '' ? 'block' : 'none';
-});
+searchInput.addEventListener("input", updateButtonStates);
 
 // Attach the clearInput function to the button's click event
 document.getElementById("icon-cross").addEventListener("click", clearInput);
+
+// Function to handle the form submission
+document.getElementById("search-form").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the form from submitting
+
+  const searchQuery = searchInput.value.toLowerCase();
+
+  // Perform the search when the form is submitted
+  performSearch(searchQuery);
+});
+
+// Initial update of the search button and clear button states
+updateButtonStates();
+

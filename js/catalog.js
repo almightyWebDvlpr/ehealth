@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
+
 function processRows2(data, gid) {
   const output = document.getElementById(`output-${gid}`);
   if (!output) {
@@ -51,3 +52,4 @@ function processRows2(data, gid) {
   table.appendChild(tbody);
   output.appendChild(table);
 }
+

@@ -3,6 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- hreflang tags to specify the language or regional targeting of each page. -->
+    <link rel="alternate" hreflang="en" href="https://www.example.com/english-page">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/images/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="./assets/images/android-chrome-512x512.png"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link rel="stylesheet" href="./css/index.css" />
 
     <!-- ===== Boxicons CDN Link ===== -->
@@ -137,7 +169,7 @@
                           fill="#A7C4E9"
                         ></path>
                       </svg>
-                     <span class="btn-content"> Колір</span>
+                      <span class="btn-content"> Колір</span>
                     </button>
                     <button
                       id="onDarkColorToggleButton"
@@ -163,7 +195,7 @@
                           fill="black"
                         ></path>
                       </svg>
-                     <span class="btn-content"> Ч/Б</span>
+                      <span class="btn-content"> Ч/Б</span>
                     </button>
                   </div>
                 </div>
@@ -176,7 +208,6 @@
                       <span class="btn-content">Великий курсор</span>
                     </button>
                     <button id="readLineBtn" class="btn btn__white">
-
                       <svg
                         width="20"
                         height="20"
@@ -334,7 +365,11 @@
                   </li>
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Надавачам послуг</p>
+                      <a
+                        href="./service-providers/to-service-providers.html"
+                        class="menu-link"
+                        >Надавачам послуг</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
@@ -543,7 +578,9 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Партнерам</p>
+                      <a href="./partners/to-partners.html" class="menu-link"
+                        >Партнерам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -565,7 +602,11 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Розробникам</p>
+                      <a
+                        href="./developers/to-developers.html"
+                        class="menu-link"
+                        >Розробникам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -600,7 +641,7 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Новини</p>
+                      <a href="./news/news.html" class="menu-link">Новини</a>
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -680,23 +721,26 @@
         <div class="hero__content flex-center-column">
           <h1>Електронна система охорони здоров'я України</h1>
           <p>Цифрова трансформація системи охорони здоров’я</p>
-          <div class="textfield__box flex-al-center">
+
+          <form class="textfield__box flex-al-center" id="search-form">
             <input
-              id="searchInput"
               class="textfield"
               type="text"
-              placeholder="Пошук..."
+              id="search-input"
+              placeholder="Пошук"
             />
-            <i id="icon-search" class="bx bx-search search__icon"></i>
+            <button class="search__icon" type="submit">
+              <i id="icon-search" class="bx bx-search"></i>
+            </button>
             <i id="icon-cross" class="bx bx-x cross__icon"></i>
-          </div>
+          </form>
         </div>
-        <div id="searchResults"></div>
       </div>
     </div>
+    
 
     <!-- Main starts -->
-    <!-- id="content" -->
+   
     <main>
       <!-- Most popular responses -->
       <section class="section">
@@ -1376,11 +1420,10 @@
     <script src="./js/themeSwitcher.js"></script>
     <script src="./js/fontSizeMutation.js"></script>
     <script src="./js/modal.js"></script>
-    
-    
 
     <!-- VIDEO JS -->
     <script src="./js/video.js"></script>
     <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+
   </body>
 </html>

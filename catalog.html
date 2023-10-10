@@ -667,6 +667,28 @@
     </header>
 
     <!-- Header end -->
+
+
+   <main>
+    <section class="top__section box-bg-light-blue">
+      <div class="container">
+        <ul id="breadcrumbs">
+          <!-- Breadcrumb items will be dynamically added here -->
+        </ul>
+
+        <div class="gap-24 flex-column">
+          <div class="top__section-title flex-center-s-b">
+            <h1 id="pageTitle"></h1>
+
+            <span onclick="sharePage()" class="top__section-link flex-al-center in-text-link">
+              <span>Поділитися</span>
+              <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="section section-background">
       <div class="container">
         <div class="selects-container">
@@ -756,14 +778,16 @@
         <!-- Define output elements for each sheet -->
         <div id="loader" class="loader"></div>
         <div id="output-1138747254" class="flex-column gap-32"></div>
-        <div id="output-0"></div>
+        <!-- <div id="output-0"></div> -->
       </div>
     </div>
+   </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="./js/catalog.js"></script>
     <script src="./js/themeSwitcher.js"></script>
     <script src="./js/fontSizeMutation.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/sharePage.js"></script>
   </body>
 </html>

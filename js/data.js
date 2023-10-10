@@ -4,7 +4,7 @@ export const responsesSlides = [
   {
     title: "Моніторинг працездатності ЄСОЗ",
     iconClass: "bx bx-right-arrow-alt",
-    url: "./service-providers/system-performance-monitoring.htmllink1.html",
+    url: "./service-providers/system-performance-monitoring.html",
   },
   {
     title: "Дашборди ЄСОЗ",
@@ -111,6 +111,55 @@ export const dashboardSlides = [
     paragraph:
       "Інформація про забезпечення ресурсами та їх використання медичними закладами, що уклали договори з Національною службою здоров’я України.",
     iconClass: "bx bx-right-arrow-alt",
+  },
+];
+
+
+
+export const developersSlides = [
+  {
+    title: "Технічні вимоги та тестова програма до МІС",
+    iconClass: "bx bx-right-arrow-alt",
+    url: "../developers/technical-requirements-and-test-program-for-mis.html",
+  },
+  {
+    title: "Як приєднати МІС до ЕСОЗ",
+    iconClass: "bx bx-right-arrow-alt",
+    url: "../developers/how-to-connect-mis-to-esoz.html",
+  },
+  {
+    title: "Моніторинг працездатності ЕСОЗ",
+    iconClass: "bx bx-right-arrow-alt",
+    url: "../support/system-performance-monitoring.html",
+  },
+  {
+    title: "Дашборди ЕСОЗ",
+    iconClass: "bx bx-right-arrow-alt",
+    url: "../electronic-healthcare/data/dashboards.html",
+  },
+];
+
+
+export const newsSlides = [
+  {
+    title: "Моніторинг працездатності ЄСОЗ",
+    iconClass: "bx bx-right-arrow-alt",
+    url: "../service-providers/system-performance-monitoring.html",
+  },
+  {
+    title: "Дашборди ЄСОЗ",
+    iconClass: "bx bx-right-arrow-alt",
+    url: "../electronic-healthcare/data/dashboards.html",
+  },
+  {
+    title: "Каталог МІС",
+    iconClass: "bx bx-right-arrow-alt",
+    url: "../service-providers/mis-catalog.html",
+  },
+  {
+    title: "Пошук медзакладу за направленням",
+    iconClass: "bx bx-right-arrow-alt",
+    url: "link4.html",
   },
 ];
  

@@ -1,42 +1,13 @@
-// const tabContents = document.querySelectorAll('.tab-content');
-
-// // Display the first tab's content by default
-// tabContents[0].style.display = 'block';
-
-// function changeTab(tabIndex) {
-//   tabContents.forEach(content => {
-//     content.style.display = 'none';
-//   });
-//   tabContents[tabIndex].style.display = 'block';
-
-//   const tabs = document.querySelectorAll('.tab');
-//   tabs.forEach(tab => {
-//     tab.classList.remove('active');
-//   });
-//   tabs[tabIndex].classList.add('active');
-// }
-
-// var waveBtn = (function () {
-// var btn = document.querySelectorAll('.tab'),
-//   tab = document.querySelector('.tab-container'),
-//   indicator = document.querySelector('.indicator'),
-//   indi = 0;
-// indicator.style.marginLeft = indi + 'px';
-
-// for(var i = 0; i < btn.length; i++) {
-// btn[i].onmousedown = function (e) {
-
-//   indicator.style.marginLeft = indi + (this.dataset.num-1) * 190 + 'px';
-// };
-// }
-// }());
-
 function changeTab(tabIndex, tabContainerId) {
   const tabContainer = document.getElementById(tabContainerId);
 
   if (!tabContainer) {
     console.error(`Container with ID "${tabContainerId}" not found.`);
     return;
+  }
+
+  if (tabContainerId === "containerLegislation") {
+    tabContainer.style.gap = "0";
   }
 
   const tabs = tabContainer.querySelectorAll(".tab");
@@ -47,12 +18,6 @@ function changeTab(tabIndex, tabContainerId) {
     return;
   }
 
-  // tabs.forEach((tab, index) => {
-  //   if (index === tabIndex) {
-  //     tab.classList.add('active');
-  //     tab.style.width = '150px'; // Adjust width as needed
-  //   }
-  // });
   tabs.forEach((tab) => {
     tab.classList.remove("active");
     tab.style.margin = "0";
@@ -61,6 +26,7 @@ function changeTab(tabIndex, tabContainerId) {
       tab.style.width = "fit-content";
       tab.style.padding = "20px";
     } else {
+      tab.style.width = "fit-content";
       tab.style.padding = "20px 0";
     }
   });
@@ -76,6 +42,10 @@ function changeTab(tabIndex, tabContainerId) {
   for (let i = 0; i < tabIndex; i++) {
     const prevTab = tabs[i];
     marginLeft += prevTab ? prevTab.offsetWidth : 0;
+    if (tabContainerId === "containerIndexHtml") {
+      // Add a margin gap between tabs (e.g., 32px)
+      marginLeft += 32; // Adjust this value as needed
+    }
   }
   indicator.style.marginLeft = `${marginLeft}px`;
 

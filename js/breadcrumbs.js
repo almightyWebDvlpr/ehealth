@@ -13,6 +13,7 @@ const translationMap = {
   data: "Дані",
   "dashboards.html": "Дашборди ЕСОЗ",
   "service-providers": "Надавачам послуг",
+  "to-service-providers.html":"Надавачам послуг",
   "heads-of-health-care-institutions": "Керівникам ЗОЗ",
   "how-connect-institution-to-esoz.html": "Як підключити заклад до ЕСОЗ",
   "how-choose-mis.html": "Як обрати МІС",
@@ -42,13 +43,16 @@ const translationMap = {
   "how-to-get-e-referral-to-a-specialist.html":
     "Як отримати е-направлення до спеціаліста?",
   partners: "Партнерам",
+  "to-partners.html":"Партнерам",
   "to-state-authorities.html": "Органам державної влади",
   "to-software-developers.html": "Розробникам ПЗ",
   developers: "Розробникам інформаційних систем",
+  "to-developers.html":"Розробникам інформаційних систем",
   "how-to-connect-mis-to-esoz.html": "Як підключити МІС до ЕСОЗ?",
   "technical-requirements-and-test-program-for-mis.html":
     "Технічні вимоги та тестова програма до МІС",
   news: "Новини",
+  "news.html":"Новини",
   "blog.html": "Блог",
   "contacts.html": "Контакти",
   "partners.html": "Партнери",
@@ -89,6 +93,15 @@ function createBreadcrumbs() {
     } else if (segment === "to-patients.html") {
       return;
     } else if (segment === "electronic-healthcare.html") {
+      return;
+    } else if (segment === "service-providers") {
+      return;
+    }else if (segment === "to-partners.html") {
+      return;
+    }else if (segment === "to-developers.html") {
+      return;
+    }
+    else if (segment === "news") {
       return;
     }
     currentPath += segment + "/";

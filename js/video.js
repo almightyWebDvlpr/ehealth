@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var video = videojs("my-video");
+    video.responsive(true);
     var playPauseButton = document.querySelector("#play-button");
     var isPlaying = false;
 
@@ -30,4 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
         }
     });
+
+
 });
