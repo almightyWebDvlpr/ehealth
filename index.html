@@ -59,7 +59,7 @@
     />
 
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
-    <title>Електоронна Сисиема Охорони Здоров'я</title>
+    <title>Електоронна Система Охорони Здоров'я</title>
   </head>
   <body>
     <div class="cursor-line hide"></div>
@@ -1424,6 +1424,27 @@
     <!-- VIDEO JS -->
     <script src="./js/video.js"></script>
     <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
-
+    <script type="application/ld+json">
+      {
+          "@context": "https://schema.org/",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://corp.com/"
+              },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Our Mission",
+              "item": "https://corp.com/our-mission/"
+              },{
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Who We Are",
+              "item": "https://corp.com/our-mission/who-we-are"
+          }]
+      }
+      </script>
   </body>
 </html>

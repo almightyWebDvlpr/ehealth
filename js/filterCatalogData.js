@@ -8,24 +8,16 @@ function getUrlParameter(name) {
 
 // Retrieve search query and found elements from URL
 const urlParam = getUrlParameter("q");
-const passedFilterName = urlParam && urlParam.length > 0 ? decodeURIComponent(urlParam) : '';
+const passedFilterName =
+  urlParam && urlParam.length > 0 ? decodeURIComponent(urlParam) : "";
 
 const pageTitle = document.getElementById("pageTitle");
 
-if(passedFilterName){
+if (passedFilterName) {
   pageTitle.innerText = passedFilterName;
-console.log('sfdsf')
+} else {
+  pageTitle.innerText = "Каталог Міс";
 }
-else{
-  pageTitle.innerText = 'Каталог Міс';
-}
-
-
-
-
-
-
-
 
 // Define variables to store the selected options
 let selectedOptions = {
@@ -35,14 +27,23 @@ let selectedOptions = {
   option4: "",
 };
 
+
+
 // Check if passedFilterName is valid before setting it as a selected option
 
 export function filterData(data) {
- 
-
   // Check if any options are selected
   const optionsSelected =
-    selectedOptions.option1 || selectedOptions.option2 || selectedOptions.option3 || selectedOptions.option4;
+    selectedOptions.option1 ||
+    selectedOptions.option2 ||
+    selectedOptions.option3 ||
+    selectedOptions.option4;
+
+  const pageTitle = document.getElementById("pageTitle");
+
+  if (!optionsSelected) {
+    pageTitle.innerText = "Каталог Міс";
+  }
 
   // If no options are selected and no passedFilterName, return all data
   if (!optionsSelected && !passedFilterName) {
@@ -56,28 +57,29 @@ export function filterData(data) {
       : [item["Рівні надання МД"]];
 
     const option1Match =
-      ! selectedOptions.option1 ||
-      option1Value.some((option) => option.includes( selectedOptions.option1));
+      !selectedOptions.option1 ||
+      option1Value.some((option) => option.includes(selectedOptions.option1));
 
     const option2Match =
-      ! selectedOptions.option2 ||
-      item["З технологією для зберігання та обробки даних"] ===  selectedOptions.option2;
+      !selectedOptions.option2 ||
+      item["З технологією для зберігання та обробки даних"] ===
+        selectedOptions.option2;
 
     const option3Match =
-      ! selectedOptions.option3 ||
-      item["З закладами якого типу власності співпрацюють"] ===  selectedOptions.option3;
+      !selectedOptions.option3 ||
+      item["З закладами якого типу власності співпрацюють"] ===
+        selectedOptions.option3;
 
     const option4Match =
-      ! selectedOptions.option4 ||
-      item["За впровадженим функціоналом (або за РМК)"] ===  selectedOptions.option4;
+      !selectedOptions.option4 ||
+      item["За впровадженим функціоналом (або за РМК)"] ===
+        selectedOptions.option4;
 
     return option1Match && option2Match && option3Match && option4Match;
   });
 }
 
-
 export function processRows(data, gid) {
-  
   // Filter the data based on selected options
   const filteredData = filterData(data);
 
@@ -88,9 +90,8 @@ export function processRows(data, gid) {
     console.error("Output element not found for gid:", gid);
     return;
   }
- 
+
   filteredData.forEach((item) => {
-   
     // Create a new card container for each object
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("mis-card-conatiner");
@@ -276,7 +277,6 @@ export function processRows(data, gid) {
   });
 }
 
-
 // Function to show or hide the "Reset Filters" button based on selected options
 export function toggleResetButtonVisibility(index) {
   const resetFiltersBtn = document.querySelectorAll(".reset-button")[index];
@@ -357,43 +357,40 @@ document.addEventListener("DOMContentLoaded", function () {
   filterAndDisplayData();
   // Update the event listener for the reset buttons to call the resetSelectedOptions function
   const resetFiltersBtns = document.querySelectorAll(".reset-button");
-  
+  // resetFiltersBtns.forEach((resetButton, index) => {
+  //   resetButton.addEventListener("click", function (e) {
+  //     e.stopPropagation();
+  //     resetSelectedOptions(index);
+  //     resetFilters(index);
+  //   });
+  //   // Initial data load when the page loads
+  //   filterAndDisplayData();
+  // });
   resetFiltersBtns.forEach((resetButton, index) => {
     resetButton.addEventListener("click", function (e) {
       e.stopPropagation();
       resetSelectedOptions(index);
-      resetFilters(index);
+      resetButton.classList.add("hidden");
     });
-    // Initial data load when the page loads
-    filterAndDisplayData();
   });
 
+  // Modify the filterAndDisplayData function
+  function filterAndDisplayData() {
+    // Check if passedFilterName is present in URL params
+    const filterNamePresent = !!passedFilterName;
 
+    if (filterNamePresent.length) {
+      // resetFilters();
+      resetSelectedOptions();
+    }
 
-// Modify the filterAndDisplayData function
-function filterAndDisplayData() {
-
-  // Check if passedFilterName is present in URL params
-  const filterNamePresent = !!passedFilterName;
-
-  if (filterNamePresent.length) {
-    // // If passedFilterName is not present, reset all options
-    // selectedOptions.option1 = "";
-    // selectedOptions.option2 = "";
-    // selectedOptions.option3 = "";
-    // selectedOptions.option4 = "";
-    resetFilters();
+    // Filter and display data based on selected options or passedFilterName
+    fetchDataAndCreateTable(
+      "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
+      "1138747254",
+      processRows
+    );
   }
-
-  // Filter and display data based on selected options or passedFilterName
-  fetchDataAndCreateTable(
-    "1hP1taKmO_sNOol52rPnB6QoYmFNVAlOfidu1bZPOMK4",
-    "1138747254",
-    processRows
-  );
-
-}
-
 
   selectHeaders.forEach((selectHeader, index) => {
     selectHeader.addEventListener("click", function (event) {
@@ -443,7 +440,6 @@ function filterAndDisplayData() {
         selectedOptionInputs[index].value = selectedValue;
         selectHeaders[index].querySelector("p").innerText =
           event.target.innerText;
-
         // Set the text of the corresponding <p> element within the select-header-group
         selectHeaderGroups[index].querySelector("p").innerText =
           event.target.innerText;
@@ -478,30 +474,30 @@ function filterAndDisplayData() {
     });
   });
 
-  function resetFilters(index) {
-    // Clear the selected options and input values
-    selectedOptions.option1 = "";
-    selectedOptions.option2 = "";
-    selectedOptions.option3 = "";
-    selectedOptions.option4 = "";
-    selectedOptionInputs.forEach((input) => {
-      input.value = "";
-    });
+  // function resetFilters(index) {
+  //   // Clear the selected options and input values
+  //   selectedOptions.option1 = "";
+  //   selectedOptions.option2 = "";
+  //   selectedOptions.option3 = "";
+  //   selectedOptions.option4 = "";
+  //   selectedOptionInputs.forEach((input) => {
+  //     input.value = "";
+  //   });
 
-    // Reset the text of the <p> elements within select-header-group
-    selectHeaderGroups[index].querySelector("p").innerText =
-      selectHeaderInitialText[index];
+  //   // Reset the text of the <p> elements within select-header-group
+  //   selectHeaderGroups[index].querySelector("p").innerText =
+  //     selectHeaderInitialText[index];
 
-    // Loop through all reset buttons and hide them
-    resetFiltersBtns.forEach((resetButton) => {
-      resetButton.classList.add("hidden");
-    });
+  //   // Loop through all reset buttons and hide them
+  //   resetFiltersBtns.forEach((resetButton) => {
+  //     resetButton.classList.add("hidden");
 
-    // Fetch and display all data
-    filterAndDisplayData();
-  }
+  //   });
+
+  //   // Fetch and display all data
+  //   filterAndDisplayData();
+  // }
 
   // Initial data load when the page loads
   filterAndDisplayData();
 });
-
