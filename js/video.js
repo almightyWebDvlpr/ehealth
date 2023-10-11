@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             playPauseButton.innerHTML = "<i class='bx bx-pause' ></i>";
         } else {
             video.pause();
-            playPauseButton.innerHTML = "<i class='bx bx-play' ></i>";
+            playPauseButton.innerHTML = "<i class='bx bx-right-arrow'></i>";
         }
         isPlaying = !isPlaying;
     });

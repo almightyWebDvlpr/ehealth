@@ -1,4 +1,5 @@
-const menuLinksToActive = document.querySelectorAll(".menu-inner .menu-link");
+
+const menuLinksToActive = document.querySelectorAll(".menu-item .menu-link");
 
 function setActiveLink() {
   const currentPath = window.location.pathname;
@@ -17,6 +18,24 @@ function setActiveLink() {
       }
     }
   });
+
+  // Add code to activate the parent menu link if a submenu link refers to the same page
+  const submenuLinks = document.querySelectorAll(".submenu-link");
+  submenuLinks.forEach((submenuLink) => {
+    const submenuLinkHref = submenuLink.getAttribute("href");
+    if (currentPath && submenuLinkHref) {
+      const submenuLinkLastPart = submenuLinkHref.split("/").pop();
+      if (currentPath.split('/').includes(submenuLinkLastPart)) { // Check if submenu link is in the current path
+        // Find the parent menu link and activate it
+        const parentMenuLink = submenuLink.closest(".menu-item").querySelector(".menu-link");
+        if (parentMenuLink) {
+          parentMenuLink.classList.add("active");
+        }
+      }
+    }
+  });
 }
 
 window.addEventListener("load", setActiveLink);
+
+

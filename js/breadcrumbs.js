@@ -13,12 +13,13 @@ const translationMap = {
   data: "Дані",
   "dashboards.html": "Дашборди ЕСОЗ",
   "service-providers": "Надавачам послуг",
-  "to-service-providers.html":"Надавачам послуг",
+  "to-service-providers.html": "Надавачам послуг",
   "heads-of-health-care-institutions": "Керівникам ЗОЗ",
   "how-connect-institution-to-esoz.html": "Як підключити заклад до ЕСОЗ",
   "how-choose-mis.html": "Як обрати МІС",
   "mis-catalog.html": "Каталог МІС",
   "legislation.html": "Законодавство",
+  "heads-of-health-care-institutions.html": "Керівникам ЗОЗ",
   doctors: "Лікарям",
   "to-doctors.html": "Лікарям",
   education: "Навчання",
@@ -26,6 +27,7 @@ const translationMap = {
   "nhcs-academy.html": "Академія НСЗУ",
   "digital-education.html": "Цифрова освіта",
   pharmacies: "Аптечним закладам",
+  "to-pharmacy.html":"Аптечним закладам",
   "how-to-connect-pharmacy-to-the-nhcs.html": "Як підключити аптеку до ЕСОЗ",
   "pharmacy-how-to-choose-mis.html": "Як обрати МІС",
   "system-performance-monitoring.html": "Моніторинг працездатності системи",
@@ -43,31 +45,32 @@ const translationMap = {
   "how-to-get-e-referral-to-a-specialist.html":
     "Як отримати е-направлення до спеціаліста?",
   partners: "Партнерам",
-  "to-partners.html":"Партнерам",
+  "to-partners.html": "Партнерам",
   "to-state-authorities.html": "Органам державної влади",
   "to-software-developers.html": "Розробникам ПЗ",
   developers: "Розробникам інформаційних систем",
-  "to-developers.html":"Розробникам інформаційних систем",
+  "to-developers.html": "Розробникам інформаційних систем",
   "how-to-connect-mis-to-esoz.html": "Як підключити МІС до ЕСОЗ?",
   "technical-requirements-and-test-program-for-mis.html":
     "Технічні вимоги та тестова програма до МІС",
   news: "Новини",
-  "news.html":"Новини",
+  "news.html": "Новини",
   "blog.html": "Блог",
   "contacts.html": "Контакти",
   "partners.html": "Партнери",
   support: "Підтримка",
+  "support.html": "Підтримка",
 };
 
 // Function to translate a breadcrumb segment (if applicable)
 function translateBreadcrumbSegment(segment) {
-  const referringPage = document.referrer;
+  // const referringPage = document.referrer;
 
-  if (referringPage) {
-    console.log(`You came from: ${referringPage}`);
-  } else {
-    console.log(`You did not come from a referring page.`);
-  }
+  // if (referringPage) {
+  //   console.log(`You came from: ${referringPage}`);
+  // } else {
+  //   console.log(`You did not come from a referring page.`);
+  // }
   return translationMap[segment] || segment;
 }
 
@@ -77,7 +80,6 @@ function createBreadcrumbs() {
   const pathSegments = window.location.pathname
     .split("/")
     .filter((segment) => segment.trim() !== "");
-
   // Clear existing breadcrumbs
   breadcrumbsContainer.innerHTML = "";
 
@@ -85,23 +87,37 @@ function createBreadcrumbs() {
   const homeBreadcrumb = createBreadcrumbItem("Головна", "/");
   breadcrumbsContainer.appendChild(homeBreadcrumb);
 
+  if ( pathSegments.length > 2) {
+    // Add the first segment as plain text
+    const firstSegment = pathSegments[0];
+    const translatedFirstSegment = translateBreadcrumbSegment(firstSegment);
+    const firstSegmentItem = createBreadcrumbItem(translatedFirstSegment);
+    breadcrumbsContainer.appendChild(firstSegmentItem);
+  }
+
   // Generate dynamic breadcrumbs based on the current page's location
   let currentPath = "/";
   pathSegments.forEach((segment, index) => {
     if (segment === "to-doctors.html") {
-      return; // Skip adding the breadcrumb for "to-doctors.html"
-    } else if (segment === "to-patients.html") {
       return;
-    } else if (segment === "electronic-healthcare.html") {
+    }else if (segment === "to-pharmacy.html") {
+      return;
+    }
+     else if (segment === "to-patients.html") {
+      return;
+    } else if (segment === "heads-of-health-care-institutions.html") {
+      return;
+    } else if (segment === "electronic-healthcare") {
       return;
     } else if (segment === "service-providers") {
       return;
     }else if (segment === "to-partners.html") {
       return;
-    }else if (segment === "to-developers.html") {
+    } else if (segment === "to-developers.html") {
       return;
-    }
-    else if (segment === "news") {
+    } else if (segment === "news.html") {
+      return;
+    } else if (segment === "support") {
       return;
     }
     currentPath += segment + "/";

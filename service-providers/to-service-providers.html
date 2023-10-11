@@ -337,7 +337,9 @@
                   </li>
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <a href="./to-service-providers.html" class="menu-link">Надавачам послуг</a>
+                      <a href="./to-service-providers.html" class="menu-link"
+                        >Надавачам послуг</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
@@ -704,7 +706,10 @@
             <div class="top__section-title flex-center-s-b">
               <h1>Надавачам послуг</h1>
 
-              <span onclick="sharePage()" class="top__section-link flex-al-center in-text-link">
+              <span
+                onclick="sharePage()"
+                class="top__section-link flex-al-center in-text-link"
+              >
                 <span>Поділитися</span>
                 <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
               </span>
@@ -721,7 +726,7 @@
               class="tab wave active"
               onclick="changeTab(0, 'containerIndexHtml')"
             >
-              <h3>Пацієнтам</h3>
+              <h3>Керівникам ЗОЗ</h3>
             </div>
             <div
               data-num="2"
@@ -731,51 +736,60 @@
               <h3>Лікарям</h3>
             </div>
             <div
-            data-num="3"
-            class="tab wave"
-            onclick="changeTab(2, 'containerIndexHtml')"
-          >
-            <h3>Аптечним закладам</h3>
-          </div>
+              data-num="3"
+              class="tab wave"
+              onclick="changeTab(2, 'containerIndexHtml')"
+            >
+              <h3>Аптечним закладам</h3>
+            </div>
             <div class="indicator"></div>
           </div>
           <div class="tab-content" id="tab1Content">
             <div class="patients__content flex">
               <div class="flex-column gap-24">
-                <h2>Пацієнтам</h2>
+                <div>
+                  <h2 class="m-0">Керівникам ЗОЗ</h2>
+                </div>
                 <p>Найбільш популярні запити</p>
 
                 <ul class="patients__content-links">
                   <li>
-                    <a href="../patients/how-to-get-an-e-prescription.html"
-                      >Як отримати е-рецепт?</a
-                    >
-                  </li>
-
-                  <li>
-                    <a href="../patients/how-to-use-e-malyatko-services.html"
-                      >Як скористатися послугами єМалятко?</a
+                    <a
+                      href="../developers/technical-requirements-and-test-program-for-mis.html"
+                      >Статус тестувань функціоналу МІС</a
                     >
                   </li>
 
                   <li>
                     <a
-                      href="../patients/how-to-make-a-declaration-with-a-family-doctor.html"
-                      >Як укласти декларацію із сімейним лікарем?</a
+                      href="../service-providers/heads-of-health-care-institutions/mis-catalog.html"
+                      >Каталог МІС</a
                     >
                   </li>
 
                   <li>
                     <a
-                      href="../patients/how-to-get-e-referral-to-a-specialist.html"
-                      >Як отримати е-направлення до спеціаліста?</a
+                      href="../service-providers/system-performance-monitoring.html"
+                      >Моніторинг працездатності ЕСОЗ</a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="../electronic-healthcare/data/dashboards.html"
+                      >Дашборди ЕСОЗ</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="../service-providers/doctors/education/nhcs-academy.html"
+                      >Академія НСЗУ</a
                     >
                   </li>
                 </ul>
 
                 <div>
                   <a
-                    href="../patients/to-patients.html"
+                    href="../service-providers/heads-of-health-care-institutions/"
                     class="btn btn__dark patients__button"
                   >
                     Відкрити розділ
@@ -798,7 +812,7 @@
               </div>
 
               <div class="doctors__content-text flex-column gap-24">
-                <h2>Лікарям</h2>
+                <h2 class="m-0">Лікарям</h2>
                 <p>Найбільш популярні запити</p>
 
                 <ul class="doctors__content-links">
@@ -845,35 +859,20 @@
         </div>
       </section>
 
-
       <section class="section section-background">
         <div class="container">
-          <div style="position: relative">
-            <div class="mis__banner"></div>
-            <div class="mis__banner-content">
-              <img
-                class="banner__img banner__img-left"
-                src="../../assets/images/banners_images/cell_asset 2.png"
-                alt="cell_asset"
-              />
-              <img
-                class="banner__img banner__img-right"
-                src="../../assets/images/banners_images/cell_asset 3.png"
-                alt="cell_asset"
-              />
-
-              <div class="banner__title">
-                <h2>Статуси тестувань функціоналу МІС</h2>
-              </div>
-              <a href="" class="btn btn__transparent banner__btn">
-                Перейти за посиланням
-                <i class="bx bx-right-arrow-alt"></i>
-              </a>
-            </div>
+          <div class="banner">
+            <h2>Статуси тестувань функціоналу МІС</h2>
+            <a
+              href="../../service-providers/heads-of-health-care-institutions/mis-catalog.html"
+              class="btn btn__transparent banner__btn"
+            >
+              Перейти за посиланням
+              <i class="bx bx-right-arrow-alt"></i>
+            </a>
           </div>
         </div>
       </section>
-
 
       <section class="section mis__section">
         <div class="container">
@@ -928,7 +927,6 @@
           </div>
         </div>
       </div>
-
 
       <section class="section">
         <div class="container">
@@ -1248,7 +1246,6 @@
     <script src="../js/setActiveNavbarLinks.js"></script>
     <script src="../js/tabs.js"></script>
     <script src="../js/sharePage.js"></script>
-
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

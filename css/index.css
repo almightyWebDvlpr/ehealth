@@ -35,7 +35,6 @@ body {
   font-family: e-Ukraine-Bold;
   color: #171717;
   letter-spacing: 0.1px;
-  cursor: url("../assets/images/icons/cursor.svg"), 20;
 }
 .dark-mode body {
   filter: grayscale();
@@ -123,7 +122,7 @@ img:hover {
 }
 
 /* Margins */
-.box-mt {
+.m .box-mt {
   margin-top: 24px;
 }
 
@@ -668,7 +667,7 @@ bottom: -30px !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #02206f;
+  background-color: #fff;
   z-index: 2;
   opacity: 1;
   padding: 16px;
@@ -676,6 +675,10 @@ bottom: -30px !important;
   color: #fff;
   font-size: 2rem;
   border-radius: 50%;
+}
+
+.play-button i {
+  color: #0d115e;
 }
 .vjs-big-play-button {
   display: none !important;
@@ -852,22 +855,22 @@ button[disabled] {
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   border-radius: 40px;
   cursor: pointer;
   color: #9ca3af;
   background: #fff;
 }
-.select-header:hover{
-  border-color: #2A21FF;
+.select-header:hover {
+  border-color: #2a21ff;
 }
 
 .select-header i {
   color: #9ca3af;
   font-size: 1.5rem;
 }
-.select-header .reset-button{
-  color: #2A21FF;
+.select-header .reset-button {
+  color: #2a21ff;
 }
 
 .chips {
@@ -882,7 +885,7 @@ button[disabled] {
   transform: rotate(45deg);
 }
 .reset-button:hover {
-  color: #03052A;
+  color: #03052a;
 }
 .hidden {
   display: none !important;
@@ -1091,6 +1094,10 @@ button[disabled] {
   padding: 96px 0;
 }
 
+.section .m-0 {
+  margin: 0;
+}
+
 .dark-mode .section {
   filter: grayscale();
 }
@@ -1143,16 +1150,12 @@ button[disabled] {
 
 .mis__section {
   position: relative;
-  background: #03052A;
+  background: #F9FBFE;
 }
 .dark-mode .mis__section {
   filter: grayscale();
 }
 
-.mis__top h2,
-.mis__top a {
-  color: #fff;
-}
 
 .mis__top a:hover i,
 .goals__button:hover i,
@@ -1229,15 +1232,16 @@ button[disabled] {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  width: 68%;
 }
 
 .patients__content-links li a,
 .doctors__content-links li a {
   display: block;
   padding: 12px;
-  border: 1px solid #0D115E;
+  border: 1px solid #0d115e;
   border-radius: 100px;
-  color: #0D115E;
+  color: #0d115e;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -1268,7 +1272,8 @@ button[disabled] {
 .doctors__button,
 .new__top-button,
 .articles__top-button,
-.btn-content, .top__section-link > span {
+.btn-content,
+.top__section-link > span {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -1323,7 +1328,7 @@ button[disabled] {
 .articles__content-list p,
 .news__caontent-sublist p {
   margin-bottom: 12px;
-  color: #8091B0;
+  color: #8091b0;
 }
 
 .news__content-list a,
@@ -1365,7 +1370,7 @@ button[disabled] {
 /* Footer */
 .footer {
   padding: 47px 0px 16px 0px;
-  background: #03052A;
+  background: #03052a;
 }
 
 .dark-mode .footer {
@@ -1672,11 +1677,18 @@ button[disabled] {
 
 .image__box {
   display: inline-flex;
-  background: #e5effe;
+  background: #F9FBFE;
   border-radius: 4px;
   padding: 12px;
   width: fit-content;
+  transition: all 0.3s ease-in-out;
 }
+
+.how__choose-mis-help-list .image-link:hover .image__box {
+  background: #e5effe;
+  transition: all 0.3s ease-in-out;
+}
+
 
 .image-width-height-l {
   width: 56px;
@@ -1740,7 +1752,7 @@ button[disabled] {
 
 .icon-box.box-hover:hover {
   background: #e5effe;
-  cursor: default;
+  cursor: pointer;
 }
 .icon-box.box-hover:hover .image__box.image__box-hover {
   background: #fff;
@@ -1847,7 +1859,6 @@ button[disabled] {
 .nhcs__notification {
   padding-bottom: 100px;
 }
-
 
 .notification__box,
 .registers__box {
@@ -2159,6 +2170,7 @@ button[disabled] {
   .patients__content-links,
   .doctors__content-links {
     flex-direction: column;
+    width: 100%;
   }
 
   .doctors__content-text,
@@ -2201,7 +2213,7 @@ button[disabled] {
   }
 
   .menu-link-wrapper {
-    width: 100% !important; 
+    width: 100% !important;
   }
 }
 
@@ -2736,6 +2748,7 @@ button[disabled] {
   }
 
   .menu-inner {
+    display: block;
     height: 100%;
     margin-top: -3rem;
     overflow-y: auto;
@@ -2770,6 +2783,7 @@ button[disabled] {
   }
 }
 
+
 .menu-inner .menu-link:not(.active):hover {
   color: #007bff;
 }
@@ -2787,7 +2801,7 @@ button[disabled] {
 .menu-item {
   display: inline-block;
   line-height: 1.5;
-  padding-right: 1.25rem;
+  /* padding-right: 1.25rem; */
   transition: all 0.3s ease-in-out;
 }
 
@@ -2814,6 +2828,8 @@ button[disabled] {
 
 /* // Media Query Breakpoint */
 @media only screen and (min-width: 993px) {
+
+
   .menu-dropdown:hover .submenu {
     opacity: 1;
     visibility: visible;
@@ -2838,6 +2854,14 @@ button[disabled] {
 }
 
 /* // Media Query Breakpoint */
+@media only screen and (min-width: 1050px) {
+
+  .menu-inner {
+    display: flex;
+    gap: 20px;
+  }
+}
+
 @media only screen and (max-width: 1050px) {
   .menu-header {
     position: relative;
@@ -3035,4 +3059,20 @@ button[disabled] {
   }
 }
 
+.banner {
+  border-radius: 400px;
+  background-image: url(../assets/images/Banner.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.banner h2{
+  color: #fff;
+}
 
