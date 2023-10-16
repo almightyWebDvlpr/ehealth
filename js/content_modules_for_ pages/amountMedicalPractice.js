@@ -6,7 +6,7 @@ class MedicalPractice {
 
   createHTML() {
     const ul = document.createElement("ul");
-    ul.classList.add("grid-col-1-1-1", "gap-32");
+    ul.classList.add("grid-col-1-1-1", "grid-col-1","gap-32");
 
     for (let i = 0; i < this.data.length; i++) {
       const li = document.createElement("li");

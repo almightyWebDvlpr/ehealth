@@ -2329,6 +2329,12 @@ button[disabled] {
 
 
 @media (max-width: 720px) {
+  .in-text-link{
+    word-break: break-all;
+  }
+  .btn{
+    white-space:unset;
+  }
   .responsive-width {
     width: 100%;
   }
@@ -2355,7 +2361,8 @@ button[disabled] {
   .grid-col-1-1-1.grid-col-1,
   .how__choose-mis-help-list.grid-col-1,
   .mis__article-content.grid-col-1,
-  .how__choose-mis-help-list.grid-col-1 {
+  .how__choose-mis-help-list.grid-col-1,
+  .grid-col-5-fr.grid-col-1 {
     grid-template-columns: 1fr;
   }
 
@@ -2459,7 +2466,7 @@ button[disabled] {
 
 @media (max-width: 480px) {
   h2 {
-    font-size: 34px;
+    font-size: 30px;
   }
   .section .m-0 {
     margin: 0;
@@ -3118,7 +3125,8 @@ button[disabled] {
   margin: 0 auto;
 }
 
-.submenu-item a:hover {
+.submenu-item a:hover,
+.submenu-link h4:hover{
   color: #0051ec;
 }
 
@@ -3137,6 +3145,8 @@ button[disabled] {
   line-height: 16px;
   padding-bottom: 6px;
 }
+
+
 
 .submenu-link.small-text.p-b-20 {
   padding-bottom: 20px;
