@@ -9,22 +9,27 @@ class ArticleWrapper {
     return paragraph;
   }
 
-  createListItem(text, backgroundClass) {
+  createListItem(text) {
     const listItem = document.createElement("li");
     listItem.appendChild(this.createParagraph(text));
+    listItem.style.border = '1px solid #f1f1f1';
+    listItem.style.background = '#fff'
 
-    // Add the specified background class to the <li> element
-    listItem.classList.add(backgroundClass);
 
     return listItem;
   }
 
   generateArticle() {
-    const article = document.createElement("article");
-    article.className = "mis__article";
+    const article = document.createElement("section");
+    article.className = "section";
+
+    article.classList.add("section-background");
 
     const container = document.createElement("div");
     container.className = "container";
+
+    const articleDiv = document.createElement('div');
+articleDiv.classList.add('flex-column', 'gap-48');
 
     const articleHeading = document.createElement("div");
     articleHeading.className = "mis__article-heading";
@@ -38,6 +43,7 @@ class ArticleWrapper {
 
     const adminContent = document.createElement("div");
     adminContent.className = "mis__article-content";
+    adminContent.classList.add('grid-col-1')
     const adminList1 = document.createElement("ul");
     adminList1.appendChild(
       this.createListItem(
@@ -67,10 +73,13 @@ class ArticleWrapper {
     adminContent.appendChild(adminList2);
 
     const medicalHeading = document.createElement("h3");
+
+  
     medicalHeading.textContent = "Медичні працівники можуть:";
 
     const medicalContent = document.createElement("div");
     medicalContent.className = "mis__article-content";
+    medicalContent.classList.add('grid-col-1');
     const medicalList1 = document.createElement("ul");
     medicalList1.appendChild(
       this.createListItem(
@@ -100,12 +109,14 @@ class ArticleWrapper {
     medicalContent.appendChild(medicalList1);
     medicalContent.appendChild(medicalList2);
 
-    container.appendChild(articleHeading);
-    container.appendChild(adminHeading);
-    container.appendChild(adminContent);
-    container.appendChild(medicalHeading);
-    container.appendChild(medicalContent);
+    articleDiv.appendChild(articleHeading);
+    articleDiv.appendChild(adminHeading);
+    articleDiv.appendChild(adminContent);
+    articleDiv.appendChild(medicalHeading);
+    articleDiv.appendChild(medicalContent);
 
+
+container.appendChild(articleDiv)
     article.appendChild(container);
     this.container.appendChild(article);
   }

@@ -3,6 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+     <!-- hreflang tags to specify the language or regional targeting of each page. -->
+   <link rel="alternate" hreflang="en" href="https://www.example.com/english-page">
+
+   <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+   <link
+     rel="icon"
+     type="image/png"
+     sizes="192x192"
+     href="../../assets/images/android-chrome-192x192.png"
+   />
+   <link
+     rel="icon"
+     type="image/png"
+     sizes="512x512"
+     href="../../assets/images/android-chrome-512x512.png"
+   />
+   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+   <link
+     rel="icon"
+     type="image/png"
+     sizes="16x16"
+     href="../../assets/images/favicon-16x16.png"
+   />
+   <link
+     rel="icon"
+     type="image/png"
+     sizes="32x32"
+     href="../../assets/images/favicon-32x32.png"
+   />
+   <link rel="manifest" href="../../site.webmanifest" />
     <link rel="stylesheet" href="../../css/index.css" />
 
     <!-- ===== Boxicons CDN Link ===== -->
@@ -39,7 +70,7 @@
             <div>
               <a href="./index.html">
                 <img
-                  src="../../assets/images/logos/Logo.png"
+                  src="../../assets/images/logos/eHealth_black.png"
                   alt="ehealth-logo"
                 />
               </a>
@@ -258,35 +289,21 @@
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html">
-                          <h4 class="submenu-title">Системи</h4></a
-                        >
+                        <h4 class="submenu-title">Системи</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a
-                              href="../../electronic-healthcare/systems/ehcs.html"
-                              class="submenu-link"
-                              >EСОЗ</a
-                            >
+                            <a href="./ehcs.html" class="submenu-link">EСОЗ</a>
                           </li>
                           <li class="submenu-item">
-                            <a
-                              href="../../electronic-healthcare/systems/central.html"
-                              class="submenu-link"
+                            <a href="./central.html" class="submenu-link"
                               >Централь</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a
-                              href="../../electronic-healthcare/systems/mis.html"
-                              class="submenu-link"
-                              >МІСи</a
-                            >
+                            <a href="./mis.html" class="submenu-link">МІСи</a>
                           </li>
                           <li class="submenu-item">
-                            <a
-                              href="../../electronic-healthcare/systems/is-nhcs.html"
-                              class="submenu-link"
+                            <a href="./is-nhcs.html" class="submenu-link"
                               >ІС НСЗУ</a
                             >
                           </li>
@@ -294,13 +311,11 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html">
-                          <h4 class="submenu-title">Реєстри</h4></a
-                        >
+                        <h4 class="submenu-title">Реєстри</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
-                              href="../../electronic-healthcare/registers/country-basic-registers-and-healthcare.html"
+                              href="../registers/country-basic-registers-and-healthcare.html"
                               class="submenu-link"
                               >Базові реєстри країни та сфери охорони
                               здоров’я</a
@@ -309,11 +324,11 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href=""><h4 class="submenu-title">Дані</h4></a>
+                        <h4 class="submenu-title">Дані</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
-                              href="../../electronic-healthcare/data/dashboards.html"
+                              href="../data/dashboards.html"
                               class="submenu-link"
                               >Дашборди EСОЗ</a
                             >
@@ -328,7 +343,7 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../electronic-healthcare/legislation.html"
+                        <a href="../legislation.html"
                           ><h4 class="submenu-title">Законодавство</h4></a
                         >
                       </div>
@@ -336,12 +351,17 @@
                   </li>
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Надавачам послуг</p>
+                      <a
+                        href="../../service-providers/to-service-providers.html"
+                        class="menu-link"
+                        >Надавачам послуг</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html"
+                        <a
+                          href="../../service-providers/heads-of-health-care-institutions/heads-of-health-care-institutions.html"
                           ><h4 class="submenu-title">Керівникам ЗОЗ</h4></a
                         >
                         <ul class="submenu-list">
@@ -360,16 +380,14 @@
                             >
                           </li>
                           <li class="submenu-item">
-                            <a
-                              href="../../404-not-found.html"
-                              class="submenu-link small-text"
+                            <a href="#" class="submenu-link small-text"
                               >Первинна медична допомога</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
                               href="../../404-not-found.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Спеціалізована медична допомога</a
                             >
                           </li>
@@ -389,11 +407,7 @@
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a
-                              href="../../404-not-found.html"
-                              class="submenu-link"
-                              >Навчання</a
-                            >
+                            <h4 class="submenu-link">Навчання</h4>
                           </li>
                           <li class="submenu-item">
                             <a
@@ -402,13 +416,13 @@
                               >Цифрові освітні ресурси</a
                             >
                           </li>
-                          <li class="submenu-item">
+                          <!-- <li class="submenu-item">
                             <a
-                              href="../../404-not-found.html"
+                              href="./404-not-found.html"
                               class="submenu-link small-text"
                               >Кібербезпека</a
                             >
-                          </li>
+                          </li> -->
                           <li class="submenu-item">
                             <a
                               href="../../service-providers/doctors/education/digital-education.html"
@@ -419,7 +433,7 @@
                           <li class="submenu-item">
                             <a
                               href="../../service-providers/doctors/education/nhcs-academy.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Академія НСЗУ</a
                             >
                           </li>
@@ -441,7 +455,8 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html"
+                        <a
+                          href="../../service-providers/pharmacies/to-pharmacy.html"
                           ><h4 class="submenu-title">Аптечним закладам</h4></a
                         >
                         <ul class="submenu-list">
@@ -556,7 +571,11 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Партнерам</p>
+                      <a
+                        href="../../partners/to-partners.html"
+                        class="menu-link"
+                        >Партнерам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -578,7 +597,11 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Розробникам</p>
+                      <a
+                        href="../../developers/to-developers.html"
+                        class="menu-link"
+                        >Розробникам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -614,7 +637,9 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Новини</p>
+                      <a href="../../news/news.html" class="menu-link"
+                        >Новини</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -644,7 +669,9 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Підтримка</p>
+                      <a href="../../support/support.html" class="menu-link"
+                        >Підтримка</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -693,20 +720,20 @@
     <!-- Main starts -->
 
     <main>
-      <section class="top__section box-bg-light-blue">
+      <section class="top__section">
         <div class="container">
           <ul id="breadcrumbs">
             <!-- Breadcrumb items will be dynamically added here -->
           </ul>
-
+          <div class="flex-column gap-48">
           <div class="gap-24 flex-column">
             <div class="top__section-title flex-center-s-b">
               <h1>ЕСОЗ</h1>
 
-              <a href="" class="top__section-link flex-al-center in-text-link">
+              <span onclick="sharePage()" class="top__section-link flex-al-center in-text-link">
                 <span>Поділитися</span>
                 <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
-              </a>
+              </span>
             </div>
             <p>
               Електронна система охорони здоров'я — найбільша ІТ-система України
@@ -714,10 +741,21 @@
               взаємодіє з центральною базою даних.
             </p>
           </div>
+          <div class="textfield__box flex-al-center" style="width: 100%">
+            <input
+              id="searchInput"
+              class="textfield"
+              type="text"
+              placeholder="Пошук..."
+            />
+            <i id="icon-search" class="bx bx-search search__icon"></i>
+            <i id="icon-cross" class="bx bx-x cross__icon"></i>
+          </div>
+          </div>
         </div>
       </section>
 
-      <article class="article section-background">
+      <section class="section">
         <div class="container">
           <h2 class="h2-mb-l">Цілі ЕСОЗ</h2>
 
@@ -771,70 +809,74 @@
             </li>
           </ul>
         </div>
-      </article>
+      </section>
 
       <section class="section section-background">
         <div class="container">
           <h2>Структура ЕСОЗ:</h2>
 
-          <div class="section__box box-bg-light-blue p-m">
-            <h3>Державний компонент</h3>
-
-            <p>
-              Центральна база даних (ЦБД) – центральний компонент ЕСОЗ, який
-              управляється та належить державі і містить основні програмні
-              модулі та реєстри, які забезпечують можливість управління,
-              збереження та обмін інформацією та документами в сфері охорони
-              здоров’я.
-            </p>
-
-            <ul class="item__list">
-              <h4>Це інформаційно-комунікаційна система, яка містить:</h4>
-
-              <li>
-                <i class="bx bx-check"></i>
-                <p>Передбачені законодавством реєстри, програмні модулі</p>
-              </li>
-
-              <li>
-                <i class="bx bx-check"></i>
-                <p>
-                  Електронну медичну інформаційно-аналітичну систему з
-                  оптимізації роботи оперативно-диспетчерських служб центрів
-                  екстреної медичної допомоги та медицини катастроф -
-                  <a href="">Централь 103</a>
-                </p>
-              </li>
-
-              <li>
-                <i class="bx bx-check"></i>
-                <p>
-                  <a href="">Інформаційну систему НСЗУ</a>
-                  в частині, необхідній для реалізації державних фінансових
-                  гарантій медичного обслуговування населення.
-                </p>
-              </li>
-            </ul>
-
-            <p>
-              Центральна база даних електронної системи охорони здоров’я
-              забезпечує можливість управління, збереження та обмін інформацією
-              та документами в сфері охорони здоров’я.
-            </p>
-          </div>
-
-          <div class="section__box p-m bg-light-gray box-mt">
-            <h3>Приватний компонент</h3>
-
-            <p>
-              МІС (електронна медична інформаційна система) — узагальнена назва
-              низки окремих державних та комерційних програмних продуктів
-              (систем), завдяки яким через спеціалізоване програмне забезпечення
-              можна автоматизувати роботу суб’єктів господарювання у сфері
-              охорони здоров’я, створювати, переглядати, обмінюватися
-              інформацією в електронній формі, зокрема з центральною базою даних
-              (у разі підключення).
-            </p>
+          <div class="flex-column gap-32">
+            <div class="content-box">
+              <div class="flex-column gap-16">
+                <h3>Державний компонент</h3>
+  
+              <p>
+                Центральна база даних (ЦБД) – центральний компонент ЕСОЗ, який
+                управляється та належить державі і містить основні програмні
+                модулі та реєстри, які забезпечують можливість управління,
+                збереження та обмін інформацією та документами в сфері охорони
+                здоров’я.
+              </p>
+              </div>
+  
+              <ul class="item__list">
+                <h4>Це інформаційно-комунікаційна система, яка містить:</h4>
+  
+                <li>
+                  <i class="bx bx-check"></i>
+                  <p>Передбачені законодавством реєстри, програмні модулі</p>
+                </li>
+  
+                <li>
+                  <i class="bx bx-check"></i>
+                  <p>
+                    Електронну медичну інформаційно-аналітичну систему з
+                    оптимізації роботи оперативно-диспетчерських служб центрів
+                    екстреної медичної допомоги та медицини катастроф -
+                    <a href="">Централь 103</a>
+                  </p>
+                </li>
+  
+                <li>
+                  <i class="bx bx-check"></i>
+                  <p>
+                    <a href="">Інформаційну систему НСЗУ</a>
+                    в частині, необхідній для реалізації державних фінансових
+                    гарантій медичного обслуговування населення.
+                  </p>
+                </li>
+              </ul>
+  
+              <p>
+                Центральна база даних електронної системи охорони здоров’я
+                забезпечує можливість управління, збереження та обмін інформацією
+                та документами в сфері охорони здоров’я.
+              </p>
+            </div>
+  
+            <div class="content-box flex-column gap-16">
+              <h3>Приватний компонент</h3>
+  
+              <p>
+                МІС (електронна медична інформаційна система) — узагальнена назва
+                низки окремих державних та комерційних програмних продуктів
+                (систем), завдяки яким через спеціалізоване програмне забезпечення
+                можна автоматизувати роботу суб’єктів господарювання у сфері
+                охорони здоров’я, створювати, переглядати, обмінюватися
+                інформацією в електронній формі, зокрема з центральною базою даних
+                (у разі підключення).
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -851,8 +893,8 @@
           </p>
 
           <ul class="section__list">
-            <li>
-              <div class="image__box mb">
+            <li class="flex-column gap-12">
+              <div class="image__box">
                 <img
                   class="image-width-height-l"
                   src="../../assets/images/new_icons/PRESCRIPTION_1.png"
@@ -862,8 +904,8 @@
               <p>Медичні висновки про народження</p>
             </li>
 
-            <li>
-              <div class="image__box mb">
+            <li class="flex-column gap-12">
+              <div class="image__box">
                 <img
                   class="image-width-height-l"
                   src="../../assets/images/new_icons/Crutches.png"
@@ -873,8 +915,8 @@
               <p>Медичні висновки про тимчасову непрацездатність.</p>
             </li>
 
-            <li>
-              <div class="image__box mb">
+            <li class="flex-column gap-12">
+              <div class="image__box">
                 <img
                   class="image-width-height-l"
                   src="../../assets/images/new_icons/suntik.png"
@@ -887,8 +929,8 @@
               </p>
             </li>
 
-            <li>
-              <div class="image__box mb">
+            <li class="flex-column gap-12">
+              <div class="image__box">
                 <img
                   class="image-width-height-l"
                   src="../../assets/images/new_icons/list_assets 1.png"
@@ -898,8 +940,8 @@
               <p>Електронна медична картка</p>
             </li>
 
-            <li>
-              <div class="image__box mb">
+            <li class="flex-column gap-12">
+              <div class="image__box">
                 <img
                   class="image-width-height-l"
                   src="../../assets/images/new_icons/medical history_3.png"
@@ -909,8 +951,8 @@
               <p>Декларації</p>
             </li>
 
-            <li>
-              <div class="image__box mb">
+            <li class="flex-column gap-12">
+              <div class="image__box">
                 <img
                   class="image-width-height-l"
                   src="../../assets/images/new_icons/14.png"
@@ -920,8 +962,8 @@
               <p>Електронні направлення</p>
             </li>
 
-            <li>
-              <div class="image__box mb">
+            <li class="flex-column gap-12">
+              <div class="image__box">
                 <img
                   class="image-width-height-l"
                   src="../../assets/images/new_icons/Virus 1.png"
@@ -940,7 +982,7 @@
 
           <div class="flex-col-gap-32">
             <div class="left-long">
-              <div class="role-card bg-light-gray">
+              <div class="role-card flex-column gap-12">
                 <h3>Міністерство Охорони Здоров’я України</h3>
                 <p>
                   Формує політику у галузі охорони здоров’я, відповідає за
@@ -948,7 +990,7 @@
                 </p>
               </div>
 
-              <div class="role-card bg-light-gray">
+              <div class="role-card flex-column gap-12">
                 <h3>Національна Служба Здоров’я України</h3>
                 <p>
                   Аналізує та використовує дані для прогнозування потреб
@@ -959,7 +1001,7 @@
             </div>
 
             <div class="right-long">
-              <div class="role-card box-bg-light-blue">
+              <div class="role-card flex-column gap-12">
                 <h3>ДП "Електронне здоров'я"</h3>
                 <p>
                   Адмініструє Центральну Базу Даних ЕСОЗ та контролює розробку
@@ -967,7 +1009,7 @@
                 </p>
               </div>
 
-              <div class="role-card bg-light-turquoise">
+              <div class="role-card flex-column gap-12">
                 <h3>Бізнес</h3>
                 <p>
                   Електронні Медичні Інформаційні Системи (МІС) - дають змогу
@@ -1161,7 +1203,7 @@
           <div class="footer__bootom-logos">
             <a href="../../index.html">
               <img
-                src="../../assets/images/logos/Frame 5.png"
+                src="../../assets/images/logos/eHealth_white.png"
                 alt="ehealth logo"
               />
             </a>
@@ -1186,5 +1228,6 @@
     <script src="../../js/themeSwitcher.js"></script>
     <script type="module" src="../../js/imagesSwiper.js"></script>
     <script src="../../js/setActiveNavbarLinks.js"></script>
+    <script src="../../js/sharePage.js"></script>
   </body>
 </html>

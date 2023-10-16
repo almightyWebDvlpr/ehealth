@@ -37,6 +37,12 @@ function changeTab(tabIndex, tabContainerId) {
   const tabWidth = selectedTab ? selectedTab.offsetWidth : 0;
   indicator.style.width = `${tabWidth}px`;
 
+  
+  if(tabContainerId === "containerLegislation" || tabContainerId === 'containerServiceProviders'){
+    indicator.style.display = 'none';
+  }
+  
+
   // Calculate the indicator margin-left based on the selected tab's position
   let marginLeft = 0;
   for (let i = 0; i < tabIndex; i++) {
@@ -65,6 +71,23 @@ function changeTab(tabIndex, tabContainerId) {
       }
     });
   }
+}
+
+
+// Usage for containerIndexHtml:
+const tabContainerServiceProviders = "containerServiceProviders";
+
+if (document.getElementById(tabContainerServiceProviders)) {
+  document.querySelectorAll(".tab").forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      if (tabContainerServiceProviders === "containerServiceProviders") {
+        changeTab(index, tabContainerServiceProviders);
+      }
+    });
+  });
+
+  // Initialize with the first tab displayed for 'containerIndexHtml'
+  changeTab(0, tabContainerServiceProviders);
 }
 
 // Usage for containerLegislation:

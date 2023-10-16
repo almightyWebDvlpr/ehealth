@@ -3,6 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <!-- hreflang tags to specify the language or regional targeting of each page. -->
+ <link rel="alternate" hreflang="en" href="https://www.example.com/english-page">
+
+ <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+ <link
+   rel="icon"
+   type="image/png"
+   sizes="192x192"
+   href="../../assets/images/android-chrome-192x192.png"
+ />
+ <link
+   rel="icon"
+   type="image/png"
+   sizes="512x512"
+   href="../../assets/images/android-chrome-512x512.png"
+ />
+ <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+ <link
+   rel="icon"
+   type="image/png"
+   sizes="16x16"
+   href="../../assets/images/favicon-16x16.png"
+ />
+ <link
+   rel="icon"
+   type="image/png"
+   sizes="32x32"
+   href="../../assets/images/favicon-32x32.png"
+ />
+ <link rel="manifest" href="../../site.webmanifest" />
+
     <link rel="stylesheet" href="../../css/index.css" />
 
     <!-- ===== Boxicons CDN Link ===== -->
@@ -39,7 +71,7 @@
             <div>
               <a href="./index.html">
                 <img
-                  src="../../assets/images/logos/Logo.png"
+                  src="../../assets/images/logos/eHealth_black.png"
                   alt="ehealth-logo"
                 />
               </a>
@@ -258,35 +290,21 @@
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html">
-                          <h4 class="submenu-title">Системи</h4></a
-                        >
+                        <h4 class="submenu-title">Системи</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a
-                              href="../../electronic-healthcare/systems/ehcs.html"
-                              class="submenu-link"
-                              >EСОЗ</a
-                            >
+                            <a href="./ehcs.html" class="submenu-link">EСОЗ</a>
                           </li>
                           <li class="submenu-item">
-                            <a
-                              href="../../electronic-healthcare/systems/central.html"
-                              class="submenu-link"
+                            <a href="./central.html" class="submenu-link"
                               >Централь</a
                             >
                           </li>
                           <li class="submenu-item">
-                            <a
-                              href="../../electronic-healthcare/systems/mis.html"
-                              class="submenu-link"
-                              >МІСи</a
-                            >
+                            <a href="./mis.html" class="submenu-link">МІСи</a>
                           </li>
                           <li class="submenu-item">
-                            <a
-                              href="../../electronic-healthcare/systems/is-nhcs.html"
-                              class="submenu-link"
+                            <a href="./is-nhcs.html" class="submenu-link"
                               >ІС НСЗУ</a
                             >
                           </li>
@@ -294,13 +312,11 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html">
-                          <h4 class="submenu-title">Реєстри</h4></a
-                        >
+                        <h4 class="submenu-title">Реєстри</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
-                              href="../../electronic-healthcare/registers/country-basic-registers-and-healthcare.html"
+                              href="../registers/country-basic-registers-and-healthcare.html"
                               class="submenu-link"
                               >Базові реєстри країни та сфери охорони
                               здоров’я</a
@@ -309,11 +325,11 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href=""><h4 class="submenu-title">Дані</h4></a>
+                        <h4 class="submenu-title">Дані</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
-                              href="../../electronic-healthcare/data/dashboards.html"
+                              href="../data/dashboards.html"
                               class="submenu-link"
                               >Дашборди EСОЗ</a
                             >
@@ -328,7 +344,7 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../electronic-healthcare/legislation.html"
+                        <a href="../legislation.html"
                           ><h4 class="submenu-title">Законодавство</h4></a
                         >
                       </div>
@@ -336,12 +352,17 @@
                   </li>
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Надавачам послуг</p>
+                      <a
+                        href="../../service-providers/to-service-providers.html"
+                        class="menu-link"
+                        >Надавачам послуг</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html"
+                        <a
+                          href="../../service-providers/heads-of-health-care-institutions/heads-of-health-care-institutions.html"
                           ><h4 class="submenu-title">Керівникам ЗОЗ</h4></a
                         >
                         <ul class="submenu-list">
@@ -360,16 +381,14 @@
                             >
                           </li>
                           <li class="submenu-item">
-                            <a
-                              href="../../404-not-found.html"
-                              class="submenu-link small-text"
+                            <a href="#" class="submenu-link small-text"
                               >Первинна медична допомога</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
                               href="../../404-not-found.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Спеціалізована медична допомога</a
                             >
                           </li>
@@ -389,11 +408,7 @@
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a
-                              href="../../404-not-found.html"
-                              class="submenu-link"
-                              >Навчання</a
-                            >
+                            <h4 class="submenu-link">Навчання</h4>
                           </li>
                           <li class="submenu-item">
                             <a
@@ -402,13 +417,13 @@
                               >Цифрові освітні ресурси</a
                             >
                           </li>
-                          <li class="submenu-item">
+                          <!-- <li class="submenu-item">
                             <a
-                              href="../../404-not-found.html"
+                              href="./404-not-found.html"
                               class="submenu-link small-text"
                               >Кібербезпека</a
                             >
-                          </li>
+                          </li> -->
                           <li class="submenu-item">
                             <a
                               href="../../service-providers/doctors/education/digital-education.html"
@@ -419,7 +434,7 @@
                           <li class="submenu-item">
                             <a
                               href="../../service-providers/doctors/education/nhcs-academy.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Академія НСЗУ</a
                             >
                           </li>
@@ -441,7 +456,8 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../404-not-found.html"
+                        <a
+                          href="../../service-providers/pharmacies/to-pharmacy.html"
                           ><h4 class="submenu-title">Аптечним закладам</h4></a
                         >
                         <ul class="submenu-list">
@@ -556,7 +572,11 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Партнерам</p>
+                      <a
+                        href="../../partners/to-partners.html"
+                        class="menu-link"
+                        >Партнерам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -578,7 +598,11 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Розробникам</p>
+                      <a
+                        href="../../developers/to-developers.html"
+                        class="menu-link"
+                        >Розробникам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -614,7 +638,9 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Новини</p>
+                      <a href="../../news/news.html" class="menu-link"
+                        >Новини</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -644,7 +670,9 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Підтримка</p>
+                      <a href="../../support/support.html" class="menu-link"
+                        >Підтримка</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -693,31 +721,43 @@
     <!-- Main starts -->
 
     <main>
-      <section class="top__section box-bg-light-blue">
+      <section class="top__section">
         <div class="container">
           <ul id="breadcrumbs">
             <!-- Breadcrumb items will be dynamically added here -->
           </ul>
+          <div class="flex-column gap-48">
+            <div class="gap-24 flex-column">
+              <div class="top__section-title flex-center-s-b">
+                <h1>Централь</h1>
 
-          <div class="gap-24 flex-column">
-            <div class="top__section-title flex-center-s-b">
-              <h1>Централь</h1>
-
-              <a href="" class="top__section-link flex-al-center in-text-link">
-                <span>Поділитися</span>
-                <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
-              </a>
+                <span onclick="sharePage()" class="top__section-link flex-al-center in-text-link">
+                  <span>Поділитися</span>
+                  <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+                </span>
+              </div>
+              <p>
+                Централь 103 - це інформаційно-аналітична системи з оптимізації
+                роботи оперативно-диспетчерських служб центрів екстреної
+                медичної допомоги та медицини катастроф.
+              </p>
             </div>
-            <p>
-              Централь 103 - це інформаційно-аналітична системи з оптимізації
-              роботи оперативно-диспетчерських служб центрів екстреної медичної
-              допомоги та медицини катастроф.
-            </p>
+
+            <div class="textfield__box flex-al-center" style="width: 100%">
+              <input
+                id="searchInput"
+                class="textfield"
+                type="text"
+                placeholder="Пошук..."
+              />
+              <i id="icon-search" class="bx bx-search search__icon"></i>
+              <i id="icon-cross" class="bx bx-x cross__icon"></i>
+            </div>
           </div>
         </div>
       </section>
 
-      <article class="article section-background pt-lg">
+      <section class="section">
         <div class="container">
           <div class="flex-col-gap-32">
             <h2>Для чого призначена система?</h2>
@@ -773,14 +813,12 @@
             </ul>
           </div>
         </div>
-      </article>
+      </section>
 
       <section class="section section-background">
         <div class="container">
-          <div
-            class="section__box bg-blue box-padding-lg color-white flex-gap-32 block"
-          >
-            <div class="section__box-content">
+          <div class="flex-column gap-48">
+            <div class="grid-col-1-1 grid-col-1 gap-32">
               <h2 class="m-0">Як було до появи “Централь 103”?</h2>
               <p>
                 До впровадження “Централь 103” центри екстреної меддопомоги не
@@ -792,7 +830,7 @@
               </p>
             </div>
 
-            <div class="section__box-content reverse">
+            <div class="grid-col-1-1 flex-column-reverse gap-32">
               <p>
                 “Централь 103” об’єднала всі диспетчерські служби країни та
                 дозволила синхронізувати їх роботу між собою та з органами
@@ -807,14 +845,14 @@
         </div>
       </section>
 
-      <div class="section-background">
+      <section class="section">
         <div class="container">
           <div class="flex-column gap-48">
             <h3>
               Які переваги створення сучасної диспетчерської служби з
               використанням електронної інформаційної системи?
             </h3>
-            <ul class="grid-col-1-1-1-1 block gap-32 pb-xl">
+            <ul class="grid-col-1-1-1-1 block gap-32">
               <li class="flex-column gap-12">
                 <div class="image__box">
                   <img
@@ -871,7 +909,7 @@
             </ul>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- Main end -->
@@ -1055,7 +1093,7 @@
           <div class="footer__bootom-logos">
             <a href="../../index.html">
               <img
-                src="../../assets/images/logos/Frame 5.png"
+                src="../../assets/images/logos/eHealth_white.png"
                 alt="ehealth logo"
               />
             </a>
@@ -1080,6 +1118,6 @@
     <script src="../../js/themeSwitcher.js"></script>
     <script type="module" src="../../js/imagesSwiper.js"></script>
     <script src="../../js/setActiveNavbarLinks.js"></script>
-
+    <script src="../../js/sharePage.js"></script>
   </body>
 </html>

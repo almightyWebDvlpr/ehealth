@@ -54,9 +54,9 @@ import {misImagesUrls, partnersImagesUrls} from './data.js'
     grabCursor: true,
     loopFillGroupWithBlank: true,
     breakpoints: {
-      320: { slidesPerView: 1, spaceBetween: 10 },
-      640: { slidesPerView: 1, spaceBetween: 20 },
-      768: { slidesPerView: 3, spaceBetween: 40 },
+      320: { slidesPerView: 1, spaceBetween: 10, slidesPerGroup: 1 },
+      640: { slidesPerView: 1, spaceBetween: 20, slidesPerGroup: 1 },
+      768: { slidesPerView: 3, spaceBetween: 40, slidesPerGroup: 1},
       1024: { slidesPerView: 4, spaceBetween: 50 },
     },
     navigation: {

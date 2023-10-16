@@ -3,6 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- hreflang tags to specify the language or regional targeting of each page. -->
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.example.com/english-page"
+    />
+
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../../../assets/images/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="../../../assets/images/android-chrome-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../assets/images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../assets/images/favicon-32x32.png"
+    />
+    <link rel="manifest" href="../../../site.webmanifest" />
+
     <link rel="stylesheet" href="../../../css/index.css" />
 
     <!-- ===== Boxicons CDN Link ===== -->
@@ -38,7 +78,7 @@
             <div>
               <a href="../../../index.html">
                 <img
-                  src="../../../assets/images/logos/Logo.png"
+                  src="../../../assets/images/logos/eHealth_black.png"
                   alt="ehealth-logo"
                 />
               </a>
@@ -259,9 +299,7 @@
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../../404-not-found.html">
-                          <h4 class="submenu-title">Системи</h4></a
-                        >
+                        <h4 class="submenu-title">Системи</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
@@ -295,9 +333,7 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../../404-not-found.html">
-                          <h4 class="submenu-title">Реєстри</h4></a
-                        >
+                        <h4 class="submenu-title">Реєстри</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
@@ -310,7 +346,7 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href=""><h4 class="submenu-title">Дані</h4></a>
+                        <h4 class="submenu-title">Дані</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
@@ -338,25 +374,31 @@
                   </li>
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Надавачам послуг</p>
+                      <a
+                        href="../../to-service-providers.html"
+                        class="menu-link"
+                        >Надавачам послуг</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="../../../404-not-found.html"
+                        <a
+                          class="submenu-link"
+                          href="../../heads-of-health-care-institutions/heads-of-health-care-institutions.html"
                           ><h4 class="submenu-title">Керівникам ЗОЗ</h4></a
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/heads-of-health-care-institutions/how-connect-institution-to-esoz.html"
+                              href="../../heads-of-health-care-institutions/how-connect-institution-to-esoz.html"
                               class="submenu-link"
                               >Як підключити заклад до EСОЗ</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/heads-of-health-care-institutions/how-choose-mis.html"
+                              href="../../heads-of-health-care-institutions/how-choose-mis.html"
                               class="submenu-link"
                               >Як обрати МІС</a
                             >
@@ -371,13 +413,13 @@
                           <li class="submenu-item">
                             <a
                               href="../../../404-not-found.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Спеціалізована медична допомога</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/heads-of-health-care-institutions/mis-catalog.html"
+                              href="../../heads-of-health-care-institutions/mis-catalog.html"
                               class="submenu-link"
                               >Каталог МІС</a
                             >
@@ -385,49 +427,44 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a
-                          href="../../../service-providers/doctors/to-doctors.html"
+                        <a class="submenu-link" href="../to-doctors.html"
                           ><h4 class="submenu-title">Лікарям</h4></a
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a
-                              href="../../../404-not-found.html"
-                              class="submenu-link"
-                              >Навчання</a
-                            >
+                            <h4 class="submenu-link">Навчання</h4>
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/doctors/education/digital-educational-resources.html"
+                              href="./digital-educational-resources.html"
                               class="submenu-link small-text"
                               >Цифрові освітні ресурси</a
                             >
                           </li>
-                          <li class="submenu-item">
+                          <!-- <li class="submenu-item">
                             <a
-                              href="../../../404-not-found.html"
+                              href="./404-not-found.html"
                               class="submenu-link small-text"
                               >Кібербезпека</a
                             >
-                          </li>
+                          </li> -->
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/doctors/education/digital-education.html"
+                              href="./digital-education.html"
                               class="submenu-link small-text"
                               >Цифрова освіта</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/doctors/education/nhcs-academy.html"
-                              class="submenu-link small-text"
+                              href="./nhcs-academy.html"
+                              class="submenu-link small-text p-b-20"
                               >Академія НСЗУ</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/system-performance-monitoring.html"
+                              href="../../system-performance-monitoring.html"
                               class="submenu-link"
                               >Моніторинг працездатності системи</a
                             >
@@ -443,48 +480,50 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="../../../404-not-found.html"
+                        <a
+                          class="submenu-link"
+                          href="../../pharmacies/to-pharmacy.html"
                           ><h4 class="submenu-title">Аптечним закладам</h4></a
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/pharmacies/how-to-connect-pharmacy-to-the-nhcs.html"
+                              href="../../pharmacies/how-to-connect-pharmacy-to-the-nhcs.html"
                               class="submenu-link"
                               >Як підключити аптеку до EСОЗ</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/pharmacies/contracting-with-nhsc.html"
+                              href="../../pharmacies/contracting-with-nhsc.html"
                               class="submenu-link"
                               >Контрактування з НСЗУ</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/pharmacies/pharmacy-how-to-choose-mis.html"
+                              href="../../pharmacies/pharmacy-how-to-choose-mis.html"
                               class="submenu-link"
                               >Як обрати МІС</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/pharmacies/mis-catalog.html"
+                              href="../../pharmacies/mis-catalog.html"
                               class="submenu-link"
                               >Каталог МІС</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/system-performance-monitoring.html"
+                              href="../../system-performance-monitoring.html"
                               class="submenu-link"
                               >Моніторинг працездатності системи</a
                             >
                           </li>
                           <li class="submenu-item">
                             <a
-                              href="../../../service-providers/pharmacies/faq.html"
+                              href="../../pharmacies/faq.html"
                               class="submenu-link"
                               >FAQ</a
                             >
@@ -558,7 +597,11 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Партнерам</p>
+                      <a
+                        href="../../../partners/to-partners.html"
+                        class="menu-link"
+                        >Партнерам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -580,7 +623,11 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Розробникам</p>
+                      <a
+                        href="../../../developers/to-developers.html"
+                        class="menu-link"
+                        >Розробникам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -616,7 +663,9 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Новини</p>
+                      <a href="../../../news/news.html" class="menu-link"
+                        >Новини</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -632,7 +681,7 @@
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="../../../news/contacts.html"
+                        <a href="../../..//contacts.html"
                           ><h4 class="submenu-title">Контакти</h4></a
                         >
                       </div>
@@ -646,7 +695,9 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Підтримка</p>
+                      <a href="../../../support/support.html" class="menu-link"
+                        >Підтримка</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -695,34 +746,49 @@
     <!-- Main starts -->
 
     <main>
-      <section class="top__section box-bg-light-blue">
+      <section class="top__section">
         <div class="container">
           <ul id="breadcrumbs">
             <!-- Breadcrumb items will be dynamically added here -->
           </ul>
+          <div class="flex-column gap-48">
+            <div class="gap-24 flex-column">
+              <div class="top__section-title flex-center-s-b">
+                <h1>Цифрові освітні ресурси</h1>
 
-          <div class="gap-24 flex-column">
-            <div class="top__section-title flex-center-s-b">
-              <h1>Цифрові освітні ресурси</h1>
+                <span
+                  onclick="sharePage()"
+                  class="top__section-link flex-al-center in-text-link"
+                >
+                  <span>Поділитися</span>
+                  <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+                </span>
+              </div>
 
-              <a href="" class="top__section-link flex-al-center in-text-link">
-                <span>Поділитися</span>
-                <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
-              </a>
+              <p>
+                Цифрові освітні ресурси для працівників охорони здоров’я – всі
+                види електронних інформаційних ресурсів (онлайн платформи,
+                курси, тексти, графіка, мультимедіа), які зберігаються та
+                використовуються в освітніх цілях.
+              </p>
             </div>
 
-            <p>
-              Цифрові освітні ресурси для працівників охорони здоров’я – всі
-              види електронних інформаційних ресурсів (онлайн платформи, курси,
-              тексти, графіка, мультимедіа), які зберігаються та
-              використовуються в освітніх цілях.
-            </p>
+            <div class="textfield__box flex-al-center" style="width: 100%">
+              <input
+                id="searchInput"
+                class="textfield"
+                type="text"
+                placeholder="Пошук..."
+              />
+              <i id="icon-search" class="bx bx-search search__icon"></i>
+              <i id="icon-cross" class="bx bx-x cross__icon"></i>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section section-background">
-        <div class="container">
+      <section class="section">
+        <div class="container-l">
           <div class="notification__box box-bg-light-blue">
             <img
               src="../../../assets/images/new_icons/finger.png"
@@ -737,7 +803,7 @@
         </div>
       </section>
 
-      <div class="section-background pb-xl">
+      <div class="pb-xl">
         <div class="container">
           <div class="h2-mb-l">
             <h2 class="h2-mb-m">Платформи цифрових освітніх ресурсів:</h2>
@@ -758,14 +824,18 @@
                 </div>
 
                 <div class="education__block-item-top-btn">
-                  <a class="btn btn__dark educatin-btn" href="">
+                  <a
+                    class="btn btn__dark educatin-btn"
+                    href="https://academy.nszu.gov.ua/"
+                    target="_blank"
+                  >
                     Перейти на сайт
                     <i class="bx bx-right-arrow-alt"></i>
                   </a>
                 </div>
               </div>
 
-              <div class="grid-col-1-1 gap-20">
+              <div class="grid-col-1-1 grid-col-1 gap-20">
                 <div class="education__block-item-inner-img bg-low-yellow">
                   <img src="../../../assets/images/image 33.png" alt="" />
                 </div>
@@ -775,40 +845,75 @@
                     Усі курси на платформі структуровані за такими напрямками:
                   </h5>
 
-                  <ul class="education__block-sublist">
+                  <ul class="education__block-nczu">
                     <li>
-                      <p>Курси Для всіх рівнів медичної допомоги</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://academy.nszu.gov.ua/course/index.php?categoryid=21"
+                        target="_blank"
+                      >
+                        <p>Курси Для всіх рівнів медичної допомоги</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>COVID-19</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://academy.nszu.gov.ua/course/index.php?categoryid=27"
+                        target="_blank"
+                      >
+                        <p>COVID-19</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Екстрена медична допомога</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://academy.nszu.gov.ua/course/index.php?categoryid=22"
+                        target="_blank"
+                      >
+                        <p>Екстрена медична допомога</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Первинна медична допомога</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://academy.nszu.gov.ua/course/index.php?categoryid=23"
+                        target="_blank"
+                      >
+                        <p>Первинна медична допомога</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>СМД: амбулаторний рівень</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://academy.nszu.gov.ua/course/index.php?categoryid=24"
+                        target="_blank"
+                      >
+                        <p>СМД: амбулаторний рівень</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>СМД: стаціонарний рівень</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://academy.nszu.gov.ua/course/index.php?categoryid=25"
+                        target="_blank"
+                      >
+                        <p>СМД: стаціонарний рівень</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Медичні навички та вміння (soft skills)</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://academy.nszu.gov.ua/course/index.php?categoryid=26"
+                        target="_blank"
+                      >
+                        <p>Медичні навички та вміння (soft skills)</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -838,7 +943,7 @@
                 </div>
               </div>
 
-              <div class="grid-col-1-1 gap-20">
+              <div class="grid-col-1-1 grid-col-1 gap-20">
                 <div class="education__block-item-inner-img bg-linear">
                   <img
                     src="../../../assets/images/image 35.png"
@@ -852,10 +957,12 @@
                     освітній серіал з вдосконалення цифрових навичок:
                   </h5>
 
-                  <ul class="education__block-sublist mb-m">
+                  <ul class="education-block-diia mb-m">
                     <li>
-                      <p>Цифрова освіта. Цифрові навички для медиків</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="https://osvita.diia.gov.ua/" target="_blank">
+                        <p>Цифрова освіта. Цифрові навички для медиків</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
                   </ul>
 
@@ -887,14 +994,18 @@
                 </div>
 
                 <div class="education__block-item-top-btn">
-                  <a class="btn btn__dark educatin-btn" href="">
+                  <a
+                    class="btn btn__dark educatin-btn"
+                    href="https://moz.gov.ua/baza-znan-kraschih-praktik"
+                    target="_blank"
+                  >
                     Перейти на сайт
                     <i class="bx bx-right-arrow-alt"></i>
                   </a>
                 </div>
               </div>
 
-              <div class="grid-col-1-1 gap-20">
+              <div class="grid-col-1-1 grid-col-1 gap-20">
                 <div class="education__block-item-inner-img bg-light-purple">
                   <img src="../../../assets/images/moz.png" alt="moz" />
                 </div>
@@ -904,40 +1015,54 @@
                     Розділ містить матеріали, що структуровані таким чином:
                   </h5>
 
-                  <ul class="education__block-sublist">
+                  <ul class="education__block-moz">
                     <li>
-                      <p>Менеджмент</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="https://moz.gov.ua/menedzhment" target="_blank">
+                        <p>Менеджмент</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>COVID-19</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="../../../404-not-found.html">
+                        <p>COVID-19</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Екстрена медична допомога</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="" target="_blank">
+                        <p>Екстрена медична допомога</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Первинна медична допомога</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="" target="_blank">
+                        <p>Первинна медична допомога</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>СМД: амбулаторний рівень</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="" target="_blank">
+                        <p>СМД: амбулаторний рівень</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>СМД: стаціонарний рівень</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="" target="_blank">
+                        <p>СМД: стаціонарний рівень</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Медичні навички та вміння (soft skills)</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="" target="_blank">
+                        <p>Медичні навички та вміння (soft skills)</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -970,14 +1095,18 @@
                 </div>
 
                 <div class="education__block-item-top-btn">
-                  <a class="btn btn__dark educatin-btn" href="">
+                  <a
+                    class="btn btn__dark educatin-btn"
+                    href="https://portal.phc.org.ua/en/"
+                    target="_blank"
+                  >
                     Перейти на сайт
                     <i class="bx bx-right-arrow-alt"></i>
                   </a>
                 </div>
               </div>
 
-              <div class="grid-col-1-1 gap-20">
+              <div class="grid-col-1-1 grid-col-1 gap-20">
                 <div class="education__block-item-inner-img bg-light-purple">
                   <img src="../../../assets/images/moz.png" alt="moz" />
                 </div>
@@ -991,58 +1120,107 @@
 
                   <ul class="education__block-sublist">
                     <li>
-                      <p>Замісна підтримувальна терапія</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="" target="_blank">
+                        <p>Замісна підтримувальна терапія</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Громадське здоров'я</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a href="" target="_blank">
+                        <p>Громадське здоров'я</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Епіднагляд</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/who_materials/category/3/"
+                        target="_blank"
+                      >
+                        <p>Епіднагляд</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Неінфекційні захворювання</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/who_materials/category/12/"
+                        target="_blank"
+                      >
+                        <p>Неінфекційні захворювання</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Курси ВООЗ</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/view_all_courses/"
+                        target="_blank"
+                      >
+                        <p>Курси ВООЗ</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Лабораторна діагностика</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/view_all_courses/"
+                        target="_blank"
+                      >
+                        <p>Лабораторна діагностика</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>COVID-19 та інші ГРВІ</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/view_all_courses/"
+                        target="_blank"
+                      >
+                        <p>COVID-19 та інші ГРВІ</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>ВІЛ-інфекція</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/view_all_courses/"
+                        target="_blank"
+                      >
+                        <p>ВІЛ-інфекція</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Туберкульоз</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/view_all_courses/"
+                        target="_blank"
+                      >
+                        <p>Туберкульоз</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Вірусні гепатити</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/view_all_courses/"
+                        target="_blank"
+                      >
+                        <p>Вірусні гепатити</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
 
                     <li>
-                      <p>Інше</p>
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <a
+                        href="https://portal.phc.org.ua/en/view_all_courses/"
+                        target="_blank"
+                      >
+                        <p>Інше</p>
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -1236,7 +1414,7 @@
           <div class="footer__bootom-logos">
             <a href="../../../index.html">
               <img
-                src="../../../assets/images/logos/Frame 5.png"
+                src="../../../assets/images/logos/eHealth_white.png"
                 alt="ehealth logo"
               />
             </a>
@@ -1267,6 +1445,6 @@
     <script src="../../../js/themeSwitcher.js"></script>
     <script src="../../../js/modal.js"></script>
     <script src="../../../js/setActiveNavbarLinks.js"></script>
-
+    <script src="../../../js/sharePage.js"></script>
   </body>
 </html>

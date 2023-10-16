@@ -84,6 +84,7 @@ const swiperOptions = {
     320: {
       slidesPerView: 1,
       spaceBetween: 10,
+      slidesPerGroup: 1,
       scrollbar: {
         el: ".swiper-scrollbar.responses-scrollbar",
         enabled: true,
@@ -91,10 +92,12 @@ const swiperOptions = {
       },
     },
     640: {
+      slidesPerGroup: 1,
       slidesPerView: 1,
       spaceBetween: 20,
     },
     768: {
+      slidesPerGroup: 2,
       slidesPerView: 2,
       spaceBetween: 40,
     },

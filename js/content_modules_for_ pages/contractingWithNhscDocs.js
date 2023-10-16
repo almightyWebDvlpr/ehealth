@@ -28,23 +28,26 @@ document.addEventListener("DOMContentLoaded", function () {
       const startIndex = (this.currentPage - 1) * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
       const paginatedData = this.items.slice(startIndex, endIndex);
-      console.log(paginatedData);
 
       const ul = document.createElement("ul");
-      ul.classList.add("grid-col-1-1-1", "gap-32");
+      ul.classList.add("grid-col-1-1-1", "grid-col-1", "gap-32");
 
       for (const itemData of paginatedData) {
         const li = document.createElement("li");
         li.classList.add("icon-box", "box-hover" ,"amount-box");
+      
 
         const a = document.createElement("a");
         a.classList.add("flex-column", "gap-24");
         a.href = itemData.link || "#";
 
         const imageBox = document.createElement("div");
-        imageBox.classList.add("image__box", "image__box-hover");
+        imageBox.classList.add("image__box", "image__box-hover", 'box-bg-light-blue');
+      
+
 
         const img = document.createElement("img");
+        
         img.src = "../../assets/images/new_icons/file text.png"; // Static image URL
         img.alt = "file text";
 
@@ -52,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         a.appendChild(imageBox);
 
         const flexContainer = document.createElement("div");
-        flexContainer.classList.add("flex-center-s-b", "document-files");
+        flexContainer.classList.add("flex-center-s-b", "document-files", 'remove-column');
 
         const h4 = document.createElement("h4");
         h4.textContent = itemData.year || "";
@@ -236,7 +239,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeCustomSelect(filterId) {
 
-    console.log(filterId)
       // Check if filterId is not provided or is empty
   if (!filterId) {
     console.warn("No filterId provided. Exiting the function.");

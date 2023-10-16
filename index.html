@@ -289,8 +289,8 @@
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a class="submenu-title" href="./404-not-found.html">
-                          Системи</a
+                        <h4 class="submenu-title">
+                          Системи</h4
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
@@ -325,9 +325,8 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="./404-not-found.html">
-                          <h4 class="submenu-title">Реєстри</h4></a
-                        >
+                  
+                          <h4 class="submenu-title">Реєстри</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
@@ -340,7 +339,7 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href=""><h4 class="submenu-title">Дані</h4></a>
+                       <h4 class="submenu-title">Дані</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
@@ -419,8 +418,8 @@
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a href="./404-not-found.html" class="submenu-link"
-                              >Навчання</a
+                            <h4 class="submenu-link"
+                              >Навчання</h4
                             >
                           </li>
                           <li class="submenu-item">
@@ -430,13 +429,13 @@
                               >Цифрові освітні ресурси</a
                             >
                           </li>
-                          <li class="submenu-item">
+                          <!-- <li class="submenu-item">
                             <a
                               href="./404-not-found.html"
                               class="submenu-link small-text"
                               >Кібербезпека</a
                             >
-                          </li>
+                          </li> -->
                           <li class="submenu-item">
                             <a
                               href="./service-providers/doctors/education/digital-education.html"
@@ -743,7 +742,7 @@
    
     <main>
       <!-- Most popular responses -->
-      <section class="section">
+      <section class="section section-background">
         <div class="container">
           <div class="responses__slider-content-top">
             <h2>Найбільш популярні запити</h2>
@@ -771,37 +770,41 @@
         </div>
       </section>
 
-      <!-- Video and  Goals -->
 
-      <section class="section goals__section">
-        <div class="container">
-          <div class="pb-xl">
-            <div class="player-wrapper">
-              <video
-                id="my-video"
-                class="video-js vjs-default-skin"
-                controls
-                preload="auto"
-                playsinline="true"
-                data-setup="{}"
+ <!-- Video -->
+      <div>
+        <div class="player-wrapper">
+          <video
+            id="my-video"
+            class="video-js vjs-default-skin"
+            controls
+            preload="auto"
+            playsinline="true"
+            data-setup="{}"
+          >
+            <source src="./assets/video/about-esoz.mp4" type="video/mp4" />
+
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider
+              upgrading to a web browser that
+              <a
+                href="https://videojs.com/html5-video-support/"
+                target="_blank"
+                >supports HTML5 video</a
               >
-                <source src="./assets/video/about-esoz.mp4" type="video/mp4" />
+            </p>
+          </video>
+          <button id="play-button" class="play-button">
+            <i class="bx bx-right-arrow"></i>
+          </button>
+        </div>
+      </div>
 
-                <p class="vjs-no-js">
-                  To view this video please enable JavaScript, and consider
-                  upgrading to a web browser that
-                  <a
-                    href="https://videojs.com/html5-video-support/"
-                    target="_blank"
-                    >supports HTML5 video</a
-                  >
-                </p>
-              </video>
-              <button id="play-button" class="play-button">
-                <i class="bx bx-right-arrow"></i>
-              </button>
-            </div>
-          </div>
+      <!--  Goals -->
+
+      <section class="section">
+        <div class="container">
+     
 
           <div class="goals">
             <div class="goals__content">
@@ -866,7 +869,7 @@
       </section>
 
       <!-- How to connect to ESOZ -->
-      <section class="section connect__section section-background">
+      <section class="section connect__section">
         <div class="container">
           <h2>Як підключитися до ЄСОЗ?</h2>
 
@@ -913,7 +916,7 @@
 
       <!--For Ptients and Doctors-->
 
-      <section class="section-background pb-xl">
+      <section class="section">
         <div class="container">
           <div class="tab-container h2-mb-l" id="containerIndexHtml">
             <div
@@ -935,7 +938,7 @@
           <div class="tab-content" id="tab1Content">
             <div class="patients__content flex">
               <div class="flex-column gap-24">
-                <h2>Пацієнтам</h2>
+                <h2 class="m-0">Пацієнтам</h2>
                 <p>Найбільш популярні запити</p>
 
                 <ul class="patients__content-links">
@@ -991,7 +994,7 @@
               </div>
 
               <div class="doctors__content-text flex-column gap-24">
-                <h2>Лікарям</h2>
+                <h2 class="m-0">Лікарям</h2>
                 <p>Найбільш популярні запити</p>
 
                 <ul class="doctors__content-links">
@@ -1039,7 +1042,7 @@
       </section>
 
       <!-- NEWS -->
-      <section class="section">
+      <section class="section section-background">
         <div class="container">
           <div class="new__top flex-center-s-b">
             <h2>Останні новини</h2>
@@ -1149,7 +1152,7 @@
       </section>
 
       <!-- Articles -->
-      <section class="section box-bg-light-blue">
+      <section class="section">
         <div class="container">
           <div class="articles__top flex-center-s-b">
             <h2>Статті</h2>
