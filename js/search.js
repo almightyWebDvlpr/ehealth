@@ -1,7 +1,10 @@
 const searchInput = document.getElementById("search-input");
 const submitBtn = document.querySelector(".search__icon");
 const clearButton = document.getElementById("icon-cross");
-// const searchResultsContainer = document.getElementById('searchResults');
+
+
+
+
 
 // Function to perform the search
 async function performSearch(searchQuery) {
@@ -97,14 +100,14 @@ async function performSearch(searchQuery) {
       console.error(`Error fetching ${url}: ${error}`);
     }
   }
-  
+// Specify the absolute path to the search-results.html file in the root directory
+const absolutePath = '/search-results.html';
 
-  window.open(
-    `search-results.html?q=${encodeURIComponent(
-      searchQuery
-    )}&elements=${encodeURIComponent(JSON.stringify(foundElements))}`,
-    "_blank"
-  );
+window.open(
+  `${absolutePath}?q=${encodeURIComponent(searchQuery)}&elements=${encodeURIComponent(JSON.stringify(foundElements))}`,
+  "_blank"
+);
+  
 }
 
 // Helper function to check if an ancestor is an <a> tag

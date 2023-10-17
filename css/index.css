@@ -288,6 +288,10 @@ img:hover {
 .color-green {
   color: #1aa603;
 }
+
+.text-color-gray{
+  color: #8091B0;
+}
 /* --------------------------------------------------------------- */
 
 .grid-col-1-1 {
@@ -2444,7 +2448,8 @@ button[disabled] {
   .dashboards__section-content.block,
   .dashboard__info.block,
   .footer__bootom,
-  .footer__bootom-logos {
+  .footer__bootom-logos,
+  .top__section-title {
     display: flex;
     flex-direction: column;
   }
