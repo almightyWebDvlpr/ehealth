@@ -15,24 +15,89 @@ async function performSearch(searchQuery) {
     "./electronic-healthcare/systems/is-nhcs.html",
     "./electronic-healthcare/systems/mis.html",
     "./electronic-healthcare/data/dashboards.html",
+    "./electronic-healthcare/registers/country-basic-registers-and-healthcare.html",
+    "./electronic-healthcare/electronic-healthcare.html",
+    "./electronic-healthcare/legislation.html",
+    "./service-providers/to-service-providers.html",
+    "./service-providers/system-performance-monitoring.html",
+    "/service-providers/heads-of-health-care-institutions/heads-of-health-care-institutions.html",
+    // "/service-providers/heads-of-health-care-institutions/how-choose-mis.html",
+    // "./service-providers/heads-of-health-care-institutions/how-connect-institution-to-esoz.html",
+    // "./service-providers/heads-of-health-care-institutions/mis-catalog.html",
+    // "./service-providers/doctors/to-doctors.html",
+    // "./service-providers/doctors/education/digital-education.html",
+    // "./service-providers/doctors/education/digital-educational-resources.html",
+    // "./service-providers/doctors/education/nhcs-academy.html",
+    // "./service-providers/pharmacies/to-pharmacy.html",
+    // "./service-providers/pharmacies/pharmacy-how-to-choose-mis.html",
+    // "./service-providers/pharmacies/mis-catalog.html",
+    // "./service-providers/pharmacies/how-to-connect-pharmacy-to-the-nhcs.html",
+    // "./service-providers/pharmacies/faq.html",
+    // "./service-providers/pharmacies/contracting-with-nhsc.html",
+    // "./patients/to-patients.html",
+    // "./patients/medical-conclusions-about-temporary-disability.html",
+    // "./patients/how-to-use-e-malyatko-services.html",
+    // "./patients/how-to-make-a-declaration-with-a-family-doctor.html",
+    // "./patients/how-to-get-e-referral-to-a-specialist.html",
+    // "./patients/how-to-get-an-e-prescription.html",
+    // "./partners/to-partners.html",
+    // "./partners/to-software-developers.html",
+    "./partners/to-state-authorities.html",
+    // "./",
+    // "./",
+    // "./",
+    // "./",
+    // "./",
+    // "./",
+    // "./",
+    // "./",
+    // "./",
+    // "./",
+    // "./",
     // Add all the HTML page URLs you want to search here
   ];
+
+  // for (const url of pageURLs) {
+  //   try {
+  //     const response = await fetch(url);
+  //     const htmlContent = await response.text();
+
+  //     // Create a temporary DOM element to parse the HTML
+  //     const tempElement = document.createElement("div");
+  //     tempElement.innerHTML = htmlContent;
+
+  //     // Recursively search for text nodes containing the search query
+  //     findTextNodes(tempElement, url, searchQuery, foundElements);
+  //   } catch (error) {
+  //     console.error(`Error fetching ${url}: ${error}`);
+  //   }
+  // }
+
 
   for (const url of pageURLs) {
     try {
       const response = await fetch(url);
       const htmlContent = await response.text();
-
+  
       // Create a temporary DOM element to parse the HTML
       const tempElement = document.createElement("div");
       tempElement.innerHTML = htmlContent;
-
+  
+      // Check if the current page contains the 'top__section' class
+      const topSection = tempElement.querySelector('.top__section');
+  
+      // If the page contains the 'top__section', remove it
+      if (topSection) {
+        topSection.remove();
+      }
+  
       // Recursively search for text nodes containing the search query
       findTextNodes(tempElement, url, searchQuery, foundElements);
     } catch (error) {
       console.error(`Error fetching ${url}: ${error}`);
     }
   }
+  
 
   window.open(
     `search-results.html?q=${encodeURIComponent(
@@ -60,7 +125,8 @@ function findTextNodes(element, url, searchQuery, foundElements) {
   const isNotExcludedElement =
     element.parentNode &&
     !element.parentNode.classList.contains("vjs-no-js") &&
-    element.parentNode.id !== "breadcrumbs";
+    element.parentNode.id !== "breadcrumbs"
+
 
   if (isTextNode && isNotAncestorLink && isNotExcludedElement) {
     const textContent = element.textContent;
@@ -117,4 +183,3 @@ document.getElementById("search-form").addEventListener("submit", function (e) {
 
 // Initial update of the search button and clear button states
 updateButtonStates();
-

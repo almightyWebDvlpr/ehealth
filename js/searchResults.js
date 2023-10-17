@@ -12,15 +12,19 @@ const foundElements = JSON.parse(
 const searchResultsFormWrapper = document.querySelector(
   ".search-results-form-wrapper"
 );
-const searchInput = document.getElementById("search-input");
-searchInput.value = foundElements.length > 0 ? searchQuery : "";
+
+const textFieldWrapper = document.querySelector(".top-section-elements");
+
+let searchInputBox = document.getElementById("searchInput");
+
+ searchInputBox = foundElements === null ? searchQuery : "";
 
 const foundElementsLength = document.createElement("p");
 foundElementsLength.textContent =
   foundElements.length > 0
     ? `За вашим запитом знайдено результатів:${foundElements.length}`
     : "За вашим запитом нічого не знайдено";
-searchResultsFormWrapper.appendChild(foundElementsLength);
+textFieldWrapper.appendChild(foundElementsLength);
 
 const resultsContainer = document.getElementById("results-container");
 

@@ -94,7 +94,7 @@ export function processRows(data, gid) {
   filteredData.forEach((item) => {
     // Create a new card container for each object
     const cardContainer = document.createElement("div");
-    cardContainer.classList.add("mis-card-conatiner");
+    cardContainer.classList.add("mis-card-conatiner", "grid-col-1");
 
     const leftSideCard = document.createElement("div");
     leftSideCard.classList.add("mis-card-left");

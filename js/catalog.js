@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function processRows2(data, gid) {
   const output = document.getElementById(`output-${gid}`);
   if (!output) {
-    console.error("Output element not found for gid:", gid);
+    // console.error("Output element not found for gid:", gid);
     return;
   }
 

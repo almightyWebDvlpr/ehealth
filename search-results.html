@@ -3,6 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- hreflang tags to specify the language or regional targeting of each page. -->
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.example.com/english-page"
+    />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/images/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="./assets/images/android-chrome-512x512.png"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link rel="stylesheet" href="./css/index.css" />
 
     <!-- ===== Boxicons CDN Link ===== -->
@@ -39,7 +75,10 @@
           <div class="header__top-logos">
             <div>
               <a href="./index.html">
-                <img src="./assets/images/logos/Logo.png" alt="ehealth-logo" />
+                <img
+                  src="./assets/images/logos/eHealth_black.png"
+                  alt="ehealth-logo"
+                />
               </a>
             </div>
             <div>
@@ -256,9 +295,7 @@
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="./404-not-found.html">
-                          <h4 class="submenu-title">Системи</h4></a
-                        >
+                        <h4 class="submenu-title">Системи</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
@@ -292,9 +329,7 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="./404-not-found.html">
-                          <h4 class="submenu-title">Реєстри</h4></a
-                        >
+                        <h4 class="submenu-title">Реєстри</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
@@ -307,7 +342,7 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href=""><h4 class="submenu-title">Дані</h4></a>
+                        <h4 class="submenu-title">Дані</h4>
                         <ul class="submenu-list">
                           <li class="submenu-item">
                             <a
@@ -332,12 +367,18 @@
                   </li>
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Надавачам послуг</p>
+                      <a
+                        href="./service-providers/to-service-providers.html"
+                        class="menu-link"
+                        >Надавачам послуг</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="./404-not-found.html"
+                        <a
+                          class="submenu-link"
+                          href="./service-providers/heads-of-health-care-institutions/heads-of-health-care-institutions.html"
                           ><h4 class="submenu-title">Керівникам ЗОЗ</h4></a
                         >
                         <ul class="submenu-list">
@@ -363,7 +404,7 @@
                           <li class="submenu-item">
                             <a
                               href="./404-not-found.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Спеціалізована медична допомога</a
                             >
                           </li>
@@ -377,14 +418,14 @@
                         </ul>
                       </div>
                       <div class="submenu-inner">
-                        <a href="./service-providers/doctors/to-doctors.html"
+                        <a
+                          class="submenu-link"
+                          href="./service-providers/doctors/to-doctors.html"
                           ><h4 class="submenu-title">Лікарям</h4></a
                         >
                         <ul class="submenu-list">
                           <li class="submenu-item">
-                            <a href="./404-not-found.html" class="submenu-link"
-                              >Навчання</a
-                            >
+                            <h4 class="submenu-link">Навчання</h4>
                           </li>
                           <li class="submenu-item">
                             <a
@@ -393,13 +434,13 @@
                               >Цифрові освітні ресурси</a
                             >
                           </li>
-                          <li class="submenu-item">
+                          <!-- <li class="submenu-item">
                             <a
                               href="./404-not-found.html"
                               class="submenu-link small-text"
                               >Кібербезпека</a
                             >
-                          </li>
+                          </li> -->
                           <li class="submenu-item">
                             <a
                               href="./service-providers/doctors/education/digital-education.html"
@@ -410,7 +451,7 @@
                           <li class="submenu-item">
                             <a
                               href="./service-providers/doctors/education/nhcs-academy.html"
-                              class="submenu-link small-text"
+                              class="submenu-link small-text p-b-20"
                               >Академія НСЗУ</a
                             >
                           </li>
@@ -430,7 +471,9 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="./404-not-found.html"
+                        <a
+                          class="submenu-link"
+                          href="./service-providers/pharmacies/to-pharmacy.html"
                           ><h4 class="submenu-title">Аптечним закладам</h4></a
                         >
                         <ul class="submenu-list">
@@ -480,7 +523,7 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="./404-not-found.html"
+                        <a class="submenu-link" href="./404-not-found.html"
                           ><h4 class="submenu-title">Бібліотека знань</h4></a
                         >
                       </div>
@@ -497,6 +540,7 @@
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
                         <a
+                          class="submenu-link"
                           href="./patients/how-to-make-a-declaration-with-a-family-doctor.html"
                           ><h4 class="submenu-title">
                             Як укласти декларацію з сімейним лікарем
@@ -504,7 +548,9 @@
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="./patients/how-to-get-an-e-prescription.html"
+                        <a
+                          class="submenu-link"
+                          href="./patients/how-to-get-an-e-prescription.html"
                           ><h4 class="submenu-title">
                             Як отримати е-рецепт
                           </h4></a
@@ -513,6 +559,7 @@
 
                       <div class="submenu-inner">
                         <a
+                          class="submenu-link"
                           href="./patients/medical-conclusions-about-temporary-disability.html"
                           ><h4 class="submenu-title">
                             Медичні висновки про тимчасову непрацездатність
@@ -521,7 +568,9 @@
                       </div>
 
                       <div class="submenu-inner">
-                        <a href="./patients/how-to-use-e-malyatko-services.html"
+                        <a
+                          class="submenu-link"
+                          href="./patients/how-to-use-e-malyatko-services.html"
                           ><h4 class="submenu-title">
                             Як скористатися послугами єМалятко
                           </h4></a
@@ -530,6 +579,7 @@
 
                       <div class="submenu-inner">
                         <a
+                          class="submenu-link"
                           href="./patients/how-to-get-e-referral-to-a-specialist.html"
                           ><h4 class="submenu-title no-wrap">
                             Як отримати е-направлення до спеціаліста
@@ -541,20 +591,26 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Партнерам</p>
+                      <a href="./partners/to-partners.html" class="menu-link"
+                        >Партнерам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="./partners/to-state-authorities.html"
+                        <a
+                          class="submenu-link"
+                          href="./partners/to-state-authorities.html"
                           ><h4 class="submenu-title">
                             Органам державної влади
                           </h4></a
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="./partners/to-software-developers.html"
+                        <a
+                          class="submenu-link"
+                          href="./partners/to-software-developers.html"
                           ><h4 class="submenu-title">Розробникам ПЗ</h4></a
                         >
                       </div>
@@ -563,13 +619,18 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Розробникам</p>
+                      <a
+                        href="./developers/to-developers.html"
+                        class="menu-link"
+                        >Розробникам</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
                         <a
+                          class="submenu-link"
                           href="./developers/technical-requirements-and-test-program-for-mis.html"
                           ><h4 class="submenu-title">
                             Технічні вимоги та тестова програма до МІС
@@ -577,7 +638,9 @@
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="./developers/how-to-connect-mis-to-esoz.html"
+                        <a
+                          class="submenu-link"
+                          href="./developers/how-to-connect-mis-to-esoz.html"
                           ><h4 class="submenu-title">
                             Як приєднати МІС до ЕСОЗ
                           </h4></a
@@ -598,28 +661,28 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Новини</p>
+                      <a href="./news/news.html" class="menu-link">Новини</a>
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
                     <div class="submenu megamenu megamenu-column-4">
                       <div class="submenu-inner">
-                        <a href="./news/blog.html"
+                        <a class="submenu-link" href="./news/blog.html"
                           ><h4 class="submenu-title">Блог</h4></a
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="./news/team.html"
+                        <a class="submenu-link" href="./news/team.html"
                           ><h4 class="submenu-title">Команда</h4></a
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="./news/contacts.html"
+                        <a class="submenu-link" href="./news/contacts.html"
                           ><h4 class="submenu-title">Контакти</h4></a
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="./news/partners.html"
+                        <a class="submenu-link" href="./news/partners.html"
                           ><h4 class="submenu-title">Партнери</h4></a
                         >
                       </div>
@@ -628,7 +691,9 @@
 
                   <li class="menu-item menu-dropdown">
                     <div class="menu-link-wrapper">
-                      <p class="menu-link">Підтримка</p>
+                      <a href="./support/support.html" class="menu-link"
+                        >Підтримка</a
+                      >
                       <i class="bx bx-chevron-right"></i>
                     </div>
 
@@ -648,7 +713,9 @@
                         >
                       </div>
                       <div class="submenu-inner">
-                        <a href="./support/system-performance-monitoring.html"
+                        <a
+                          class="submenu-link"
+                          href="./support/system-performance-monitoring.html"
                           ><h4 class="submenu-title">
                             Моніторинг працездатності ЕСОЗ
                           </h4></a
@@ -676,19 +743,36 @@
     <!-- Main starts -->
     <!-- id="content" -->
     <main>
-      <section class="section section-background">
+      <section class="top__section">
+        <div class="container">
+          
+          <div class="flex-column gap-48 top-section-elements">
+            <div class="gap-24 flex-column">
+              <div class="top__section-title flex-center-s-b">
+                <h1>Пошук</h1>
+              </div>
+            </div>
+
+            <form class="textfield__box flex-al-center" id="search-form" style="width: 100%;">
+              <input
+                class="textfield"
+                type="text"
+                id="search-input"
+                placeholder="Пошук"
+              />
+              <button class="search__icon" type="submit">
+                <i id="icon-search" class="bx bx-search"></i>
+              </button>
+              <i id="icon-cross" class="bx bx-x cross__icon"></i>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="container">
           <div class="search-results-container">
-            <div class="search-results-form-wrapper">
-                <form id="search-form">
-                    <input
-                      type="text"
-                      id="search-input"
-                     
-                    />
-                    <button type="submit">Search</button>
-                  </form>
-            </div>
+            <div class="search-results-form-wrapper"></div>
             <div
               class="flex-column gap-24 connect__section"
               id="results-container"
@@ -879,13 +963,16 @@
       <div class="container">
         <div class="footer__bootom">
           <div class="footer__bootom-logos">
-            <a href="">
-              <img src="./assets/images/logos/Frame 5.png" alt="ehealth logo" />
+            <a href="./index.html">
+              <img
+                src="./assets/images/logos/eHealth_white.png"
+                alt="ehealth logo"
+              />
             </a>
             <a href="">
               <img src="./assets/images/logos/Group.png" alt="diia logo" />
             </a>
-            <a href="">ehealth.gov.ua</a>
+            <a href="./index.html">ehealth.gov.ua</a>
           </div>
           <div>
             <p>Всі права захищені 2023</p>
@@ -904,5 +991,6 @@
     <script src="./js/fontSizeMutation.js"></script>
     <script src="./js/themeSwitcher.js"></script>
     <script src="./js/searchResults.js"></script>
+    <script src="./js/search.js"></script>
   </body>
 </html>

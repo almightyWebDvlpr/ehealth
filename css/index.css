@@ -1541,11 +1541,17 @@ button[disabled] {
   gap: 16px;
 }
 
+.footer__navigation-item{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .footer__navigation-item h4 {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin-bottom: 24px;
+
 }
 
 .footer__navigation-subitem h4 {
@@ -1566,10 +1572,10 @@ button[disabled] {
 .footer__navigation-link::after {
   position: absolute;
   content: "";
-  height: 2px;
+  height: 1px;
   width: 100%;
   background: #fff;
-  bottom: 0;
+  bottom: -6px;
   left: 0;
   transition: transform 0.25s ease-out;
   transform: scaleX(0);
@@ -2436,9 +2442,15 @@ button[disabled] {
   .grid-col-1-1.block,
   .flex.block,
   .dashboards__section-content.block,
-  .dashboard__info.block {
+  .dashboard__info.block,
+  .footer__bootom,
+  .footer__bootom-logos {
     display: flex;
     flex-direction: column;
+  }
+
+  .footer__bootom{
+    gap: 24px;
   }
 
   .grid-col-1-1.grid-col-1,
@@ -2446,7 +2458,9 @@ button[disabled] {
   .how__choose-mis-help-list.grid-col-1,
   .mis__article-content.grid-col-1,
   .how__choose-mis-help-list.grid-col-1,
-  .grid-col-5-fr.grid-col-1 {
+  .grid-col-5-fr.grid-col-1,
+  .selects-container,
+  .mis-card-conatiner.grid-col-1 {
     grid-template-columns: 1fr;
   }
 
