@@ -27,7 +27,7 @@ const translationMap = {
   "nhcs-academy.html": "Академія НСЗУ",
   "digital-education.html": "Цифрова освіта",
   pharmacies: "Аптечним закладам",
-  "to-pharmacy.html":"Аптечним закладам",
+  "to-pharmacy.html": "Аптечним закладам",
   "how-to-connect-pharmacy-to-the-nhcs.html": "Як підключити аптеку до ЕСОЗ",
   "pharmacy-how-to-choose-mis.html": "Як обрати МІС",
   "system-performance-monitoring.html": "Моніторинг працездатності системи",
@@ -87,7 +87,7 @@ function createBreadcrumbs() {
   const homeBreadcrumb = createBreadcrumbItem("Головна", "/");
   breadcrumbsContainer.appendChild(homeBreadcrumb);
 
-  if ( pathSegments.length > 2) {
+  if (pathSegments.length > 2) {
     // Add the first segment as plain text
     const firstSegment = pathSegments[0];
     const translatedFirstSegment = translateBreadcrumbSegment(firstSegment);
@@ -100,10 +100,9 @@ function createBreadcrumbs() {
   pathSegments.forEach((segment, index) => {
     if (segment === "to-doctors.html") {
       return;
-    }else if (segment === "to-pharmacy.html") {
+    } else if (segment === "to-pharmacy.html") {
       return;
-    }
-     else if (segment === "to-patients.html") {
+    } else if (segment === "to-patients.html") {
       return;
     } else if (segment === "heads-of-health-care-institutions.html") {
       return;
@@ -111,13 +110,13 @@ function createBreadcrumbs() {
       return;
     } else if (segment === "service-providers") {
       return;
-    }else if (segment === "to-partners.html") {
+    } else if (segment === "to-partners.html") {
       return;
     } else if (segment === "to-developers.html") {
       return;
     } else if (segment === "news.html") {
       return;
-    } else if (segment === "support") {
+    } else if (segment === "support.html") {
       return;
     }
     currentPath += segment + "/";

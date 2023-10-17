@@ -16,7 +16,7 @@ class NewsFeed {
     const paginatedData = this.data.slice(startIndex, endIndex);
 
     const ul = document.createElement("ul");
-    ul.classList.add("grid-col-1-1-1", "gap-32");
+    ul.classList.add("grid-col-1-1-1","grid-col-1", "gap-32");
 
     for (const item of paginatedData) {
       const li = document.createElement("li");
