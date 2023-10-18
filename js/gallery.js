@@ -2,6 +2,11 @@ import { misImagesUrls, partnersImagesUrls } from "./data.js";
 
 function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
   const imageContainer = document.getElementById(containerId);
+
+  if(!imageContainer){
+    return
+  }
+console.log(imageContainer)
   imageContainer.classList.add("grid-auto-fit", "gap-32");
   // Apply container styles if provided
   if (containerStyles) {
@@ -34,6 +39,7 @@ function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
     // Apply default styles to the image
     // imgElement.style.width = "200px";
     // imgElement.style.height = "90px";
+    imgElement.style.aspectRatio = "3/2";
     imgElement.style.objectFit = "contain";
 
     // Apply custom image styles if provided
@@ -52,12 +58,10 @@ function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
   }
 }
 
-// createImageList(
-//   "misImageContainer",
-//   misImagesUrls,
-//   { padding: "24px", background: "#fff", textAlign: "center" },
-//   { width: "200px", height: "90px", objectFit: "contain" }
-// );
+createImageList(
+  "misImageContainer",
+  misImagesUrls
+);
 
 createImageList(
   "partnersImageContainer",

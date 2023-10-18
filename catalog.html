@@ -668,121 +668,374 @@
 
     <!-- Header end -->
 
+    <main>
+      <section class="top__section">
+        <div class="container">
+          <ul id="breadcrumbs">
+            <!-- Breadcrumb items will be dynamically added here -->
+          </ul>
+          <div class="flex-column gap-48 top-section-elements">
+            <div class="gap-24 flex-column">
+              <div class="top__section-title flex-center-s-b">
+                <h1 id="pageTitle"></h1>
 
-   <main>
-    <section class="top__section box-bg-light-blue">
+                <span
+                  onclick="sharePage()"
+                  class="top__section-link flex-al-center in-text-link"
+                >
+                  <span>Поділитися</span>
+                  <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+                </span>
+              </div>
+
+              <form
+                class="textfield__box flex-al-center"
+                id="search-form"
+                style="width: 100%"
+              >
+                <input
+                  class="textfield"
+                  type="text"
+                  id="search-input"
+                  placeholder="Пошук"
+                />
+                <button class="search__icon" type="submit">
+                  <i id="icon-search" class="bx bx-search"></i>
+                </button>
+                <i id="icon-cross" class="bx bx-x cross__icon"></i>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section">
+        <div class="container">
+          <div class="selects-container">
+            <div class="custom-select">
+              <div class="select-header">
+                <div class="select-header-group">
+                  <i class="bx bx-filter-alt"></i>
+                  <p>За рівнями надання МД</p>
+                </div>
+                <div>
+                  <i class="reset-button hidden bx bx-plus-circle"></i>
+                  <i class="bx bx-chevron-down arrow-icon"></i>
+                </div>
+              </div>
+              <ul class="options-list">
+                <li data-value="Надавачам ПМД">Надавачам ПМД</li>
+                <li data-value="Надавачам СМД">Надавачам СМД</li>
+                <li data-value="Аптечним закладам">Аптечним закладам</li>
+                <li data-value="Лабораторіям">Лабораторіям</li>
+                <li data-value="Екстреної МД">Екстреної МД</li>
+                <li data-value="Пацієнтам (ПІС)">Пацієнтам (ПІС)</li>
+              </ul>
+              <input type="hidden" id="selected-option1" />
+            </div>
+
+            <div class="custom-select">
+              <div class="select-header">
+                <div class="select-header-group">
+                  <i class="bx bx-filter-alt"></i>
+                  <p>За технологією для зберігання та обробки даних</p>
+                </div>
+                <div>
+                  <i class="reset-button hidden bx bx-plus-circle"></i>
+                  <i class="bx bx-chevron-down arrow-icon"></i>
+                </div>
+              </div>
+              <ul class="options-list">
+                <li data-value="option5">Option 5</li>
+                <li data-value="option6">Option 6</li>
+                <li data-value="option7">Option 7</li>
+                <li data-value="option8">Option 8</li>
+              </ul>
+              <input type="hidden" id="selected-option2" />
+            </div>
+
+            <div class="custom-select">
+              <div class="select-header">
+                <div class="select-header-group">
+                  <i class="bx bx-filter-alt"></i>
+                  <p>З закладами якого типу власності співпрацюють</p>
+                </div>
+                <div>
+                  <i class="reset-button hidden bx bx-plus-circle"></i>
+                  <i class="bx bx-chevron-down arrow-icon"></i>
+                </div>
+              </div>
+              <ul class="options-list">
+                <li data-value="Лікарня">Лікарня</li>
+                <li data-value="Аптека">Аптека</li>
+                <li data-value="option11">Option 11</li>
+                <li data-value="option12">Option 12</li>
+              </ul>
+              <input type="hidden" id="selected-option3" />
+            </div>
+
+            <div class="custom-select">
+              <div class="select-header">
+                <div class="select-header-group">
+                  <i class="bx bx-filter-alt"></i>
+                  <p>За впровадженим функціоналом (або за РМК)</p>
+                </div>
+                <div>
+                  <i class="reset-button hidden bx bx-plus-circle"></i>
+                  <i class="bx bx-chevron-down arrow-icon"></i>
+                </div>
+              </div>
+              <ul class="options-list">
+                <li data-value="option13">Option 13</li>
+                <li data-value="option14">Option 14</li>
+                <li data-value="option15">Option 15</li>
+                <li data-value="option16">Option 16</li>
+              </ul>
+              <input type="hidden" id="selected-option4" />
+            </div>
+          </div>
+
+          <!-- Define output elements for each sheet -->
+          <div id="loader" class="loader"></div>
+          <div id="output-1138747254" class="flex-column gap-32"></div>
+          <!-- <div id="output-0"></div> -->
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
       <div class="container">
-        <ul id="breadcrumbs">
-          <!-- Breadcrumb items will be dynamically added here -->
-        </ul>
+        <!-- To Partners -->
 
-        <div class="gap-24 flex-column">
-          <div class="top__section-title flex-center-s-b">
-            <h1 id="pageTitle"></h1>
+        <article>
+          <div class="homepage__content-top">
+            <h2 class="h2-mb-l">Партнери</h2>
 
-            <span onclick="sharePage()" class="top__section-link flex-al-center in-text-link">
-              <span>Поділитися</span>
-              <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
-            </span>
+            <div class="swiper__buttons footer__swiper-buttons">
+              <i
+                class="bx bx-arrow-back swiper-button-prev partners-button-prev"
+              ></i>
+              <i
+                class="bx bx-arrow-back bx-rotate-180 swiper-button-next partners-button-next"
+              ></i>
+            </div>
+          </div>
+
+          <div class="swiper__section">
+            <div
+              id="partners-swiper-container"
+              class="swiper mySwiper container"
+            >
+              <div class="swiper-wrapper content"></div>
+            </div>
+          </div>
+          <div style="position: relative">
+            <div class="swiper-pagination partners-swiper-pagination"></div>
+          </div>
+        </article>
+
+        <nav class="footer__navigation">
+          <ul class="footer__navigation-list">
+            <li class="footer__navigation-item">
+              <a
+                class="footer__navigation-link"
+                href="./electronic-healthcare/electronic-healthcare.html"
+              >
+                <h4>Електронна охорона здоров’я</h4>
+              </a>
+
+              <ul class="gap-12 flex-column">
+                <li>
+                  <a class="footer__navigation-link" href="">Системи</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="">Реєстри</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="">Дані</a>
+                </li>
+
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./electronic-healthcare/legislation.html"
+                    >Законодавство</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <a
+                class="footer__navigation-link"
+                href="./service-providers/to-service-providers.html"
+              >
+                <h4>Надавачам послуг</h4>
+              </a>
+
+              <ul class="gap-12 flex-column">
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./service-providers/heads-of-health-care-institutions/heads-of-health-care-institutions.html"
+                    >Керівникам ЗОЗ</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./service-providers/doctors/to-doctors.html"
+                    >Лікарям</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./service-providers/pharmacies/to-pharmacy.html"
+                    >Аптечним закладам</a
+                  >
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="./404-not-found.html"
+                    >Бібліотека знань</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <ul class="footer__navigation-sublist">
+                <li class="footer__navigation-subitem">
+                  <a
+                    class="footer__navigation-link"
+                    href="./patients/to-patients.html"
+                  >
+                    <h4>Пацієнтам</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a
+                    class="footer__navigation-link"
+                    href="./partners/to-partners.html"
+                  >
+                    <h4>Партнерам</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a
+                    class="footer__navigation-link"
+                    href="./developers/to-developers.html"
+                  >
+                    <h4>Розробникам</h4>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <ul class="footer__navigation-sublist">
+                <li class="footer__navigation-subitem">
+                  <a class="footer__navigation-link" href="./news/news.html">
+                    <h4>Новини</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a
+                    class="footer__navigation-link"
+                    href="./support/support.html"
+                  >
+                    <h4>Підтримка</h4>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__socials">
+          <p>Стежте за нами тут:</p>
+
+          <div class="footer__socials-list">
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+              </a>
+            </div>
+
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-youtube" style="color: #ff0302"></i>
+              </a>
+            </div>
+
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-linkedin" style="color: #0b53d0"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__controls">
+          <ul class="footer__controls-list">
+            <!-- <li>
+            <a class="btn btn__white" href="">
+              Посилання на чат-бот
+              <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </li> -->
+
+            <li>
+              <a class="btn btn__white" href="">
+                Контакт центр
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="btn btn__white" href="">
+                Повідомити про проблему в ЄСОЗ
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__divider"></div>
+
+      <div class="container">
+        <div class="footer__bootom">
+          <div class="footer__bootom-logos">
+            <a href="/index.html">
+              <img
+                src="./assets/images/logos/eHealth_white.png"
+                alt="ehealth logo"
+              />
+            </a>
+            <a href="https://diia.gov.ua/" target="_blank">
+              <img src="./assets/images/logos/Group.png" alt="diia logo" />
+            </a>
+            <a href="/index.html">ehealth.gov.ua</a>
+          </div>
+          <div>
+            <p>Всі права захищені <span id="currentYear"></span></p>
           </div>
         </div>
       </div>
-    </section>
+    
+    </footer>
 
-    <div class="section section-background">
-      <div class="container">
-        <div class="selects-container">
-          <div class="custom-select">
-            <div class="select-header">
-              <div class="select-header-group">
-                <i class="bx bx-filter-alt"></i>
-                <p>За рівнями надання МД</p>
-              </div>
-              <div>
-                <i class="reset-button hidden bx bx-plus-circle"></i>
-                <i class="bx bx-chevron-down arrow-icon"></i>
-                
-              </div>
-            </div>
-            <ul class="options-list">
-              <li data-value="Надавачам ПМД">Надавачам ПМД</li>
-              <li data-value="Надавачам СМД">Надавачам СМД</li>
-              <li data-value="Аптечним закладам">Аптечним закладам</li>
-              <li data-value="Лабораторіям">Лабораторіям</li>
-              <li data-value="Екстреної МД">Екстреної МД</li>
-              <li data-value="Пацієнтам (ПІС)">Пацієнтам (ПІС)</li>
-            </ul>
-            <input type="hidden" id="selected-option1" />
-          </div>
-
-          <div class="custom-select">
-            <div class="select-header">
-              <div class="select-header-group">
-                <i class="bx bx-filter-alt"></i>
-                <p>За технологією для зберігання та обробки даних</p>
-              </div>
-              <div>
-                <i class="reset-button hidden bx bx-plus-circle"></i>
-                <i class="bx bx-chevron-down arrow-icon"></i>
-              </div>
-            </div>
-            <ul class="options-list">
-              <li data-value="option5">Option 5</li>
-              <li data-value="option6">Option 6</li>
-              <li data-value="option7">Option 7</li>
-              <li data-value="option8">Option 8</li>
-            </ul>
-            <input type="hidden" id="selected-option2" />
-          </div>
-
-          <div class="custom-select">
-            <div class="select-header">
-              <div class="select-header-group">
-                <i class="bx bx-filter-alt"></i>
-                <p>З закладами якого типу власності співпрацюють</p>
-              </div>
-              <div>
-                <i class="reset-button hidden bx bx-plus-circle"></i>
-                <i class="bx bx-chevron-down arrow-icon"></i>
-              </div>
-            </div>
-            <ul class="options-list">
-              <li data-value="Лікарня">Лікарня</li>
-              <li data-value="Аптека">Аптека</li>
-              <li data-value="option11">Option 11</li>
-              <li data-value="option12">Option 12</li>
-            </ul>
-            <input type="hidden" id="selected-option3" />
-          </div>
-
-          <div class="custom-select">
-            <div class="select-header">
-              <div class="select-header-group">
-                <i class="bx bx-filter-alt"></i>
-                <p>За впровадженим функціоналом (або за РМК)</p>
-              </div>
-              <div>
-                <i class="reset-button hidden bx bx-plus-circle"></i>
-                <i class="bx bx-chevron-down arrow-icon"></i>
-              </div>
-            </div>
-            <ul class="options-list">
-              <li data-value="option13">Option 13</li>
-              <li data-value="option14">Option 14</li>
-              <li data-value="option15">Option 15</li>
-              <li data-value="option16">Option 16</li>
-            </ul>
-            <input type="hidden" id="selected-option4" />
-          </div>
-        </div>
-
-        <!-- Define output elements for each sheet -->
-        <div id="loader" class="loader"></div>
-        <div id="output-1138747254" class="flex-column gap-32"></div>
-        <!-- <div id="output-0"></div> -->
-      </div>
-    </div>
-   </main>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="./js/imagesSwiper.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="./js/catalog.js"></script>
@@ -790,5 +1043,7 @@
     <script src="./js/fontSizeMutation.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/sharePage.js"></script>
+    <script src="./js/updateYear.js"></script>
+
   </body>
 </html>

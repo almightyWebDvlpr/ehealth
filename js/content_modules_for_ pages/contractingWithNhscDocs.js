@@ -237,12 +237,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Select Filter Code
 
-  function initializeCustomSelect(filterId) {
+  function initializeCustomSelect(filterId, container) {
 
+    if (container !== "icon-box-list-container") {
+      // console.warn("Container is not 'some'. Exiting the function.");
+      return;
+    }
       // Check if filterId is not provided or is empty
   if (!filterId) {
     console.warn("No filterId provided. Exiting the function.");
     return;
+
   }
 
  

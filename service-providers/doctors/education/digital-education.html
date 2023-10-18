@@ -1018,7 +1018,12 @@
         <nav class="footer__navigation">
           <ul class="footer__navigation-list">
             <li class="footer__navigation-item">
-              <h4>Електронна охорона здоров’я</h4>
+              <a
+                class="footer__navigation-link"
+                href="../../../electronic-healthcare/electronic-healthcare.html"
+              >
+                <h4>Електронна охорона здоров’я</h4>
+              </a>
 
               <ul class="gap-12 flex-column">
                 <li>
@@ -1034,31 +1039,50 @@
                 </li>
 
                 <li>
-                  <a class="footer__navigation-link" href="">Законодавство</a>
+                  <a
+                    class="footer__navigation-link"
+                    href="../../../electronic-healthcare/legislation.html"
+                    >Законодавство</a
+                  >
                 </li>
               </ul>
             </li>
 
             <li class="footer__navigation-item">
-              <h4>Надавачам послуг</h4>
+              <a
+                class="footer__navigation-link"
+                href="../../to-service-providers.html"
+              >
+                <h4>Надавачам послуг</h4>
+              </a>
 
               <ul class="gap-12 flex-column">
                 <li>
-                  <a class="footer__navigation-link" href="">Керівникам ЗОЗ</a>
+                  <a
+                    class="footer__navigation-link"
+                    href="../../heads-of-health-care-institutions/heads-of-health-care-institutions.html"
+                    >Керівникам ЗОЗ</a
+                  >
                 </li>
 
                 <li>
-                  <a class="footer__navigation-link" href="">Лікарям</a>
+                  <a
+                    class="footer__navigation-link"
+                    href="../to-doctors.html"
+                    >Лікарям</a
+                  >
                 </li>
 
                 <li>
-                  <a class="footer__navigation-link" href=""
+                  <a
+                    class="footer__navigation-link"
+                    href="../../pharmacies/to-pharmacy.html"
                     >Аптечним закладам</a
                   >
                 </li>
 
                 <li>
-                  <a class="footer__navigation-link" href=""
+                  <a class="footer__navigation-link" href="../../../404-not-found.html"
                     >Бібліотека знань</a
                   >
                 </li>
@@ -1068,19 +1092,28 @@
             <li class="footer__navigation-item">
               <ul class="footer__navigation-sublist">
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="">
+                  <a
+                    class="footer__navigation-link"
+                    href="../../../patients/to-patients.html"
+                  >
                     <h4>Пацієнтам</h4>
                   </a>
                 </li>
 
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="">
+                  <a
+                    class="footer__navigation-link"
+                    href="../../../partners/to-partners.html"
+                  >
                     <h4>Партнерам</h4>
                   </a>
                 </li>
 
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="">
+                  <a
+                    class="footer__navigation-link"
+                    href="../../../developers/to-developers.html"
+                  >
                     <h4>Розробникам</h4>
                   </a>
                 </li>
@@ -1090,13 +1123,16 @@
             <li class="footer__navigation-item">
               <ul class="footer__navigation-sublist">
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="">
+                  <a class="footer__navigation-link" href="../../../news/news.html">
                     <h4>Новини</h4>
                   </a>
                 </li>
 
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="">
+                  <a
+                    class="footer__navigation-link"
+                    href="../../../support/support.html"
+                  >
                     <h4>Підтримка</h4>
                   </a>
                 </li>
@@ -1109,7 +1145,7 @@
 
           <div class="footer__socials-list">
             <div class="masked-icon">
-              <a href="">
+              <a href="https://www.facebook.com/ezdorovya/" target="_blank">
                 <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
               </a>
             </div>
@@ -1131,11 +1167,11 @@
         <div class="footer__controls">
           <ul class="footer__controls-list">
             <!-- <li>
-              <a class="btn btn__white" href="">
-                Посилання на чат-бот
-                <i class="bx bx-right-arrow-alt"></i>
-              </a>
-            </li> -->
+            <a class="btn btn__white" href="">
+              Посилання на чат-бот
+              <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </li> -->
 
             <li>
               <a class="btn btn__white" href="">
@@ -1159,22 +1195,19 @@
       <div class="container">
         <div class="footer__bootom">
           <div class="footer__bootom-logos">
-            <a href="../../../index.html">
+            <a href="/index.html">
               <img
                 src="../../../assets/images/logos/eHealth_white.png"
                 alt="ehealth logo"
               />
             </a>
-            <a href="https://diia.gov.ua/">
-              <img
-                src="../../../assets/images/logos/Group.png"
-                alt="diia logo"
-              />
+            <a href="https://diia.gov.ua/" target="_blank">
+              <img src="../../../assets/images/logos/Group.png" alt="diia logo" />
             </a>
-            <a href="../../../index.html">ehealth.gov.ua</a>
+            <a href="/index.html">ehealth.gov.ua</a>
           </div>
           <div>
-            <p>Всі права захищені 2023</p>
+            <p>Всі права захищені <span id="currentYear"></span></p>
           </div>
         </div>
       </div>
@@ -1193,6 +1226,7 @@
     <script src="../../../js/modal.js"></script>
     <script src="../../../js/setActiveNavbarLinks.js"></script>
     <script src="../../../js/sharePage.js"></script>
+    <script src="../../../js/updateYear.js"></script>
 
     <!-- Accordion JS -->
     <script type="module" src="../../../js/accordion.js"></script>
