@@ -391,6 +391,7 @@ document.addEventListener("DOMContentLoaded", function () {
       processRows
     );
   }
+  
 
   selectHeaders.forEach((selectHeader, index) => {
     selectHeader.addEventListener("click", function (event) {
