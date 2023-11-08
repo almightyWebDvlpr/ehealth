@@ -55,7 +55,9 @@ window.addEventListener("resize", () => {
 // Initialize All Event Listeners
 burger.addEventListener("click", toggleMenu);
 overlay.addEventListener("click", toggleMenu);
-closeMenu.addEventListener("click", toggleMenu);
+closeMenu.addEventListener("click", ()=>{ 
+  toggleMenu
+});
 menuArrow.addEventListener("click", hideSubMenu);
 menuInner.addEventListener("click", toggleSubMenu);
 

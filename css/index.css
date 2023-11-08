@@ -940,7 +940,7 @@ button[disabled] {
   font-size: 2rem;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 29px;
   margin-right: 32px;
 }
 
@@ -1889,7 +1889,7 @@ button[disabled] {
 }
 
 .dark-mode .top__section {
-  filter: invert();
+  filter:grayscale();
 }
 
 .top__section-link {
@@ -1902,7 +1902,16 @@ button[disabled] {
 .mis__article {
   padding: 64px 0;
 }
-
+.galery-img{
+  display: inline-block;
+  max-width: 100%;
+  object-fit: contain;
+  aspect-ratio: 3/2;
+  transition: all 0.3s ease;
+}
+.galery-mis-img:hover{
+  transform: scale(0.9);
+}
 /* EHCS Page */
 
 .article__list {
@@ -3119,8 +3128,11 @@ footer .swiper{
     position: absolute;
     right: 0;
     color: #fff;
-    font-size: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 20px;
   }
+  
 }
 
 /* // Media Query Breakpoint */

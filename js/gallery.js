@@ -35,11 +35,7 @@ function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
           linkElement.setAttribute("href", element["Посилання на сайт МІС"]);
           linkElement.setAttribute("target", "_blank");
           const imgElement = document.createElement("img");
-          imgElement.style.maxWidth = "100%";
-          imgElement.style.display = "inline-block";
-
-          imgElement.style.aspectRatio = "3/2";
-          imgElement.style.objectFit = "contain";
+          imgElement.classList.add('galery-mis-img', 'galery-img')
           imgElement.src = element["Лого МІС"];
 
           if (imageStyles) {
@@ -72,11 +68,8 @@ function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
       }
 
       const imgElement = document.createElement("img");
-      imgElement.style.maxWidth = "100%";
-      imgElement.style.display = "inline-block";
-
-      imgElement.style.aspectRatio = "3/2";
-      imgElement.style.objectFit = "contain";
+      imgElement.classList.add('galery-img')
+      
 
       if (imageStyles) {
         Object.assign(imgElement.style, imageStyles);
