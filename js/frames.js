@@ -14,7 +14,7 @@
    // Append the iframe to the container
    container.appendChild(iframe);
  }
- console.log(iframe.contentWindow.document.body.scrollHeight);
+//  console.log(iframe.contentWindow.document.body.scrollHeight);
 
  // Wait for the iframe to load its content
  iframe.onload = function () {

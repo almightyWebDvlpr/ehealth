@@ -28,6 +28,55 @@
 
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
     <title>Каталог</title>
+
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Каталог" />
+    <meta property="og:description" content="" />
+    <meta
+      property="og:image"
+      content="http://127.0.0.2:4041/assets/images/logos/eHealth_black.png"
+    />
+    <meta
+      property="og:url"
+      content="http://127.0.0.2:4041/catalog.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta
+      property="og:site_name"
+      content="Електоронна Система Охорони Здоров'я"
+    />
+
+    <meta name="description" content="Електоронна Система Охорони Здоров'я" />
+    <meta name="keywords" content="Каталог, eHealth, Електоронна, Здоров'я" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "http://127.0.0.2:4041/index.html",
+              "name": "Головна сторінка"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "http://127.0.0.2:4041/catalog.html",
+              "name": "Каталог"
+            }
+          }
+        ]
+      }
+    </script>
+   
   </head>
   <body>
     <div class="cursor-line hide"></div>
@@ -1030,20 +1079,18 @@
           </div>
         </div>
       </div>
-    
     </footer>
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="./js/imagesSwiper.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
     <script type="module" src="./js/catalog.js"></script>
     <script src="./js/themeSwitcher.js"></script>
     <script src="./js/fontSizeMutation.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/sharePage.js"></script>
     <script src="./js/updateYear.js"></script>
-
   </body>
 </html>

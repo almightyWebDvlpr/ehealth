@@ -19,7 +19,7 @@ export const responsesSlides = [
   {
     title: "Пошук медзакладу за направленням",
     iconClass: "bx bx-right-arrow-alt",
-    url: "link4.html",
+    url: "./find-services.html",
   },
 ];
 
@@ -159,7 +159,7 @@ export const newsSlides = [
   {
     title: "Пошук медзакладу за направленням",
     iconClass: "bx bx-right-arrow-alt",
-    url: "link4.html",
+    url: "../find-services.html",
   },
 ];
  

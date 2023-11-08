@@ -6,7 +6,7 @@ function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
   if(!imageContainer){
     return
   }
-console.log(imageContainer)
+// console.log(imageContainer)
   imageContainer.classList.add("grid-auto-fit", "gap-32");
   // Apply container styles if provided
   if (containerStyles) {

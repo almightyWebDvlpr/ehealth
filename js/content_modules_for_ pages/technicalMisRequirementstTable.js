@@ -26,7 +26,7 @@ class DynamicTable {
       const row = document.createElement("tr");
       this.columnHeaders.forEach((columnName) => {
         const cell = document.createElement("td");
-        const cellSpan = document.createElement('span')
+        const cellSpan = document.createElement("span");
         cell.setAttribute("data-th", columnName);
 
         // Check if the data is a link (e.g., contains <a> tags)
@@ -35,11 +35,19 @@ class DynamicTable {
           link.href = rowData[columnName];
           link.target = "_blank";
           link.innerHTML = rowData[columnName];
-          cellSpan.appendChild(link)
-          cell.appendChild(cellSpan);
+          const pdfLinkDiv = document.createElement("div");
+          const pdfIcon = document.createElement("i");
+          pdfIcon.classList.add("fa-solid", "fa-file-pdf");
+          pdfIcon.style.color = "#d91919";
+          pdfIcon.style.fontSize = "2rem";
+          cellSpan.appendChild(link);
+
+          pdfLinkDiv.appendChild(cellSpan);
+          pdfLinkDiv.appendChild(pdfIcon);
+          cell.appendChild(pdfLinkDiv);
         } else {
-          cellSpan.textContent =  rowData[columnName];
-          cell.appendChild(cellSpan)
+          cellSpan.textContent = rowData[columnName];
+          cell.appendChild(cellSpan);
         }
 
         row.appendChild(cell);
@@ -69,8 +77,8 @@ const data = [
     "Наказ №": "12345",
     "Дата затвердження НСЗУ": "2023-09-13",
     "Що затверджено": "Sample Item 1",
-    Наказ: "<a href='sample-order-1.pdf' target='_blank'>Order 1</a>",
-    "Вимоги/програма": "Sample Requirements 1",
+    Наказ: "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
+    "Вимоги/програма": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
   },
   {
     Статус: "Pending",
@@ -78,7 +86,7 @@ const data = [
     "Дата затвердження НСЗУ": "2023-09-14",
     "Що затверджено": "Sample Item 2",
     Наказ: "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
-    "Вимоги/програма": "Sample Requirements 2",
+    "Вимоги/програма": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
   },
   {
     Статус: "Pending",
@@ -86,7 +94,7 @@ const data = [
     "Дата затвердження НСЗУ": "2023-09-14",
     "Що затверджено": "Sample Item 2",
     Наказ: "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
-    "Вимоги/програма": "Sample Requirements 2",
+    "Вимоги/програма": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
   },
   {
     Статус: "Pending",
@@ -94,7 +102,7 @@ const data = [
     "Дата затвердження НСЗУ": "2023-09-14",
     "Що затверджено": "Sample Item 2",
     Наказ: "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
-    "Вимоги/програма": "Sample Requirements 2",
+    "Вимоги/програма": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
   },
   {
     Статус: "Pending",
@@ -102,7 +110,7 @@ const data = [
     "Дата затвердження НСЗУ": "2023-09-14",
     "Що затверджено": "Sample Item 2",
     Наказ: "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
-    "Вимоги/програма": "Sample Requirements 2",
+    "Вимоги/програма": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
   },
   {
     Статус: "Pending",
@@ -110,7 +118,7 @@ const data = [
     "Дата затвердження НСЗУ": "2023-09-14",
     "Що затверджено": "Sample Item 2",
     Наказ: "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
-    "Вимоги/програма": "Sample Requirements 2",
+    "Вимоги/програма": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
   },
   {
     Статус: "Pending",
@@ -118,7 +126,7 @@ const data = [
     "Дата затвердження НСЗУ": "2023-09-14",
     "Що затверджено": "Sample Item 2",
     Наказ: "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
-    "Вимоги/програма": "Sample Requirements 2",
+    "Вимоги/програма": "<a href='sample-order-2.pdf' target='_blank'>Order 2</a>",
   },
   // Add more data rows here as needed
 ];

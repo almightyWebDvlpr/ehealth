@@ -66,6 +66,59 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <title>Новини</title>
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Новини" />
+    <meta
+      property="og:description"
+      content=""
+    />
+    <meta
+      property="og:image"
+      content="http://127.0.0.2:4041/assets/images/logos/eHealth_black.png"
+    />
+    <meta
+      property="og:url"
+      content="http://127.0.0.2:4041/news/news.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta
+      property="og:site_name"
+      content="Електоронна Система Охорони Здоров'я"
+    />
+
+    <meta name="description" content="Електоронна Система Охорони Здоров'я" />
+    <meta
+      name="keywords"
+      content="Новини, eHealth, Електоронна, Здоров'я"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "http://127.0.0.2:4041/index.html",
+              "name": "Головна сторінка"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "http://127.0.0.2:4041/news/news.html",
+              "name": "Новини"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="cursor-line hide"></div>
@@ -820,7 +873,7 @@
 
       <section class="section">
         <div class="container">
-          <div class="new__top flex-center-s-b">
+          <div class="new__top flex-s-b column">
             <h2>Останні новини</h2>
 
             <div>

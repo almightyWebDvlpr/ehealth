@@ -1,0 +1,8 @@
+/* THANKS */
+Special thanks to our contributors and supporters.
+
+/* SITE */
+Last update: October 31, 2023
+
+/* STANDARD */
+This `humans.txt` file is based on the original concept at http://humanstxt.org/

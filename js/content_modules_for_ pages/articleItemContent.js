@@ -136,7 +136,7 @@ const dataFromBackend = [
   "У майбутньому функціонал ЕСОЗ буде доповнюватися новими цифровими інструментами, що безумовно покращить якість послуг і доступ до важливої медичної інформації.",
 ];
 
-console.log(dataFromBackend.length)
+// console.log(dataFromBackend.length)
 // Instantiate the class and generate the HTML
 const generator = new DynamicHTMLGenerator(dataFromBackend);
 generator.generateHTML(); // This will insert the content into the 'aricleItem' container
