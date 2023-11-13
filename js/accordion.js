@@ -9,6 +9,7 @@ import {
   babyServiceAccordion,
   developersServiceAccordion,
   digitalEducationAccordionContainer,
+  pharmacyFaqAccordion,
 } from "./data.js";
 
 function createAccordion(header, content, subcontent, content2, subcontent2) {
@@ -212,6 +213,9 @@ document.addEventListener("DOMContentLoaded", function () {
         break;
       case "digitalEducationAccordionContainer":
         accordion = digitalEducationAccordionContainer;
+        break;
+      case "pharmacyFaqAccordion":
+        accordion = pharmacyFaqAccordion;
         break;
       // Add more cases as needed
 
