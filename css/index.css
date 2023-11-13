@@ -1326,6 +1326,7 @@ button[disabled] {
 .hero p {
   color: #fff;
   margin: 24px 0 32px 0;
+  text-align: center;
 }
 
 .textfield__box {
@@ -2668,6 +2669,13 @@ button[disabled] {
     font-size: 40px;
     line-height: 57px;
   }
+  .header__top-controls{
+    align-items: baseline;
+    flex-direction: row-reverse;
+  }
+  .header__top {
+    gap: 25px;
+  }
   .flex-center-s-b {
     flex-direction: column;
   }
@@ -3126,7 +3134,7 @@ footer .swiper{
   .bx.bx-x.close-menu {
     display: block;
     position: absolute;
-    right: 0;
+    right: 14px;
     color: #fff;
     font-size: 3rem;
     cursor: pointer;
@@ -3146,11 +3154,12 @@ footer .swiper{
   }
 }
 @media only screen and (max-width: 1050px) {
+
   .menu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 75%;
+    width: 85%;
     height: 100%;
     z-index: 100;
     overflow: hidden;
