@@ -22,6 +22,7 @@ const translationMap = {
   "heads-of-health-care-institutions.html": "Керівникам ЗОЗ",
   doctors: "Лікарям",
   "to-doctors.html": "Лікарям",
+  "doctors-faq.html":"FAQ",
   education: "Навчання",
   "digital-educational-resources.html": "Цифрові освітні ресурси",
   "nhcs-academy.html": "Академія НСЗУ",

@@ -28,6 +28,7 @@ function setActiveLink() {
       if (currentPath.split('/').includes(submenuLinkLastPart)) { // Check if submenu link is in the current path
         // Find the parent menu link and activate it
         const parentMenuLink = submenuLink.closest(".menu-item").querySelector(".menu-link");
+        console.log(parentMenuLink)
         if (parentMenuLink) {
           parentMenuLink.classList.add("active");
         }
