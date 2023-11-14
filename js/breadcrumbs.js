@@ -44,6 +44,7 @@ const translationMap = {
   "how-to-use-e-malyatko-services.html": "Як скористатися послугами е-Малятко?",
   "how-to-get-e-referral-to-a-specialist.html":
     "Як отримати е-направлення до спеціаліста?",
+    "patients-faq.html":"FAQ",
   partners: "Партнерам",
   "to-partners.html": "Партнерам",
   "to-state-authorities.html": "Органам державної влади",
