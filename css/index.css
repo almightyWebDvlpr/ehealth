@@ -445,6 +445,12 @@ main, footer{
   transition: all 0.3s ease-in-out;
 }
 
+.btn.btn__white.leng-btn{
+  padding: 8px 12px 8px 12px;
+}
+.btn.btn__white.leng-btn:hover{
+  border-color: #000 !important;
+}
 .btn__transparent {
   background: transparent;
   border: 1px solid #fff;
@@ -1162,11 +1168,7 @@ button[disabled] {
   background-color: #fff;
   border: 1px solid #e5e7eb;
 }
-.options-list.language-options {
-  position: absolute;
-  z-index: 1;
-  bottom: -170px;
-}
+
 
 .options-list.areas-options-list li {
   font-size: 16px;
@@ -1177,12 +1179,7 @@ button[disabled] {
   text-transform: lowercase;
 }
 
-.select-header.language-header {
-  padding: 5px 10px;
-}
-.select-header-group.language-header {
-  font-size: 14px;
-}
+
 
 .options-list li {
   padding: 12px 10px;
@@ -3292,6 +3289,20 @@ footer .swiper{
   .dark-mode .menu-item:hover .menu-link {
     color: #000;
   }
+
+  .dark-mode .menu-item .menu-link.active{
+    color:#000 !important;
+    }
+    
+    .dark-mode .menu-item .menu-link.active::before{
+      transition: all 0.3s ease-in-out;
+        position: absolute;
+        left: 0;
+        content: "";
+        background: #000;
+        height: 2px;
+        width: 100%;
+    }
 }
 
 /* // Media Query Breakpoint */

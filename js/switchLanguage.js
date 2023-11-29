@@ -19,7 +19,7 @@ function initializeCustomSelect(filterId) {
 
     // Set the initial language based on the browser's language preference
     const browserLanguage = window.navigator.language;
-    // console.log(browserLanguage)
+
     if (browserLanguage.startsWith('ru')) {
         hiddenInput.value = 'UA';
     } else if (browserLanguage.startsWith('pl')) {
