@@ -451,6 +451,8 @@ main, footer{
 .btn.btn__white.leng-btn:hover{
   border-color: #000 !important;
 }
+
+
 .btn__transparent {
   background: transparent;
   border: 1px solid #fff;
@@ -1070,8 +1072,8 @@ button[disabled] {
   border: 2px solid #f1f1f1;
 }
 .select-header:hover,
-.autocomplete .textfield:hover,
-.autocomplete.textfield__box:hover .textfield,
+/* .autocomplete .textfield:hover, */
+/* .autocomplete.textfield__box:hover .textfield, */
 .autocomplete.textfield__box:hover .cross__icon {
   border-color: #2a21ff;
   transition: all 0.3s ease;
@@ -1335,8 +1337,20 @@ button[disabled] {
   transition: 0.5s all ease;
 }
 
-.textfield__box:hover {
-  border: 2px solid hsla(0, 0%, 100%, 0.27);
+.textfield__box:hover,
+.textfield__box:focus-within  {
+  border: 2px solid #2a21ff;
+  transition: 0.5s all ease;
+}
+
+
+
+.textfield__box:focus-within i{
+  color: #2a21ff !important;
+}
+
+.textfield__box:hover i{
+  color: #2a21ff;
   transition: 0.5s all ease;
 }
 .textfield {

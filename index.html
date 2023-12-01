@@ -64,7 +64,7 @@
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
 
     <title>Електоронна Система Охорони Здоров'я</title>
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="index,follow" />
     <!-- Open Graph tags -->
     <meta property="og:title" content="Електоронна Система Охорони Здоров'я" />
     <meta property="og:description" content="" />
@@ -83,19 +83,23 @@
     <meta name="description" content="Електоронна Система Охорони Здоров'я" />
     <meta name="keywords" content="Здоров'я, eHealth, Електоронна" />
 
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Books",
-          "item": {"@id":"http://127.0.0.2:4041/index.html","name":"Головна сторінка"}
-        }]
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Main",
+            "item": {
+              "@id": "http://127.0.0.2:4041/index.html",
+              "name": "Головна сторінка"
+            }
+          }
+        ]
       }
-      </script>
+    </script>
   </head>
   <body>
     <div itemscope itemtype="http://schema.org/Main">
@@ -133,10 +137,10 @@
             </div>
 
             <div class="header__top-controls flex-al-center">
-<div class="leng-btns">
-<button class="btn btn__white leng-btn">UA</button>
-<button class="btn btn__white leng-btn">EN</button>
-</div>
+              <div class="leng-btns">
+                <button class="btn btn__white leng-btn">UA</button>
+                <button class="btn btn__white leng-btn">EN</button>
+              </div>
 
               <div
                 id="toggleModalButton"
@@ -153,8 +157,6 @@
                 <i class="bx bx-right-arrow-alt"></i>
               </div> -->
               </div>
-
-             
 
               <div class="burger" id="burger">
                 <span class="burger-line"></span>
@@ -482,7 +484,7 @@
                                 >Як обрати МІС</a
                               >
                             </li>
-                             
+
                             <li class="submenu-item">
                               <a
                                 href="./service-providers/heads-of-health-care-institutions/mis-catalog.html"
@@ -606,8 +608,6 @@
                             </li>
                           </ul>
                         </div>
-
-                       
                       </div>
                     </li>
 
@@ -672,9 +672,7 @@
                           <a
                             class="submenu-link"
                             href="./patients/patients-faq.html"
-                            ><h4 class="submenu-title no-wrap">
-                              FAQ
-                            </h4></a
+                            ><h4 class="submenu-title no-wrap">FAQ</h4></a
                           >
                         </div>
                       </div>
@@ -1434,8 +1432,6 @@
                       >Аптечним закладам</a
                     >
                   </li>
-
-                  
                 </ul>
               </li>
 
@@ -1606,7 +1602,7 @@
     <script src="./js/video.js"></script>
     <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
     <script src="./js/updateYear.js"></script>
-    
+
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-SXYG678JTB"
