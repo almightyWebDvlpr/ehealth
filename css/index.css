@@ -3372,6 +3372,10 @@ footer .swiper{
   flex: 0 0 25%;
   padding: 0 1rem;
 }
+.submenu-inner.submenu-inner-serice-providers{
+  flex: 0 0 33%;
+}
+
 
 .submenu-title {
   display: block;

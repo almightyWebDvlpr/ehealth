@@ -89,6 +89,12 @@
           </div>
 
           <div class="header__top-controls flex-al-center">
+
+            <div class="leng-btns">
+              <button class="btn btn__white leng-btn">UA</button>
+              <button class="btn btn__white leng-btn">EN</button>
+            </div>
+
             <div
               id="toggleModalButton"
               class="btn header__top-control--light flex-al-center"
@@ -375,7 +381,7 @@
                       <i class="bx bx-chevron-right"></i>
                     </div>
                     <div class="submenu megamenu megamenu-column-4">
-                      <div class="submenu-inner">
+                      <div class="submenu-inner submenu-inner-serice-providers">
                         <a
                           class="submenu-link"
                           href="./service-providers/heads-of-health-care-institutions/heads-of-health-care-institutions.html"
@@ -396,7 +402,7 @@
                               >Як обрати МІС</a
                             >
                           </li>
-                           
+
                           <li class="submenu-item">
                             <a
                               href="./service-providers/heads-of-health-care-institutions/mis-catalog.html"
@@ -404,9 +410,15 @@
                               >Каталог МІС</a
                             >
                           </li>
+
+                          <li class="submenu-item">
+                            <a href="#" class="submenu-link"
+                              >Статуси тестувань функціоналу МІС</a
+                            >
+                          </li>
                         </ul>
                       </div>
-                      <div class="submenu-inner">
+                      <div class="submenu-inner submenu-inner-serice-providers">
                         <a
                           class="submenu-link"
                           href="./service-providers/doctors/to-doctors.html"
@@ -467,7 +479,7 @@
                         </ul>
                       </div>
 
-                      <div class="submenu-inner">
+                      <div class="submenu-inner submenu-inner-serice-providers">
                         <a
                           class="submenu-link"
                           href="./service-providers/pharmacies/to-pharmacy.html"
@@ -518,8 +530,6 @@
                           </li>
                         </ul>
                       </div>
-
-                      
                     </div>
                   </li>
 
@@ -584,9 +594,7 @@
                         <a
                           class="submenu-link"
                           href="./patients/patients-faq.html"
-                          ><h4 class="submenu-title no-wrap">
-                            FAQ
-                          </h4></a
+                          ><h4 class="submenu-title no-wrap">FAQ</h4></a
                         >
                       </div>
                     </div>
@@ -748,7 +756,6 @@
     <main>
       <section class="top__section">
         <div class="container">
-          
           <div class="flex-column gap-48 top-section-elements">
             <div class="gap-24 flex-column">
               <div class="top__section-title flex-center-s-b">
@@ -756,7 +763,11 @@
               </div>
             </div>
 
-            <form class="textfield__box flex-al-center" id="search-form" style="width: 100%;">
+            <form
+              class="textfield__box flex-al-center"
+              id="search-form"
+              style="width: 100%"
+            >
               <input
                 class="textfield"
                 type="text"
@@ -846,13 +857,20 @@
                 </li>
 
                 <li>
-                  <a class="footer__navigation-link" href="./electronic-healthcare/legislation.html">Законодавство</a>
+                  <a
+                    class="footer__navigation-link"
+                    href="./electronic-healthcare/legislation.html"
+                    >Законодавство</a
+                  >
                 </li>
               </ul>
             </li>
 
             <li class="footer__navigation-item">
-              <a class="footer__navigation-link" href="./service-providers/to-service-providers.html">
+              <a
+                class="footer__navigation-link"
+                href="./service-providers/to-service-providers.html"
+              >
                 <h4>Надавачам послуг</h4>
               </a>
 
@@ -866,35 +884,48 @@
                 </li>
 
                 <li>
-                  <a class="footer__navigation-link" href="./service-providers/doctors/to-doctors.html">Лікарям</a>
-                </li>
-
-                <li>
-                  <a class="footer__navigation-link" href="./service-providers/pharmacies/to-pharmacy.html"
-                    >Аптечним закладам</a
+                  <a
+                    class="footer__navigation-link"
+                    href="./service-providers/doctors/to-doctors.html"
+                    >Лікарям</a
                   >
                 </li>
 
-               
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./service-providers/pharmacies/to-pharmacy.html"
+                    >Аптечним закладам</a
+                  >
+                </li>
               </ul>
             </li>
 
             <li class="footer__navigation-item">
               <ul class="footer__navigation-sublist">
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="./patients/to-patients.html">
+                  <a
+                    class="footer__navigation-link"
+                    href="./patients/to-patients.html"
+                  >
                     <h4>Пацієнтам</h4>
                   </a>
                 </li>
 
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="./partners/to-partners.html">
+                  <a
+                    class="footer__navigation-link"
+                    href="./partners/to-partners.html"
+                  >
                     <h4>Партнерам</h4>
                   </a>
                 </li>
 
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="./developers/to-developers.html">
+                  <a
+                    class="footer__navigation-link"
+                    href="./developers/to-developers.html"
+                  >
                     <h4>Розробникам</h4>
                   </a>
                 </li>
@@ -910,7 +941,10 @@
                 </li>
 
                 <li class="footer__navigation-subitem">
-                  <a class="footer__navigation-link" href="./support/support.html">
+                  <a
+                    class="footer__navigation-link"
+                    href="./support/support.html"
+                  >
                     <h4>Підтримка</h4>
                   </a>
                 </li>
@@ -1004,6 +1038,5 @@
     <script src="./js/searchResults.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/updateYear.js"></script>
-
   </body>
 </html>
