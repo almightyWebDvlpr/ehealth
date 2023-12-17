@@ -19,7 +19,7 @@ function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
   if (containerId === "misImageContainer") {
     getMisesData = (data, gid) => {
       data.forEach((element) => {
-        if (element["Посилання на сайт МІС"] || element["Лого МІС"]) {
+        if (element["Посилання на веб-сайт МІС"] || element["Логотип (новий)"]) {
           const imageDiv = document.createElement("div");
           imageDiv.classList.add("grid-auto-fit", "gap-32");
           imageDiv.style.padding = "24px";
@@ -32,11 +32,20 @@ function createImageList(containerId, imageUrls, containerStyles, imageStyles) {
             Object.assign(imageDiv.style, containerStyles);
           }
           const linkElement = document.createElement("a");
-          linkElement.setAttribute("href", element["Посилання на сайт МІС"]);
+          linkElement.setAttribute("href", element["Посилання на веб-сайт МІС"]);
           linkElement.setAttribute("target", "_blank");
           const imgElement = document.createElement("img");
           imgElement.classList.add('galery-mis-img', 'galery-img')
-          imgElement.src = element["Лого МІС"];
+
+          const idIndex = element["Логотип (новий)"].indexOf('id=');
+
+          if (idIndex !== -1) {
+            // Extract the substring starting from the index of 'id='
+            var fileId = element["Логотип (новий)"].slice(idIndex + 3);
+          
+            imgElement.src = `https://drive.google.com/uc?id=${fileId}`
+          }
+        
 
           if (imageStyles) {
             Object.assign(imgElement.style, imageStyles);
