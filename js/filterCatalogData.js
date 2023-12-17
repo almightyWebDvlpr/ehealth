@@ -27,8 +27,6 @@ let selectedOptions = {
   option4: "",
 };
 
-
-
 // Check if passedFilterName is valid before setting it as a selected option
 
 export function filterData(data) {
@@ -38,7 +36,7 @@ export function filterData(data) {
     selectedOptions.option2 ||
     selectedOptions.option3 ||
     selectedOptions.option4;
-
+  console.log(optionsSelected);
   const pageTitle = document.getElementById("pageTitle");
 
   if (!optionsSelected) {
@@ -56,19 +54,33 @@ export function filterData(data) {
       ? item["Рівні надання МД"]
       : [item["Рівні надання МД"]];
 
+    const option2Value = Array.isArray(
+      item["Технологія для зберігання та обробки даних"]
+    )
+      ? item["Технологія для зберігання та обробки даних"]
+      : [item["Технологія для зберігання та обробки даних"]];
+
+    const option3Value = Array.isArray(
+      item["З закладами якого типу власності співпрацюють"]
+    )
+      ? item["З закладами якого типу власності співпрацюють"]
+      : [item["З закладами якого типу власності співпрацюють"]];
+
     const option1Match =
       !selectedOptions.option1 ||
       option1Value.some((option) => option.includes(selectedOptions.option1));
 
     const option2Match =
       !selectedOptions.option2 ||
-      item["З технологією для зберігання та обробки даних"] ===
-        selectedOptions.option2;
+      option2Value.some((option) =>
+        option.toLowerCase().includes(selectedOptions.option2.toLowerCase())
+      );
 
     const option3Match =
-      !selectedOptions.option3 ||
-      item["З закладами якого типу власності співпрацюють"] ===
-        selectedOptions.option3;
+      !selectedOptions.option3.toLowerCase() ||
+      option3Value.some((option) =>
+        option.toLowerCase().includes(selectedOptions.option3.toLowerCase())
+      );
 
     const option4Match =
       !selectedOptions.option4 ||
@@ -80,6 +92,7 @@ export function filterData(data) {
 }
 
 export function processRows(data, gid) {
+  
   // Filter the data based on selected options
   const filteredData = filterData(data);
 
@@ -120,12 +133,12 @@ export function processRows(data, gid) {
     buttonEducation.innerText = "Навчальні ресурси";
 
     for (const key in item) {
-      if (key === "Лого МІС" && item[key] !== "") {
+      if (key === "Логотип (новий)" && item[key] !== "") {
         // Create an <img> element for the logo
         const logoImage = document.createElement("img");
         logoImage.classList.add("catalog-logo-img");
         // logoImage.style.width = '100%'
-        logoImage.src = item[key];
+        // logoImage.src = item[key];
         const logoContainer = document.createElement("div");
         logoContainer.classList.add("logo-container"); // Add a class for styling
         logoContainer.appendChild(logoImage);
@@ -138,8 +151,14 @@ export function processRows(data, gid) {
         rightSideCard.appendChild(heading);
       } else if (key === "Посилання на навчальні ресурси МІС") {
         // Insert link into the buttonEducation href attribute
-        buttonEducation.href = item[key];
-      } else if (key === "Посилання на сайт МІС") {
+        misCardsControls.appendChild(buttonGoToSite);
+        if(item[key].length > 2 && item[key].length !== 1){
+console.log(item[key].length)
+          buttonEducation.href = item[key];
+          misCardsControls.appendChild(buttonEducation);
+        }
+      
+      } else if (key === "Посилання на веб-сайт МІС") {
         // Insert link into the buttonGoToSite href attribute
         buttonGoToSite.href = item[key];
       } else {
@@ -151,7 +170,10 @@ export function processRows(data, gid) {
         heading.textContent = key;
 
         const paragraph = document.createElement("p");
+  
         paragraph.textContent = item[key];
+
+
 
         const pairDiv = document.createElement("div");
         pairDiv.classList.add("flex-column", "gap-6");
@@ -178,12 +200,28 @@ export function processRows(data, gid) {
 
           pairDiv.appendChild(heading);
           pairDiv.appendChild(mdContainer);
+        } else if (key === "Посилання на веб-сайт Оператора МІС") {
+          const linkInText = document.createElement("a");
+          linkInText.setAttribute("href", item[key]);
+          linkInText.setAttribute("target", "_blank");
+          const modifiedUrl = item[key].replace(/^https?:\/\/|\/$/g, "");
+
+          linkInText.textContent = modifiedUrl;
+          linkInText.classList.add("in-text-link");
+          pairDiv.appendChild(heading);
+          pairDiv.appendChild(linkInText);
         } else {
           pairDiv.appendChild(heading);
           pairDiv.appendChild(paragraph);
         }
 
         if (key === "Контакти служби підтримки") {
+          const contactsParts = paragraph.textContent
+            .split(",")
+            .map(function (part) {
+              return part.trim();
+            });
+
           const contactsWrapper = document.createElement("div");
           contactsWrapper.classList.add("flex-column", "gap-6");
 
@@ -191,12 +229,6 @@ export function processRows(data, gid) {
           contactsDiv.style.display = "flex";
           contactsDiv.style.gap = "12px";
           contactsDiv.style.flexWrap = "wrap";
-
-          const contactsParts = paragraph.textContent
-            .split(",")
-            .map(function (part) {
-              return part.trim();
-            });
 
           contactsParts.forEach(function (partText) {
             const newP = document.createElement("a");
@@ -211,11 +243,34 @@ export function processRows(data, gid) {
 
             const iconHomeTel = document.createElement("span");
             iconHomeTel.style.marginRight = "5px";
-            if (partText) {
-              newP.setAttribute("href", `tel:${partText}`);
-              newP.textContent = partText;
+
+            const urlRegex = /\b(?:https?|ftp):\/\/[^\s]+/g;
+            const urls = partText.match(urlRegex);
+            const emailRegex =
+              /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+            const emails = partText.match(emailRegex);
+
+            if (urls) {
+            
+              newP.href = urls[0];
+              newP.textContent = urls[0];
+              newP.classList.add("in-text-link");
+              newP.style.wordBreak = "break-all";
               contactsDiv.appendChild(newP);
+            } else if (emails) {
+              newP.setAttribute("href", `mailto:${emails[0]}`);
+              newP.textContent = emails[0];
+
+              contactsDiv.appendChild(newP);
+            } else {
+              if (partText.length > 0 && partText !== "" && partText !== "-") {
+                newP.setAttribute("href", `tel:${partText}`);
+                newP.textContent = partText;
+
+                contactsDiv.appendChild(newP);
+              }
             }
+
             switch (true) {
               case partText.includes("073"):
               case partText.includes("063"):
@@ -229,7 +284,7 @@ export function processRows(data, gid) {
                   "<i class='bx bx-phone' style='color:#5454e9; font-size:1.4rem;'></i>";
                 newP.appendChild(iconHomeTel);
                 break;
-
+              case partText.includes("099"):
               case partText.includes("066"):
               case partText.includes("050"):
               case partText.includes("095"):
@@ -251,6 +306,16 @@ export function processRows(data, gid) {
                 newP.appendChild(iconTel);
                 break;
 
+              case partText.includes("http"):
+                iconHomeTel.innerHTML = "";
+                break;
+
+              case partText.includes("@"):
+                iconHomeTel.innerHTML =
+                  "<i class='bx bx-envelope' style='color:#5454e9; font-size:1.4rem;'></i>";
+                newP.appendChild(iconHomeTel);
+                break;
+
               default:
                 iconHomeTel.innerHTML =
                   "<i class='bx bx-phone' style='color:#5454e9; font-size:1.4rem;'></i>";
@@ -269,8 +334,8 @@ export function processRows(data, gid) {
       }
     }
 
-    misCardsControls.appendChild(buttonGoToSite);
-    misCardsControls.appendChild(buttonEducation);
+    // misCardsControls.appendChild(buttonGoToSite);
+    // misCardsControls.appendChild(buttonEducation);
     cardContainer.appendChild(leftSideCard);
     cardContainer.appendChild(rightSideCard);
     output.appendChild(cardContainer);
@@ -391,7 +456,6 @@ document.addEventListener("DOMContentLoaded", function () {
       processRows
     );
   }
-  
 
   selectHeaders.forEach((selectHeader, index) => {
     selectHeader.addEventListener("click", function (event) {

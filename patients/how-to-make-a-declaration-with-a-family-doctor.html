@@ -854,6 +854,131 @@
             class="accordion"
           >
             <!-- accordion items will be dynamically added here -->
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h5 class="accordion-header-title">
+                  Оберіть за вашими особистими критеріями заклад чи лікаря.
+                </h5>
+                <i class="fa-sharp fa-solid fa-plus"></i>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner flex-column gap-16">
+                  <p>
+                    Ви можете скористатися порадами знайомих, рекомендаціями в
+                    Інтернеті або відвідати найближчі заклади та дізнатися про
+                    лікарів.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h5 class="accordion-header-title">
+                  Перегляньте мапу та перевірте, чи вже можна подати декларацію
+                  у вибраному закладі.
+                </h5>
+                <i class="fa-sharp fa-solid fa-plus"></i>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner flex-column gap-16">
+                  <p>
+                    Також медичні заклади, підключені до системи можна
+                    розпізнати за наліпкою «Тут можна обрати свого лікаря»
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h5 class="accordion-header-title">
+                  Візьміть із собою паспорт, ідентифікаційний код і мобільний
+                  телефон.
+                </h5>
+                <i class="fa-sharp fa-solid fa-plus"></i>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner flex-column gap-16">
+                  <p>
+                    Якщо потрібно подати декларацію для дитини до 14 років —
+                    візьміть також свідоцтво про народження дитини
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h5 class="accordion-header-title">
+                  Зверніться у реєстратуру медзакладу та повідомте, що хочете
+                  подати декларацію
+                </h5>
+                <!-- <i class="fa-sharp fa-solid fa-plus"></i> -->
+              </div>
+              <!-- <div class="accordion-content">
+                <div class="accordion-content-inner flex-column gap-16">
+                  <p>
+                   
+                  </p>
+                </div>
+              </div> -->
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h5 class="accordion-header-title">
+                  Уповноважений працівник медзакладу (працівник реєстратури,
+                  медсестра або лікар) введе ваші дані в електронну систему
+                  охорони здоровʼя.
+                </h5>
+                <i class="fa-sharp fa-solid fa-plus"></i>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner flex-column gap-16">
+                  <p>
+                    На мобільний надійде СМС з кодом. Повідомте цей код
+                    працівнику закладу
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h5 class="accordion-header-title">
+                  З електронної системи роздруковується декларація з вашими
+                  даними.
+                </h5>
+                <i class="fa-sharp fa-solid fa-plus"></i>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner flex-column gap-16">
+                  <p>
+                    Уважно перевірте, чи всі ваші дані коректні. Якщо потрібно —
+                    працівник закладу внесе зміни та роздрукує декларацію ще
+                    раз. Підпишіть два екземпляри роздрукованої декларації. Один
+                    ви забираєте з собою, інший лишається у закладі
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h5 class="accordion-header-title">
+                  Працівник закладу підтверджує вашу декларацію електронним
+                  підписом і відправляє в електронну систему охорони здоровʼя.
+                </h5>
+                <!-- <i class="fa-sharp fa-solid fa-plus"></i> -->
+              </div>
+              <!-- <div class="accordion-content">
+                <div class="accordion-content-inner flex-column gap-16">
+                  <p></p>
+                </div>
+              </div> -->
+            </div>
           </div>
         </div>
       </section>
@@ -866,6 +991,23 @@
           </h2>
           <div id="amountMedicalPractice">
             <!-- html with nuber boxes dynamically added here -->
+            <ul class="grid-col-1-1-1 grid-col-1 gap-32">
+<li class="icon-box amount-box">
+  <span class="in-text-link">18000</span>
+  <p>Осіб на одного сімейного лікаря</p>
+</li>
+
+<li class="icon-box amount-box">
+  <span class="in-text-link">18545</span>
+  <p>Осіб на одного терапевта</p>
+</li>
+
+<li class="icon-box amount-box">
+  <span class="in-text-link">185</span>
+  <p>Осіб на одного педіатра</p>
+</li>
+
+            </ul>
           </div>
 
           <p class="article">
@@ -1188,8 +1330,9 @@
     <script src="../js/themeSwitcher.js"></script>
     <script src="../js/toggleMenu.js"></script>
     <script src="../js/breadcrumbs.js"></script>
-    <script type="module" src="../js/accordion.js"></script>
-    <script src="../js/content_modules_for_ pages/amountMedicalPractice.js"></script>
+    <!-- <script type="module" src="../js/accordion.js"></script> -->
+    <script src="../js/accordionNew.js"></script>
+    <!-- <script src="../js/content_modules_for_ pages/amountMedicalPractice.js"></script> -->
     <script src="../js/setActiveNavbarLinks.js"></script>
     <script src="../js/sharePage.js"></script>
     <script src="../js/updateYear.js"></script>

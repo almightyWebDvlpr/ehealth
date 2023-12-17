@@ -517,7 +517,8 @@ main, footer{
   align-items: baseline;
 }
 
-.accordion-content-inner ul li i {
+.accordion-content-inner ul li i,
+.accordion-content-inner i {
   font-size: 1.7rem;
 }
 
@@ -3544,4 +3545,31 @@ footer .swiper{
 }
 .banner h2 {
   color: #fff;
+}
+
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin-right: 10px;
+}
+
+.load-more {
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.content-page {
+  display: none;
+}
+
+.content-page.active {
+  display: block;
 }

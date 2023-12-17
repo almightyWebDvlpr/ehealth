@@ -22,3 +22,7 @@ updateYear(); // Initial call to set the current year
 
 // To continuously check and update the year, use setInterval
 setInterval(updateYear, 1000); // Check every second
+
+
+
+
