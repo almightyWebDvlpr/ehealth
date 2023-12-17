@@ -36,7 +36,6 @@ export function filterData(data) {
     selectedOptions.option2 ||
     selectedOptions.option3 ||
     selectedOptions.option4;
-  console.log(optionsSelected);
   const pageTitle = document.getElementById("pageTitle");
 
   if (!optionsSelected) {
@@ -92,7 +91,6 @@ export function filterData(data) {
 }
 
 export function processRows(data, gid) {
-  
   // Filter the data based on selected options
   const filteredData = filterData(data);
 
@@ -134,11 +132,23 @@ export function processRows(data, gid) {
 
     for (const key in item) {
       if (key === "Логотип (новий)" && item[key] !== "") {
+        
+
+        const idIndex = item[key].indexOf('id=');
+       
+       
         // Create an <img> element for the logo
         const logoImage = document.createElement("img");
         logoImage.classList.add("catalog-logo-img");
         // logoImage.style.width = '100%'
-        // logoImage.src = item[key];
+
+        if (idIndex !== -1) {
+          // Extract the substring starting from the index of 'id='
+          var fileId = item[key].slice(idIndex + 3);
+        
+         logoImage.src = `https://drive.google.com/uc?id=${fileId}`
+        }
+       
         const logoContainer = document.createElement("div");
         logoContainer.classList.add("logo-container"); // Add a class for styling
         logoContainer.appendChild(logoImage);
@@ -152,12 +162,11 @@ export function processRows(data, gid) {
       } else if (key === "Посилання на навчальні ресурси МІС") {
         // Insert link into the buttonEducation href attribute
         misCardsControls.appendChild(buttonGoToSite);
-        if(item[key].length > 2 && item[key].length !== 1){
-console.log(item[key].length)
+        if (item[key].length > 2 && item[key].length !== 1) {
+         
           buttonEducation.href = item[key];
           misCardsControls.appendChild(buttonEducation);
         }
-      
       } else if (key === "Посилання на веб-сайт МІС") {
         // Insert link into the buttonGoToSite href attribute
         buttonGoToSite.href = item[key];
@@ -170,10 +179,8 @@ console.log(item[key].length)
         heading.textContent = key;
 
         const paragraph = document.createElement("p");
-  
+
         paragraph.textContent = item[key];
-
-
 
         const pairDiv = document.createElement("div");
         pairDiv.classList.add("flex-column", "gap-6");
@@ -251,7 +258,6 @@ console.log(item[key].length)
             const emails = partText.match(emailRegex);
 
             if (urls) {
-            
               newP.href = urls[0];
               newP.textContent = urls[0];
               newP.classList.add("in-text-link");

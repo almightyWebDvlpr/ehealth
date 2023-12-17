@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <!-- ===== Boxicons CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ===== Link Swiper's CSS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <title>Каталог</title>
+
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Каталог" />
+    <meta property="og:description" content="" />
+    <meta
+      property="og:image"
+      content="http://127.0.0.2:4041/assets/images/logos/eHealth_black.png"
+    />
+    <meta property="og:url" content="http://127.0.0.2:4041/catalog.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta
+      property="og:site_name"
+      content="Електоронна Система Охорони Здоров'я"
+    />
+
+    <meta name="description" content="Електоронна Система Охорони Здоров'я" />
+    <meta name="keywords" content="Каталог, eHealth, Електоронна, Здоров'я" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "http://127.0.0.2:4041/index.html",
+              "name": "Головна сторінка"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "http://127.0.0.2:4041/catalog.html",
+              "name": "Каталог"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="cursor-line hide"></div>
+    <!-- Header starts -->
+
+    <header>
+      <div class="section-background">
+        <div class="header__top flex-center-s-b">
+          <div class="header__top-logos">
+            <div>
+              <a href="./index.html">
+                <img
+                  src="./assets/images/logos/eHealth_black.png"
+                  alt="ehealth-logo"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="https://diia.gov.ua/">
+                <img src="./assets/images/logos/image 8.png" alt="diia logo" />
+              </a>
+            </div>
+          </div>
+
+          <div class="header__top-controls flex-al-center">
+            <div class="leng-btns">
+              <button class="btn btn__white leng-btn">UA</button>
+              <button class="btn btn__white leng-btn">EN</button>
+            </div>
+
+            <div
+              id="toggleModalButton"
+              class="btn header__top-control--light flex-al-center"
+            >
+              <i class="bx bx-show-alt icon-show"></i>
+
+              <span class="header-control-light-text">
+                Для людей з порушенням зору
+              </span>
+            </div>
+
+            <!-- <div class="btn header__top-control--dark flex-center">
+                <span>Посилання на чат-бот</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </div> -->
+          </div>
+
+          <div class="burger" id="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+        </div>
+
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <i id="closeModalBtn" class="bx bx-x close"></i>
+            <h3>Налаштувати вигляд</h3>
+            <div class="modal-controls-wrapper">
+              <div class="flex-column gap-12">
+                <h5>Розмір текста</h5>
+
+                <div class="modal-controls">
+                  <div>
+                    <button id="decreaseFontSizeBtn" class="modal-btn">
+                      <i class="bx bx-minus"></i>
+                    </button>
+                  </div>
+                  <div>
+                    <button id="increaseFontSizeBtn" class="modal-btn">
+                      <i class="bx bx-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-column gap-12">
+                <h5>Відступи між буквами</h5>
+                <div class="modal-controls">
+                  <button id="decreaseLetterSpacingBtn" class="modal-btn">
+                    <i class="bx bx-minus"></i>
+                  </button>
+                  <button id="increaseLetterSpacingBtn" class="modal-btn">
+                    <i class="bx bx-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex-column gap-12">
+                <h5>Колір</h5>
+                <div class="modal-controls">
+                  <button
+                    id="offDarkColorToggleButton"
+                    class="btn btn__white modal-btn-rounded"
+                    disabled
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg"
+                    >
+                      <circle
+                        cx="10"
+                        cy="10"
+                        r="9"
+                        fill="#F4EF67"
+                        stroke="black"
+                        stroke-width="2"
+                      ></circle>
+                      <path
+                        d="M10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C10 9 10 11.3333 10 18Z"
+                        fill="#A7C4E9"
+                      ></path>
+                    </svg>
+                    <span class="btn-content"> Колір</span>
+                  </button>
+                  <button
+                    id="onDarkColorToggleButton"
+                    class="btn btn__white modal-btn-rounded"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg"
+                    >
+                      <circle
+                        cx="10"
+                        cy="10"
+                        r="9"
+                        stroke="black"
+                        stroke-width="2"
+                      ></circle>
+                      <path
+                        d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C10 8.75 10 11.6667 10 20Z"
+                        fill="black"
+                      ></path>
+                    </svg>
+                    <span class="btn-content"> Ч/Б</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex-column gap-12">
+                <h5>Інше</h5>
+                <div class="modal-controls">
+                  <button id="toggleCursorBtn" class="btn btn__white">
+                    <span class="btn-content">Великий курсор</span>
+                  </button>
+                  <button id="readLineBtn" class="btn btn__white">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg"
+                    >
+                      <path
+                        opacity="0.3"
+                        d="M14.6172 18L13.2891 14.5625H6.17969L4.85156 18H2.27344L8.25 3.15625H11.2578L17.2344 18H14.6172ZM7.03906 12.375H12.4297L9.73438 5.42188L7.03906 12.375Z"
+                        fill="black"
+                      ></path>
+                      <line
+                        y1="11"
+                        x2="20"
+                        y2="11"
+                        stroke="black"
+                        stroke-width="2"
+                      ></line>
+                    </svg>
+                    <span class="btn-content">Лінія для читання</span>
+                  </button>
+                </div>
+                <button id="toggleUnderlineBtn" class="btn btn__white">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="svg"
+                  >
+                    <path
+                      d="M13.4629 14L12.4668 11.4219H7.13477L6.13867 14H4.20508L8.6875 2.86719H10.9434L15.4258 14H13.4629ZM7.7793 9.78125H11.8223L9.80078 4.56641L7.7793 9.78125Z"
+                      fill="black"
+                    ></path>
+                    <line
+                      x1="3"
+                      y1="17"
+                      x2="17"
+                      y2="17"
+                      stroke="black"
+                      stroke-width="2"
+                    ></line>
+                  </svg>
+                  <span class="btn-content"> Підкреслювати посилання </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__nav">
+        <div class="container">
+          <nav class="navbar">
+            <section class="navbar-center">
+              <span class="overlay"
+                ><i id="closeMenu" class="bx bx-x close-menu"></i
+              ></span>
+              <div class="menu" id="menu">
+                <div class="menu-header">
+                  <span class="menu-arrow"
+                    ><i class="bx bx-chevron-left"></i
+                  ></span>
+                  <span class="menu-title"></span>
+                </div>
+                <ul class="menu-inner">
+                  <li class="menu-item menu-dropdown">
+                    <div class="menu-link-wrapper">
+                      <p class="menu-link">Електронна охорона здоров’я</p>
+                      <i class="bx bx-chevron-right"></i>
+                    </div>
+                    <div class="submenu megamenu megamenu-column-4">
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html">
+                          <h4 class="submenu-title">Системи</h4></a
+                        >
+                        <ul class="submenu-list">
+                          <li class="submenu-item">
+                            <a
+                              href="./electronic-healthcare/systems/ehcs.html"
+                              class="submenu-link"
+                              >EСОЗ</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./electronic-healthcare/systems/central.html"
+                              class="submenu-link"
+                              >Централь</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./electronic-healthcare/systems/mis.html"
+                              class="submenu-link"
+                              >МІСи</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./electronic-healthcare/systems/is-nhcs.html"
+                              class="submenu-link"
+                              >ІС НСЗУ</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html">
+                          <h4 class="submenu-title">Реєстри</h4></a
+                        >
+                        <ul class="submenu-list">
+                          <li class="submenu-item">
+                            <a
+                              href="./electronic-healthcare/registers/country-basic-registers-and-healthcare.html"
+                              class="submenu-link"
+                              >Базові реєстри країни та сфери охорони
+                              здоров’я</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="submenu-inner">
+                        <a href=""><h4 class="submenu-title">Дані</h4></a>
+                        <ul class="submenu-list">
+                          <li class="submenu-item">
+                            <a
+                              href="./electronic-healthcare/data/dashboards.html"
+                              class="submenu-link"
+                              >Дашборди EСОЗ</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a href="./404-not-found.html" class="submenu-link"
+                              >Інформаційна платформа</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./electronic-healthcare/legislation.html"
+                          ><h4 class="submenu-title">Законодавство</h4></a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item menu-dropdown">
+                    <div class="menu-link-wrapper">
+                      <p class="menu-link">Надавачам послуг</p>
+                      <i class="bx bx-chevron-right"></i>
+                    </div>
+                    <div class="submenu megamenu megamenu-column-4">
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html"
+                          ><h4 class="submenu-title">Керівникам ЗОЗ</h4></a
+                        >
+                        <ul class="submenu-list">
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/heads-of-health-care-institutions/how-connect-institution-to-esoz.html"
+                              class="submenu-link"
+                              >Як підключити заклад до EСОЗ</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/heads-of-health-care-institutions/how-choose-mis.html"
+                              class="submenu-link"
+                              >Як обрати МІС</a
+                            >
+                          </li>
+
+                          <li class="submenu-item">
+                            <a href="./404-not-found.html" class="submenu-link"
+                              >Каталог МІС</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./service-providers/doctors/to-doctors.html"
+                          ><h4 class="submenu-title">Лікарям</h4></a
+                        >
+                        <ul class="submenu-list">
+                          <li class="submenu-item">
+                            <a href="./404-not-found.html" class="submenu-link"
+                              >Навчання</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/doctors/education/digital-educational-resources.html"
+                              class="submenu-link small-text"
+                              >Цифрові освітні ресурси</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./404-not-found.html"
+                              class="submenu-link small-text"
+                              >Кібербезпека</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/doctors/education/digital-education.html"
+                              class="submenu-link small-text"
+                              >Цифрова освіта</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/doctors/education/nhcs-academy.html"
+                              class="submenu-link small-text"
+                              >Академія НСЗУ</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/system-performance-monitoring.html"
+                              class="submenu-link"
+                              >Моніторинг працездатності системи</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a href="./404-not-found.html" class="submenu-link"
+                              >Повідомити про проблему</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/doctors/doctors-faq.html"
+                              class="submenu-link"
+                              >FAQ</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html"
+                          ><h4 class="submenu-title">Аптечним закладам</h4></a
+                        >
+                        <ul class="submenu-list">
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/pharmacies/how-to-connect-pharmacy-to-the-nhcs.html"
+                              class="submenu-link"
+                              >Як підключити аптеку до EСОЗ</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/pharmacies/contracting-with-nhsc.html"
+                              class="submenu-link"
+                              >Контрактування з НСЗУ</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/pharmacies/pharmacy-how-to-choose-mis.html"
+                              class="submenu-link"
+                              >Як обрати МІС</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/mis-catalog.html"
+                              class="submenu-link"
+                              >Каталог МІС</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/system-performance-monitoring.html"
+                              class="submenu-link"
+                              >Моніторинг працездатності системи</a
+                            >
+                          </li>
+                          <li class="submenu-item">
+                            <a
+                              href="./service-providers/pharmacies/faq.html"
+                              class="submenu-link"
+                              >FAQ</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="menu-item menu-dropdown">
+                    <div class="menu-link-wrapper">
+                      <a href="./patients/to-patients.html" class="menu-link"
+                        >Пацієнтам</a
+                      >
+                      <i class="bx bx-chevron-right"></i>
+                    </div>
+                    <div class="submenu megamenu megamenu-column-4">
+                      <div class="submenu-inner">
+                        <a
+                          href="./patients/how-to-make-a-declaration-with-a-family-doctor.html"
+                          ><h4 class="submenu-title">
+                            Як укласти декларацію з сімейним лікарем
+                          </h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./patients/how-to-get-an-e-prescription.html"
+                          ><h4 class="submenu-title">
+                            Як отримати е-рецепт
+                          </h4></a
+                        >
+                      </div>
+
+                      <div class="submenu-inner">
+                        <a
+                          href="./patients/medical-conclusions-about-temporary-disability.html"
+                          ><h4 class="submenu-title">
+                            Медичні висновки про тимчасову непрацездатність
+                          </h4></a
+                        >
+                      </div>
+
+                      <div class="submenu-inner">
+                        <a href="./patients/how-to-use-e-malyatko-services.html"
+                          ><h4 class="submenu-title">
+                            Як скористатися послугами єМалятко
+                          </h4></a
+                        >
+                      </div>
+
+                      <div class="submenu-inner">
+                        <a
+                          href="./patients/how-to-get-e-referral-to-a-specialist.html"
+                          ><h4 class="submenu-title no-wrap">
+                            Як отримати е-направлення до спеціаліста
+                          </h4></a
+                        >
+                      </div>
+
+                      <div class="submenu-inner">
+                        <a
+                          class="submenu-link"
+                          href="./patients/patients-faq.html"
+                          ><h4 class="submenu-title no-wrap">FAQ</h4></a
+                        >
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="menu-item menu-dropdown">
+                    <div class="menu-link-wrapper">
+                      <p class="menu-link">Партнерам</p>
+                      <i class="bx bx-chevron-right"></i>
+                    </div>
+
+                    <div class="submenu megamenu megamenu-column-4">
+                      <div class="submenu-inner">
+                        <a href="./partners/to-state-authorities.html"
+                          ><h4 class="submenu-title">
+                            Органам державної влади
+                          </h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./partners/to-software-developers.html"
+                          ><h4 class="submenu-title">Розробникам ПЗ</h4></a
+                        >
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="menu-item menu-dropdown">
+                    <div class="menu-link-wrapper">
+                      <p class="menu-link">Розробникам</p>
+                      <i class="bx bx-chevron-right"></i>
+                    </div>
+
+                    <div class="submenu megamenu megamenu-column-4">
+                      <div class="submenu-inner">
+                        <a
+                          href="./developers/technical-requirements-and-test-program-for-mis.html"
+                          ><h4 class="submenu-title">
+                            Технічні вимоги та тестова програма до МІС
+                          </h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./developers/how-to-connect-mis-to-esoz.html"
+                          ><h4 class="submenu-title">
+                            Як приєднати МІС до ЕСОЗ
+                          </h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html"
+                          ><h4 class="submenu-title">Кабінет розробника</h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html"
+                          ><h4 class="submenu-title">F&Q</h4></a
+                        >
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="menu-item menu-dropdown">
+                    <div class="menu-link-wrapper">
+                      <p class="menu-link">Новини</p>
+                      <i class="bx bx-chevron-right"></i>
+                    </div>
+
+                    <div class="submenu megamenu megamenu-column-4">
+                      <div class="submenu-inner">
+                        <a href="./news/blog.html"
+                          ><h4 class="submenu-title">Блог</h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./news/team.html"
+                          ><h4 class="submenu-title">Команда</h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./news/contacts.html"
+                          ><h4 class="submenu-title">Контакти</h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./news/partners.html"
+                          ><h4 class="submenu-title">Партнери</h4></a
+                        >
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="menu-item menu-dropdown">
+                    <div class="menu-link-wrapper">
+                      <p class="menu-link">Підтримка</p>
+                      <i class="bx bx-chevron-right"></i>
+                    </div>
+
+                    <div class="submenu megamenu megamenu-column-4">
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html"
+                          ><h4 class="submenu-title">
+                            Чат-бот зворотнього зв’язку
+                          </h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html"
+                          ><h4 class="submenu-title">
+                            Лінк на дзвінок контакт-центру
+                          </h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./support/system-performance-monitoring.html"
+                          ><h4 class="submenu-title">
+                            Моніторинг працездатності ЕСОЗ
+                          </h4></a
+                        >
+                      </div>
+                      <div class="submenu-inner">
+                        <a href="./404-not-found.html"
+                          ><h4 class="submenu-title">
+                            Повідомити про проблему в ЕСОЗ
+                          </h4></a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Header end -->
+
+    <main>
+      <section class="top__section">
+        <div class="container">
+          <ul id="breadcrumbs">
+            <!-- Breadcrumb items will be dynamically added here -->
+          </ul>
+          <div class="flex-column gap-48 top-section-elements">
+            <div class="gap-24 flex-column">
+              <div class="top__section-title flex-center-s-b">
+                <h1 id="pageTitle"></h1>
+
+                <span
+                  onclick="sharePage()"
+                  class="top__section-link flex-al-center in-text-link"
+                >
+                  <span>Поділитися</span>
+                  <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+                </span>
+              </div>
+
+              <form
+                class="textfield__box flex-al-center"
+                id="search-form"
+                style="width: 100%"
+              >
+                <input
+                  class="textfield"
+                  type="text"
+                  id="search-input"
+                  placeholder="Пошук"
+                />
+                <button class="search__icon" type="submit">
+                  <i id="icon-search" class="bx bx-search"></i>
+                </button>
+                <i id="icon-cross" class="bx bx-x cross__icon"></i>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section">
+        <div class="container">
+          <div class="selects-container">
+            <div class="custom-select">
+              <div class="select-header">
+                <div class="select-header-group">
+                  <i class="bx bx-filter-alt"></i>
+                  <p>За рівнями надання МД</p>
+                </div>
+                <div>
+                  <i class="reset-button hidden bx bx-plus-circle"></i>
+                  <i class="bx bx-chevron-down arrow-icon"></i>
+                </div>
+              </div>
+              <ul class="options-list">
+                <li data-value="ПМД">Надавачам ПМД</li>
+                <li data-value="СМД">Надавачам СМД</li>
+                <li data-value="Аптечним закладам">Аптечним закладам</li>
+                <li data-value="Лабораторії">Лабораторіям</li>
+                <li data-value="Екстрена медична допомога">Екстреної МД</li>
+                <li data-value="ФОП">ФОП</li>
+                <li data-value="Пацієнтам (ПІС)">Пацієнтам (ПІС)</li>
+              </ul>
+              <input type="hidden" id="selected-option1" />
+            </div>
+
+            <div class="custom-select">
+              <div class="select-header">
+                <div class="select-header-group">
+                  <i class="bx bx-filter-alt"></i>
+                  <p>За технологією для зберігання та обробки даних</p>
+                </div>
+                <div>
+                  <i class="reset-button hidden bx bx-plus-circle"></i>
+                  <i class="bx bx-chevron-down arrow-icon"></i>
+                </div>
+              </div>
+              <ul class="options-list">
+                <li data-value="Гібрид">Гібрид</li>
+                <li data-value="Хмара">Хмара</li>
+                <li data-value="Десктоп">Десктоп</li>
+              </ul>
+              <input type="hidden" id="selected-option2" />
+            </div>
+
+            <div class="custom-select">
+              <div class="select-header">
+                <div class="select-header-group">
+                  <i class="bx bx-filter-alt"></i>
+                  <p>З закладами якого типу власності співпрацюють</p>
+                </div>
+                <div>
+                  <i class="reset-button hidden bx bx-plus-circle"></i>
+                  <i class="bx bx-chevron-down arrow-icon"></i>
+                </div>
+              </div>
+              <ul class="options-list">
+                <li data-value="Відомчі заклади">Відомчі заклади</li>
+                <li data-value="Комунальна власність">Комунальна власність</li>
+                <li data-value="Приватна власність">Приватна власність</li>
+              </ul>
+              <input type="hidden" id="selected-option3" />
+            </div>
+
+            <div class="custom-select">
+              <div class="select-header">
+                <div class="select-header-group">
+                  <i class="bx bx-filter-alt"></i>
+                  <p>За впровадженим функціоналом (або за РМК)</p>
+                </div>
+                <div>
+                  <i class="reset-button hidden bx bx-plus-circle"></i>
+                  <i class="bx bx-chevron-down arrow-icon"></i>
+                </div>
+              </div>
+              <ul class="options-list">
+                <li data-value="option13">Option 13</li>
+                <li data-value="option14">Option 14</li>
+                <li data-value="option15">Option 15</li>
+                <li data-value="option16">Option 16</li>
+              </ul>
+              <input type="hidden" id="selected-option4" />
+            </div>
+          </div>
+
+          <!-- Define output elements for each sheet -->
+          <!-- <div id="loader" class="loader"></div> -->
+          <div id="output-1138747254" class="flex-column gap-32">
+            <div class="mis-card-conatiner grid-col-1">
+              <div class="mis-card-left">
+                <div class="logo-container">
+                  <img
+                    src="https://drive.google.com/uc?id=1rTfuyHeSzpUcyGO3YCeYhsYg0xxnzEwj"
+                    alt=""
+                    class="catalog-logo-img"
+                  />
+                </div>
+                <div class="mis-card-controls">
+                  <a
+                    href=""
+                    class="btn btn__dark mis__catalog-btn"
+                    target="_blank"
+                  >
+                    Перейти на сайт
+                    <i class="bx bx-right-arrow-alt"></i>
+                  </a>
+                  <a href="" class="btn btn__white" target="_blank"
+                    >Навчальні ресурси</a
+                  >
+                </div>
+                <div class="flex-column gap-6">
+                  <p
+                    style="
+                      color: rgb(128, 145, 176);
+                      font-size: 14px;
+                      font-weight: 300;
+                      line-height: 19.6px;
+                    "
+                  >
+                    Контакти служби підтримки
+                  </p>
+                  <div style="display: flex; gap: 12px; flex-wrap: wrap">
+                    <a
+                      href="tel:+ 38 (067) 340 77 34"
+                      style="display: flex; flex-direction: row-reverse"
+                      >+ 38 (067) 340 77 34<img
+                        class="icon-tel"
+                        src="./assets/images/icons/kyivstar.png"
+                        style="width: 20px; height: 20px; margin-right: 5px"
+                    /></a>
+                    <a
+                      href="tel:+ 38 (032) 242 69 03"
+                      style="display: flex; flex-direction: row-reverse"
+                      >+ 38 (032) 242 69 03<span style="margin-right: 5px"
+                        ><i
+                          class="bx bx-phone"
+                          style="color: #5454e9; font-size: 1.4rem"
+                        ></i></span
+                    ></a>
+                    <a
+                      href="tel:+ 38 (099) 340 70 35"
+                      style="display: flex; flex-direction: row-reverse"
+                      >+ 38 (099) 340 70 35<img
+                        class="icon-tel"
+                        src="./assets/images/icons/vodafone.png"
+                        style="width: 20px; height: 20px; margin-right: 5px"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="mis-card-right">
+                <h2 class="h2-mb-m">Doctor Eleks</h2>
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">Назва Оператора МІС</p>
+                  <p>ТОВ ДОКТОР ЕЛЕКС</p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">Рік підключення до ЦБД ЕСОЗ</p>
+                  <p>2019</p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Посилання на веб-сайт Оператора МІС
+                  </p>
+                  <a
+                    href="https://ehealth.eleks.com/"
+                    target="_blank"
+                    class="in-text-link"
+                    >ehealth.eleks.com</a
+                  >
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">Рівні надання МД</p>
+
+                  <div class="flex gap-12" style="flex-wrap: wrap">
+                    <p class="chips" style="font-size: 13px">ПМД</p>
+                    <p class="chips" style="font-size: 13px">СМД</p>
+                    <p class="chips" style="font-size: 13px">Аптечні заклади</p>
+                    <p class="chips" style="font-size: 13px">
+                      Екстрена медична допомога
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Технологія для зберігання та обробки даних
+                  </p>
+                  <p>гібрид</p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    З закладами якого типу власності співпрацюють
+                  </p>
+                  <p>
+                    відомчі заклади, комунальна власність, приватна власність
+                  </p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Перелік додаткового ф-лу, який реалізовано у МІС
+                  </p>
+                  <p>
+                    запис на прийом, складський облік, кадровий облік,
+                    управлінський облік, телемедичні рішення, інтеграції з
+                    девайсами, інтеграції з стороннім програмним забезпеченням
+                  </p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Контакт з питань підключення для нових закладів
+                  </p>
+                  <p>
+                    + 38 (067) 340 77 34, + 38 (032) 242 69 03, + 38 (099) 340
+                    70 35
+                  </p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Впроваджений перелік ф-лу, який вимагається ТВ до МІС
+                  </p>
+                  <p>
+                    адміністрування аптечного закладу, адміністрування надавача
+                    медичних послуг, вакцинація, вакцинація середнім медичним
+                    персоналом, ведення електронних медичних записів в
+                    стаціонарі, виписування електронного рецепту на лікарські
+                    засоби, виписування електронного рецепту на медичні вироби,
+                    декларації, діагностичний звіт, довідники, доступ до
+                    медичних даних, електронні медичні записи, електронні
+                    направлення, медичні висновки про народження, медичні
+                    висновки про тимчасову непрацездатність, неонатальний
+                    скринінг, план лікування, погашення електронного рецепту на
+                    лікарські засоби, погашення електронного рецепту на медичні
+                    вироби, процедури, реабілітація, реорганізація юридичної
+                    особи, робота з ідентифікованим пацієнтом, робота з
+                    клінічними оцінками та категоріями пацієнтів, робота з
+                    неідентифікованим пацієнтом, робоче місце адміністратора
+                    медичних записів, робоче місце лаборанта, робоче місце
+                    середнього медичного персоналу, робоче місце
+                    трансплант-координатора, спостереження, статус верифікації
+                    пацієнта
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mis-card-conatiner grid-col-1">
+              <div class="mis-card-left">
+                <div class="logo-container">
+                  <img
+                    src="https://drive.google.com/uc?id=1FA7aGGwlerEBl6qMtqTviHGRql3VtEb7"
+                    alt=""
+                    class="catalog-logo-img"
+                  />
+                </div>
+                <div class="mis-card-controls">
+                  <a
+                    href="https://helsi.pro/"
+                    class="btn btn__dark mis__catalog-btn"
+                    target="_blank"
+                  >
+                    Перейти на сайт
+                    <i class="bx bx-right-arrow-alt"></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    class="btn btn__white"
+                    href="https://miswiki.atlassian.net/wiki/spaces/SD/pages/1637646358/Helsi"
+                    >Навчальні ресурси</a
+                  >
+                </div>
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">Контакти служби підтримки</p>
+                  <div style="display: flex; gap: 12px; flex-wrap: wrap">
+                    <a
+                      href="tel:+ 38 (068) 580 10 90"
+                      style="display: flex; flex-direction: row-reverse"
+                      >+ 38 (068) 580 10 90<img
+                        class="icon-tel"
+                        src="./assets/images/icons/kyivstar.png"
+                        style="width: 20px; height: 20px; margin-right: 5px"
+                    /></a>
+
+                    <a
+                      href="tel:+ 38 (066) 580 10 90"
+                      style="display: flex; flex-direction: row-reverse"
+                      >+ 38 (066) 580 10 90<img
+                        class="icon-tel"
+                        src="./assets/images/icons/vodafone.png"
+                        style="width: 20px; height: 20px; margin-right: 5px"
+                    /></a>
+                    <a
+                      href="tel:+ 38 (044) 580 10 90"
+                      style="display: flex; flex-direction: row-reverse"
+                      >+ 38 (044) 580 10 90<span style="margin-right: 5px"
+                        ><i
+                          class="bx bx-phone"
+                          style="color: #5454e9; font-size: 1.4rem"
+                        ></i></span
+                    ></a>
+                    <a
+                      href="tel:+ 38 (073) 580 10 90"
+                      style="display: flex; flex-direction: row-reverse"
+                      >+ 38 (073) 580 10 90<img
+                        class="icon-tel"
+                        src="./assets/images/icons/logo.svg"
+                        style="width: 20px; height: 20px; margin-right: 5px"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="mis-card-right">
+                <h2 class="h2-mb-m">Helsi</h2>
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">Назва Оператора МІС</p>
+                  <p>ТОВ ХЕЛСІ УКРАЇНА</p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">Рік підключення до ЦБД ЕСОЗ</p>
+                  <p>2019</p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Посилання на веб-сайт Оператора МІС
+                  </p>
+                  <a
+                    href="https://helsi.me/"
+                    target="_blank"
+                    class="in-text-link"
+                    >ehealth.eleks.com</a
+                  >
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">Рівні надання МД</p>
+
+                  <div class="flex gap-12" style="flex-wrap: wrap">
+                    <p class="chips" style="font-size: 13px">ПМД</p>
+                    <p class="chips" style="font-size: 13px">СМД</p>
+                    <p class="chips" style="font-size: 13px">Аптечні заклади</p>
+                    <p class="chips" style="font-size: 13px">Лабораторії</p>
+                    <p class="chips" style="font-size: 13px">
+                      Екстрена медична допомога
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Технологія для зберігання та обробки даних
+                  </p>
+                  <p>Хмара</p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    З закладами якого типу власності співпрацюють
+                  </p>
+                  <p>
+                    відомчі заклади, комунальна власність, приватна власність
+                  </p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Перелік додаткового ф-лу, який реалізовано у МІС
+                  </p>
+                  <p>
+                    запис на прийом, складський облік, кадровий облік,
+                    управлінський облік, телемедичні рішення, інтеграції з
+                    девайсами, інтеграції з стороннім програмним забезпеченням
+                  </p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Контакт з питань підключення для нових закладів
+                  </p>
+                  <p>
+                    + 38 (044) 580 10 90, + 38 (068) 580 10 90, + 38 (066) 580
+                    10 90, + 38 (073) 580 10 90
+                  </p>
+                </div>
+
+                <div class="flex-column gap-6">
+                  <p class="mis-card-info">
+                    Впроваджений перелік ф-лу, який вимагається ТВ до МІС
+                  </p>
+                  <p>
+                    адміністрування аптечного закладу, адміністрування надавача
+                    медичних послуг, вакцинація, вакцинація середнім медичним
+                    персоналом, ведення електронних медичних записів в
+                    стаціонарі, виписування електронного рецепту на лікарські
+                    засоби, виписування електронного рецепту на медичні вироби,
+                    декларації, діагностичний звіт, довідники, доступ до
+                    медичних даних, електронні медичні записи, електронні
+                    направлення, медичні висновки про народження, медичні
+                    висновки про тимчасову непрацездатність, план лікування,
+                    погашення електронного рецепту на лікарські засоби,
+                    погашення електронного рецепту на медичні вироби, процедури,
+                    реабілітація, реорганізація юридичної особи, робота з
+                    ідентифікованим пацієнтом, робота з клінічними оцінками та
+                    категоріями пацієнтів, робота з неідентифікованим пацієнтом,
+                    робоче місце адміністратора медичних записів, робоче місце
+                    середнього медичного персоналу, робоче місце
+                    трансплант-координатора, спостереження, статус верифікації
+                    пацієнта
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pagination-container">
+              <button class="pagination-button pagination-button-prev">
+                <i class="bx bx-chevron-left"></i>
+              </button>
+              <button class="pagination-button active-pagination-button">
+                <p>1</p>
+              </button>
+              <button class="pagination-button">
+                <p>2</p>
+              </button>
+              <button class="pagination-button">
+                <p>3</p>
+              </button>
+              <span>...</span>
+              <button class="pagination-button">
+                <p>4</p>
+              </button>
+              <button class="pagination-button">
+                <p>5</p>
+              </button>
+              <button class="pagination-button pagination-button-next">
+                <i class="bx bx-chevron-right"></i>
+              </button>
+             
+            </div>
+          </div>
+          <!-- <div id="output-0"></div> -->
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <!-- To Partners -->
+
+        <article>
+          <div class="homepage__content-top">
+            <h2 class="h2-mb-l">Партнери</h2>
+
+            <div class="swiper__buttons footer__swiper-buttons">
+              <i
+                class="bx bx-arrow-back swiper-button-prev partners-button-prev"
+              ></i>
+              <i
+                class="bx bx-arrow-back bx-rotate-180 swiper-button-next partners-button-next"
+              ></i>
+            </div>
+          </div>
+
+          <div class="swiper__section">
+            <div
+              id="partners-swiper-container"
+              class="swiper mySwiper container"
+            >
+              <div class="swiper-wrapper content"></div>
+            </div>
+          </div>
+          <div style="position: relative">
+            <div class="swiper-pagination partners-swiper-pagination"></div>
+          </div>
+        </article>
+
+        <nav class="footer__navigation">
+          <ul class="footer__navigation-list">
+            <li class="footer__navigation-item">
+              <a
+                class="footer__navigation-link"
+                href="./electronic-healthcare/electronic-healthcare.html"
+              >
+                <h4>Електронна охорона здоров’я</h4>
+              </a>
+
+              <ul class="gap-12 flex-column">
+                <li>
+                  <a class="footer__navigation-link" href="">Системи</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="">Реєстри</a>
+                </li>
+
+                <li>
+                  <a class="footer__navigation-link" href="">Дані</a>
+                </li>
+
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./electronic-healthcare/legislation.html"
+                    >Законодавство</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <a
+                class="footer__navigation-link"
+                href="./service-providers/to-service-providers.html"
+              >
+                <h4>Надавачам послуг</h4>
+              </a>
+
+              <ul class="gap-12 flex-column">
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./service-providers/heads-of-health-care-institutions/heads-of-health-care-institutions.html"
+                    >Керівникам ЗОЗ</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./service-providers/doctors/to-doctors.html"
+                    >Лікарям</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    class="footer__navigation-link"
+                    href="./service-providers/pharmacies/to-pharmacy.html"
+                    >Аптечним закладам</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <ul class="footer__navigation-sublist">
+                <li class="footer__navigation-subitem">
+                  <a
+                    class="footer__navigation-link"
+                    href="./patients/to-patients.html"
+                  >
+                    <h4>Пацієнтам</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a
+                    class="footer__navigation-link"
+                    href="./partners/to-partners.html"
+                  >
+                    <h4>Партнерам</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a
+                    class="footer__navigation-link"
+                    href="./developers/to-developers.html"
+                  >
+                    <h4>Розробникам</h4>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="footer__navigation-item">
+              <ul class="footer__navigation-sublist">
+                <li class="footer__navigation-subitem">
+                  <a class="footer__navigation-link" href="./news/news.html">
+                    <h4>Новини</h4>
+                  </a>
+                </li>
+
+                <li class="footer__navigation-subitem">
+                  <a
+                    class="footer__navigation-link"
+                    href="./support/support.html"
+                  >
+                    <h4>Підтримка</h4>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__socials">
+          <p>Стежте за нами тут:</p>
+
+          <div class="footer__socials-list">
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-facebook" style="color: #0b53d0"></i>
+              </a>
+            </div>
+
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-youtube" style="color: #ff0302"></i>
+              </a>
+            </div>
+
+            <div class="masked-icon">
+              <a href="">
+                <i class="fa-brands fa-linkedin" style="color: #0b53d0"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__controls">
+          <ul class="footer__controls-list">
+            <!-- <li>
+            <a class="btn btn__white" href="">
+              Посилання на чат-бот
+              <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </li> -->
+
+            <li>
+              <a class="btn btn__white" href="">
+                Контакт центр
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="btn btn__white" href="">
+                Повідомити про проблему в ЄСОЗ
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__divider"></div>
+
+      <div class="container">
+        <div class="footer__bootom">
+          <div class="footer__bootom-logos">
+            <a href="/index.html">
+              <img
+                src="./assets/images/logos/eHealth_white.png"
+                alt="ehealth logo"
+              />
+            </a>
+            <a href="https://diia.gov.ua/" target="_blank">
+              <img src="./assets/images/logos/Group.png" alt="diia logo" />
+            </a>
+            <a href="/index.html">ehealth.gov.ua</a>
+          </div>
+          <div>
+            <p>Всі права захищені <span id="currentYear"></span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="./js/imagesSwiper.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <!-- <script type="module" src="./js/catalog.js"></script> -->
+    <script src="./js/catalogCustomSelects.js"></script>
+    <script src="./js/themeSwitcher.js"></script>
+    <script src="./js/fontSizeMutation.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/sharePage.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/updateYear.js"></script>
+  </body>
+</html>

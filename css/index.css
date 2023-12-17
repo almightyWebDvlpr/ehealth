@@ -1065,6 +1065,9 @@ button[disabled] {
   background: #fff;
   transition: all 0.3s ease;
 }
+.select-icon-rotate{
+  transform: rotate(180deg);
+}
 
 .select-header.autocomplete-select-header {
   display: none;
@@ -2060,6 +2063,12 @@ button[disabled] {
   grid-template-columns: repeat(auto-fill, minmax(383px, 1fr));
   gap: 24px;
 }
+.mis-card-info{
+  color: rgb(128, 145, 176);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19.6px;
+}
 .icon-box {
   background: #f9fbfe;
   padding: 24px;
@@ -2418,7 +2427,7 @@ button[disabled] {
 }
 
 .catalog-logo-img {
-  aspect-ratio: 16/5;
+  /* aspect-ratio: 16/5; */
   object-fit: scale-down;
   max-width: 100%;
 }
