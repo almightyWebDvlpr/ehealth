@@ -839,8 +839,70 @@
 
           <div class="swiper__section">
             <div id="systemsSwiper" class="swiper swiper-container">
-              <div class="swiper-wrapper">
+              <div
+                class="swiper-wrapper"
+                style="
+                  cursor: grab;
+                  transition-duration: 0ms;
+                  transform: translate3d(0px, 0px, 0px);
+                  transition-delay: 0ms;
+                "
+                id="swiper-wrapper-400bde3109bd22663"
+                aria-live="polite"
+              >
                 <!-- Slides will be dynamically added here -->
+                <div
+                  class="swiper-slide responses-swiper-slide swiper-slide-active"
+                  role="group"
+                  aria-label="1 / 4"
+                  style="width: 295.333px; margin-right: 50px"
+                >
+                  <a
+                    class="swiper-card systemsSwiper__swiper-card"
+                    href="./systems/ehcs.html"
+                    ><h5 class="">ЕСОЗ</h5>
+                    <i class="bx bx-right-arrow-alt"></i
+                  ></a>
+                </div>
+                <div
+                  class="swiper-slide responses-swiper-slide swiper-slide-next"
+                  role="group"
+                  aria-label="2 / 4"
+                  style="width: 295.333px; margin-right: 50px"
+                >
+                  <a
+                    class="swiper-card systemsSwiper__swiper-card"
+                    href="./systems/central.html"
+                    ><h5 class="">Централь</h5>
+                    <i class="bx bx-right-arrow-alt"></i
+                  ></a>
+                </div>
+                <div
+                  class="swiper-slide responses-swiper-slide"
+                  role="group"
+                  aria-label="3 / 4"
+                  style="width: 295.333px; margin-right: 50px"
+                >
+                  <a
+                    class="swiper-card systemsSwiper__swiper-card"
+                    href="./systems/mis.html"
+                    ><h5 class="">МІСи</h5>
+                    <i class="bx bx-right-arrow-alt"></i
+                  ></a>
+                </div>
+                <div
+                  class="swiper-slide responses-swiper-slide"
+                  role="group"
+                  aria-label="4 / 4"
+                  style="width: 295.333px; margin-right: 50px"
+                >
+                  <a
+                    class="swiper-card systemsSwiper__swiper-card"
+                    href="./systems/is-nhcs.html"
+                    ><h5 class="">ІС НСЗУ</h5>
+                    <i class="bx bx-right-arrow-alt"></i
+                  ></a>
+                </div>
               </div>
             </div>
 
@@ -1216,7 +1278,7 @@
 
     <!-- Footer end -->
 
-    <script type="module" src="../js/cardsSwiper.js"></script>
+    <!-- <script type="module" src="../js/cardsSwiper.js"></script> -->
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="../js/imagesSwiper.js"></script>
@@ -1232,5 +1294,58 @@
     <script src="../js/themeSwitcher.js"></script>
     <script src="../js/setActiveNavbarLinks.js"></script>
     <script src="../js/sharePage.js"></script>
+
+
+    
+
+    <script>
+      const swiperSystems = new Swiper("#systemsSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        slidesPerGroup: 4,
+        grabCursor: true,
+        // loop: true,
+        loopFillGroupWithBlank: true,
+        // autoplay: {
+        //     delay: 5000,
+        // },
+        scrollbar: {
+          el: `.swiper-scrollbar.responses-scrollbar`,
+          hide: false,
+          draggable: true,
+          dragSize: 400,
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            slidesPerGroup: 1,
+            scrollbar: {
+              el: ".swiper-scrollbar.responses-scrollbar",
+              enabled: true,
+              dragSize: 0,
+            },
+          },
+          640: {
+            slidesPerGroup: 1,
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerGroup: 2,
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next.responses-button-next",
+          prevEl: ".swiper-button-prev.responses-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>

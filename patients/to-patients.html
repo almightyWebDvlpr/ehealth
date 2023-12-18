@@ -967,8 +967,108 @@
 
           <div class="swiper__section">
             <div id="dashboardsSwiper" class="swiper swiper3 swiper-container">
-              <div class="swiper-wrapper">
+              <div
+                class="swiper-wrapper"
+                style="cursor: grab"
+                id="swiper-wrapper-28497cac10e7115b1"
+                aria-live="polite"
+              >
                 <!-- Slides will be dynamically added here -->
+                <div
+                  class="swiper-slide responses-swiper-slide swiper-slide-active"
+                  role="group"
+                  aria-label="1 / 5"
+                  style="width: 338.667px; margin-right: 50px"
+                >
+                  <div class="swiper-card dashboardsSwiper__swiper-card">
+                    <h5 class="mb">
+                      Стан подання пропозицій закладами охорони здоров`я на
+                      укладення договорів з НСЗУ за програмою медичних гарантій
+                    </h5>
+                    <i class="bx bx-right-arrow-alt"></i>
+                    <p>
+                      Інформація про подання пропозицій спеціалізованими
+                      закладами в системі “Смарттендер” на укладення договору з
+                      НСЗУ за кожним із медичних пакетів.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide responses-swiper-slide swiper-slide-next"
+                  role="group"
+                  aria-label="2 / 5"
+                  style="width: 338.667px; margin-right: 50px"
+                >
+                  <div class="swiper-card dashboardsSwiper__swiper-card">
+                    <h5 class="mb">
+                      Укладені договори про медичне обслуговування населення за
+                      програмою медичних гарантій
+                    </h5>
+                    <i class="bx bx-right-arrow-alt"></i>
+                    <p>
+                      Інформація про заклади охорони здоров’я, які надають
+                      медичні послуги за тими з медичних пакетів, за якими
+                      уклали договір з НСЗУ.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide responses-swiper-slide"
+                  role="group"
+                  aria-label="3 / 5"
+                  style="width: 338.667px; margin-right: 50px"
+                >
+                  <div class="swiper-card dashboardsSwiper__swiper-card">
+                    <h5 class="mb">
+                      Оплати надавачам медичної допомоги за програмою медичних
+                      гарантій
+                    </h5>
+                    <i class="bx bx-right-arrow-alt"></i>
+                    <p>
+                      Інформація щодо сум виплат закладам, які надають первинну,
+                      спеціалізовану та екстрену медичну допомогу за договором з
+                      НСЗУ.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide responses-swiper-slide"
+                  role="group"
+                  aria-label="4 / 5"
+                  style="width: 338.667px; margin-right: 50px"
+                >
+                  <div class="swiper-card dashboardsSwiper__swiper-card">
+                    <h5 class="mb">
+                      Звіт про доходи та витрати надавачів медичних послуг
+                      (окремі показники)
+                    </h5>
+                    <i class="bx bx-right-arrow-alt"></i>
+                    <p>
+                      Інформація про забезпечення ресурсами та їх використання
+                      медичними закладами, що уклали договори з Національною
+                      службою здоров’я України.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide responses-swiper-slide"
+                  role="group"
+                  aria-label="5 / 5"
+                  style="width: 338.667px; margin-right: 50px"
+                >
+                  <div class="swiper-card dashboardsSwiper__swiper-card">
+                    <h5 class="mb">
+                      Звіт про доходи та витрати надавачів медичних послуг
+                      (окремі показники)
+                    </h5>
+                    <i class="bx bx-right-arrow-alt"></i>
+                    <p>
+                      Інформація про забезпечення ресурсами та їх використання
+                      медичними закладами, що уклали договори з Національною
+                      службою здоров’я України.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1218,6 +1318,57 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="../js/imagesSwiper.js"></script>
-    <script type="module" src="../js/cardsSwiper.js"></script>
+    <!-- <script type="module" src="../js/cardsSwiper.js"></script> -->
+
+    
+    <script>
+      const swiperSystems = new Swiper("#dashboardsSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        slidesPerGroup: 4,
+        grabCursor: true,
+        // loop: true,
+        loopFillGroupWithBlank: true,
+        // autoplay: {
+        //     delay: 5000,
+        // },
+        scrollbar: {
+          el: `.swiper-scrollbar.responses-scrollbar`,
+          hide: false,
+          draggable: true,
+          dragSize: 400,
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            slidesPerGroup: 1,
+            scrollbar: {
+              el: ".swiper-scrollbar.responses-scrollbar",
+              enabled: true,
+              dragSize: 0,
+            },
+          },
+          640: {
+            slidesPerGroup: 1,
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerGroup: 2,
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next.dasboard-button-next",
+          prevEl: ".swiper-button-prev.dasboard-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>

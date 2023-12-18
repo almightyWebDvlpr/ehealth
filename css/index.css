@@ -3029,6 +3029,7 @@ footer .swiper {
 }
 .image {
   padding: 24px;
+  display: block;
 }
 
 .image img {
