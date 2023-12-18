@@ -1352,7 +1352,7 @@
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script type="module" src="./js/imagesSwiper.js"></script>
+    <!-- <script type="module" src="./js/imagesSwiper.js"></script> -->
     <script src="./js/modal.js"></script>
     <script src="./js/toggleMenu.js"></script>
     <script src="./js/fontSizeMutation.js"></script>
@@ -1364,5 +1364,31 @@
 
     <script type="module" src="./js/fetchServicesData.js"></script>
     <script src="./js/leaflet.extra-markers.min.js"></script>
+
+    <!-- Partners Logos Swiper -->
+    <script>
+      const swiperPartnersLogos = new Swiper("#partners-swiper-container", {
+        mousewheel: true,
+        keyboard: true,
+        slidesPerView: 4,
+        spaceBetween: 10,
+        slidesPerGroup: 4,
+        grabCursor: true,
+        loopFillGroupWithBlank: true,
+        breakpoints: {
+          320: { slidesPerView: 1, spaceBetween: 10, slidesPerGroup: 1 },
+          640: { slidesPerView: 1, spaceBetween: 20, slidesPerGroup: 1 },
+          768: { slidesPerView: 3, spaceBetween: 40, slidesPerGroup: 1 },
+          1024: { slidesPerView: 4, spaceBetween: 50 },
+        },
+        pagination: {
+          el: ".swiper-pagination.partners-swiper-pagination",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next.partners-button-next",
+          prevEl: ".swiper-button-prev.partners-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>
